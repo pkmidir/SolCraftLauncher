@@ -26,6 +26,10 @@
 #include <android/dlext.h>
 #include "utils.h"
 #include "ctxbridges/gl_bridge.h"
+#define GLFW_CLIENT_API 0x22001
+/* Consider GLFW_NO_API as Vulkan API */
+#define GLFW_NO_API 0
+#define GLFW_OPENGL_API 0x30001
 
 struct PotatoBridge {
 
