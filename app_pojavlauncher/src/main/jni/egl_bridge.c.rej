@@ -1,0 +1,43 @@
+--- app_pojavlauncher/src/main/jni/egl_bridge.c
++++ app_pojavlauncher/src/main/jni/egl_bridge.c
+@@ -602,6 +602,7 @@ void (*vtest_swap_buffers_p) (void);
+ #define RENDERER_GL4ES 1
+ #define RENDERER_VK_ZINK 2
+ #define RENDERER_VIRGL 3
++#define RENDERER_VGPU 4
+ 
+ void* gbuffer;
+ 
+@@ -749,15 +752,17 @@ int pojavInit() {
+             printf("VirGL: OSMesa buffer flush is DISABLED!\n");
+         }
+         loadSymbolsVirGL();
+-    } else if (strncmp("opengles", renderer, 8) == 0) {
++    } else if (strncmp("opengles2_vgpu", renderer,14) == 0) {
++        pojav_environ->config_renderer = RENDERER_VGPU;
++    } else if(strncmp("opengles", renderer, 8) == 0) {
+         pojav_environ->config_renderer = RENDERER_GL4ES;
+-        //loadSymbols();
+     } else if (strcmp(renderer, "vulkan_zink") == 0) {
+-        pojav_environ->config_renderer = RENDERER_VK_ZINK;
+-        setenv("GALLIUM_DRIVER","zink",1);
+-        loadSymbols();
++            pojav_environ->config_renderer = RENDERER_VK_ZINK;
++            setenv("GALLIUM_DRIVER","zink",1);
++            loadSymbols();
+     }
+-    if(pojav_environ->config_renderer == RENDERER_GL4ES) {
++
++    if (pojav_environ->config_renderer == RENDERER_GL4ES||pojav_environ->config_renderer == RENDERER_VGPU) {
+         if(gl_init()) {
+             gl_setup_window(pojav_environ->pojavWindow);
+             return 1;
+@@ -980,7 +986,7 @@ Java_org_lwjgl_glfw_GLFW_nativeEglDetachOnCurrentThread(JNIEnv *env, jclass claz
+ */
+ 
+ void* pojavCreateContext(void* contextSrc) {
+-    if (pojav_environ->config_renderer == RENDERER_GL4ES) {
++    if (pojav_environ->config_renderer == RENDERER_GL4ES||pojav_environ->config_renderer == RENDERER_VGPU) {
+         /*const EGLint ctx_attribs[] = {
+             EGL_CONTEXT_CLIENT_VERSION, atoi(getenv("LIBGL_ES")),
+             EGL_NONE

@@ -1,0 +1,136 @@
+diff --git a/app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/utils/JREUtils.java b/app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/utils/JREUtils.java
+index be6524d554..e9a80be270 100644
+--- a/app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/utils/JREUtils.java
++++ b/app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/utils/JREUtils.java
+@@ -438,6 +438,8 @@ public static String loadGraphicsLibrary(){
+         if(LOCAL_RENDERER == null) return null;
+         String renderLibrary;
+         switch (LOCAL_RENDERER){
++            case "opengles2_vgpu":
++                renderLibrary = "libvgpu.so"; break;
+             case "opengles2":
+             case "opengles2_5":
+             case "opengles3":
+diff --git a/app_pojavlauncher/src/main/jni/egl_bridge.c b/app_pojavlauncher/src/main/jni/egl_bridge.c
+index e8eeb57733..03fb32b86f 100644
+--- a/app_pojavlauncher/src/main/jni/egl_bridge.c
++++ b/app_pojavlauncher/src/main/jni/egl_bridge.c
+@@ -602,6 +602,7 @@ void (*vtest_swap_buffers_p) (void);
+ #define RENDERER_GL4ES 1
+ #define RENDERER_VK_ZINK 2
+ #define RENDERER_VIRGL 3
++#define RENDERER_VGPU 4
+ 
+ void* gbuffer;
+ 
+@@ -617,6 +618,7 @@ void pojavTerminate() {
+     printf("EGLBridge: Terminating\n");
+ 
+     switch (pojav_environ->config_renderer) {
++        case RENDERER_VGPU:
+         case RENDERER_GL4ES: {
+             eglMakeCurrent_p(potatoBridge.eglDisplay, EGL_NO_SURFACE, EGL_NO_SURFACE, EGL_NO_CONTEXT);
+             eglDestroySurface_p(potatoBridge.eglDisplay, potatoBridge.eglSurface);
+@@ -638,7 +640,7 @@ void pojavTerminate() {
+ 
+ JNIEXPORT void JNICALL Java_net_kdt_pojavlaunch_utils_JREUtils_setupBridgeWindow(JNIEnv* env, jclass clazz, jobject surface) {
+     pojav_environ->pojavWindow = ANativeWindow_fromSurface(env, surface);
+-    if(pojav_environ->config_renderer == RENDERER_GL4ES) {
++    if(pojav_environ->config_renderer == RENDERER_GL4ES||pojav_environ->config_renderer == RENDERER_VGPU) {
+         gl_setup_window();
+     }
+ }
+@@ -651,6 +653,7 @@ Java_net_kdt_pojavlaunch_utils_JREUtils_releaseBridgeWindow(JNIEnv *env, jclass
+ 
+ void* pojavGetCurrentContext() {
+     switch (pojav_environ->config_renderer) {
++        case RENDERER_VGPU:
+         case RENDERER_GL4ES:
+             return (void *)eglGetCurrentContext_p();
+         case RENDERER_VIRGL:
+@@ -747,15 +750,17 @@ int pojavInit() {
+             printf("VirGL: OSMesa buffer flush is DISABLED!\n");
+         }
+         loadSymbolsVirGL();
+-    } else if (strncmp("opengles", renderer, 8) == 0) {
++    } else if (strncmp("opengles2_vgpu", renderer,14) == 0) {
++        pojav_environ->config_renderer = RENDERER_VGPU;
++    } else if(strncmp("opengles", renderer, 8) == 0) {
+         pojav_environ->config_renderer = RENDERER_GL4ES;
+-        //loadSymbols();
+     } else if (strcmp(renderer, "vulkan_zink") == 0) {
+-        pojav_environ->config_renderer = RENDERER_VK_ZINK;
+-        setenv("GALLIUM_DRIVER","zink",1);
+-        loadSymbols();
++            pojav_environ->config_renderer = RENDERER_VK_ZINK;
++            setenv("GALLIUM_DRIVER","zink",1);
++            loadSymbols();
+     }
+-    if(pojav_environ->config_renderer == RENDERER_GL4ES) {
++
++    if (pojav_environ->config_renderer == RENDERER_GL4ES||pojav_environ->config_renderer == RENDERER_VGPU) {
+         if(gl_init()) {
+             gl_setup_window(pojav_environ->pojavWindow);
+             return 1;
+@@ -879,6 +884,7 @@ void pojavSwapBuffers() {
+         return;
+     }
+     switch (pojav_environ->config_renderer) {
++        case RENDERER_VGPU:
+         case RENDERER_GL4ES: {
+             gl_swap_buffers();
+         } break;
+@@ -930,7 +936,7 @@ void pojavMakeCurrent(void* window) {
+     //    printf("OSMDroid: skipped context reset\n");
+     //    return JNI_TRUE;
+     //}
+-    if(pojav_environ->config_renderer == RENDERER_GL4ES) {
++    if(pojav_environ->config_renderer == RENDERER_GL4ES||pojav_environ->config_renderer == RENDERER_VGPU) {
+         gl_make_current((render_window_t*)window);
+     }
+     if (pojav_environ->config_renderer == RENDERER_VK_ZINK || pojav_environ->config_renderer == RENDERER_VIRGL) {
+@@ -977,7 +983,7 @@ Java_org_lwjgl_glfw_GLFW_nativeEglDetachOnCurrentThread(JNIEnv *env, jclass claz
+ */
+ 
+ void* pojavCreateContext(void* contextSrc) {
+-    if (pojav_environ->config_renderer == RENDERER_GL4ES) {
++    if (pojav_environ->config_renderer == RENDERER_GL4ES||pojav_environ->config_renderer == RENDERER_VGPU) {
+         /*const EGLint ctx_attribs[] = {
+             EGL_CONTEXT_CLIENT_VERSION, atoi(getenv("LIBGL_ES")),
+             EGL_NONE
+@@ -1020,6 +1026,7 @@ Java_org_lwjgl_opengl_GL_getNativeWidthHeight(JNIEnv *env, jobject thiz) {
+ }
+ void pojavSwapInterval(int interval) {
+     switch (pojav_environ->config_renderer) {
++        case RENDERER_VGPU:
+         case RENDERER_GL4ES: {
+             gl_swap_interval(interval);
+         } break;
+diff --git a/app_pojavlauncher/src/main/jniLibs/arm64-v8a/libvgpu.so b/app_pojavlauncher/src/main/jniLibs/arm64-v8a/libvgpu.so
+new file mode 100644
+index 0000000000..521ccff6a4
+Binary files /dev/null and b/app_pojavlauncher/src/main/jniLibs/arm64-v8a/libvgpu.so differ
+diff --git a/app_pojavlauncher/src/main/jniLibs/armeabi-v7a/libvgpu.so b/app_pojavlauncher/src/main/jniLibs/armeabi-v7a/libvgpu.so
+new file mode 100644
+index 0000000000..65869d48f3
+Binary files /dev/null and b/app_pojavlauncher/src/main/jniLibs/armeabi-v7a/libvgpu.so differ
+diff --git a/app_pojavlauncher/src/main/res/values/headings_array.xml b/app_pojavlauncher/src/main/res/values/headings_array.xml
+index fb5d4c6953..ab821e4b71 100644
+--- a/app_pojavlauncher/src/main/res/values/headings_array.xml
++++ b/app_pojavlauncher/src/main/res/values/headings_array.xml
+@@ -5,6 +5,7 @@
+         <!-- <item name="4">@string/mcl_setting_renderer_vulkan_zink</item> -->
+         <item name="5">@string/mcl_setting_renderer_virgl</item>
+         <item name="6">@string/mcl_setting_renderer_angle</item>
++        <item name="7">@string/mcl_setting_renderer_vgpu</item>
+     </string-array>
+ 
+     <string-array name="menu_customcontrol">
+@@ -39,6 +40,7 @@
+         <!--<item>vulkan_zink</item> -->
+         <item>opengles3_virgl</item> <!-- virglrenderer with OpenGL ES 3 -->
+         <item>opengles3_desktopgl_angle_vulkan</item>
++        <item>opengles2_vgpu</item>
+     </string-array>
+ 
+ </resources>
