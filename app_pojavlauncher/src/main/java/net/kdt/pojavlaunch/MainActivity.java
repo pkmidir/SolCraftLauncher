@@ -343,8 +343,7 @@ public class MainActivity extends BaseActivity implements ControlButtonMenuListe
     }
 
     private void checkVulkanZinkIsSupported() {
-        if (Tools.DEVICE_ARCHITECTURE == ARCH_X86
-                || Build.VERSION.SDK_INT < 25
+        if (Build.VERSION.SDK_INT < 25
                 || !getPackageManager().hasSystemFeature(PackageManager.FEATURE_VULKAN_HARDWARE_LEVEL)
                 || !getPackageManager().hasSystemFeature(PackageManager.FEATURE_VULKAN_HARDWARE_VERSION)) {
             Logger.appendToLog("Error: Vulkan Zink renderer is not supported!");
