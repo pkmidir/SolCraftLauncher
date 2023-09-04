@@ -67,6 +67,7 @@ LOCAL_LDFLAGS := -z global
 include $(BUILD_SHARED_LIBRARY)
 #endif
 
+
 include $(CLEAR_VARS)
 LOCAL_MODULE := istdio
 LOCAL_SHARED_LIBRARIES := xhook
