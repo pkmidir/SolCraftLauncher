@@ -159,7 +159,7 @@ android {
     externalNativeBuild {
         ndkBuild {
             path file('src/main/jni/Android.mk')
-        }
+        },
         cmake {
             cppFlags ""
             arguments "-DANDROID_STL=c++_shared"
