@@ -202,7 +202,7 @@ int pojavInitOpenGL() {
         set_gl_bridge_tbl();
     } else if (strcmp(renderer, "vulkan_zink") == 0) {
         pojav_environ->config_renderer = RENDERER_VK_ZINK;
-        setenv("MESA_LOADER_DRIVER_OVERRIDE", "zink");
+        setenv("MESA_LOADER_DRIVER_OVERRIDE", "zink", 1);
         load_vulkan();
         setenv("GALLIUM_DRIVER","zink",1);
         set_osm_bridge_tbl();
