@@ -218,7 +218,7 @@ int pojavInitOpenGL() {
         set_osm_bridge_tbl();
     } else if (strcmp(renderer, "swrast") == 0) {
         pojav_environ->config_renderer = RENDERER_VK_ZINK;
-        setenv("GALLIUM_DRIVER", "llvmpipe", 1);
+        setenv("GALLIUM_DRIVER", "softpipe", 1);
         setenv("LIBGL_ALWAYS_SOFTWARE", "1", 1);
         set_osm_bridge_tbl();
     }
