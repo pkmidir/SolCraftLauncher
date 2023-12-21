@@ -221,10 +221,7 @@ public class JREUtils {
                 envMap.put("LIBGL_ES", "3");
                 envMap.put("POJAVEXEC_EGL","libEGL_angle.so"); // Use ANGLE EGL
             }
-            if(LOCAL_RENDERER.equals("malihw_panfrost")) {
-                envMap.put("POJAVEXEC_OSMESA", "libOSMesa_pan.so");
-            }
-            if(LOCAL_RENDERER.equals("adrhw_freedreno") || LOCAL_RENDERER.equals("swrast")) {
+            if(LOCAL_RENDERER.equals("malihw_panfrost") || LOCAL_RENDERER.equals("adrhw_freedreno") || LOCAL_RENDERER.equals("swrast")) {
                 envMap.put("POJAVEXEC_OSMESA", "libOSMesa.so");
             }
         }
@@ -454,7 +451,7 @@ public class JREUtils {
             case "opengles2_5":
             case "opengles3":
                 renderLibrary = "libgl4es_114.so"; break;
-            case "malihw_panfrost": renderLibrary = "libOSMesa_pan.so"; break;
+            case "malihw_panfrost": 
             case "swrast": 
             case "vulkan_zink": 
             case "adrhw_freedreno": 
