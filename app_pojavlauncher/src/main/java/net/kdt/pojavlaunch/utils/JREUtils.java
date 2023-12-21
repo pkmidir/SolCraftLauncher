@@ -207,7 +207,6 @@ public class JREUtils {
         envMap.put("force_glsl_extensions_warn", "true");
         envMap.put("allow_higher_compat_version", "true");
         envMap.put("allow_glsl_extension_directive_midshader", "true");
-        envMap.put("MESA_LOADER_DRIVER_OVERRIDE", "zink");
         envMap.put("VTEST_SOCKET_NAME", new File(Tools.DIR_CACHE, ".virgl_test").getAbsolutePath());
 
         envMap.put("LD_LIBRARY_PATH", LD_LIBRARY_PATH);
@@ -225,7 +224,7 @@ public class JREUtils {
             if(LOCAL_RENDERER.equals("malihw_panfrost")) {
                 envMap.put("POJAVEXEC_OSMESA", "libOSMesa_pan.so");
             }
-            if(LOCAL_RENDERER.equals("adrhw_freedreno")) {
+            if(LOCAL_RENDERER.equals("adrhw_freedreno") || LOCAL_RENDERER.equals("swrast")) {
                 envMap.put("POJAVEXEC_OSMESA", "libOSMesa.so");
             }
         }
@@ -455,9 +454,11 @@ public class JREUtils {
             case "opengles2_5":
             case "opengles3":
                 renderLibrary = "libgl4es_114.so"; break;
-            case "vulkan_zink": renderLibrary = "libOSMesa.so"; break;
             case "malihw_panfrost": renderLibrary = "libOSMesa_pan.so"; break;
-            case "adrhw_freedreno": renderLibrary = "libOSMesa.so"; break;
+            case "swrast": 
+            case "vulkan_zink": 
+            case "adrhw_freedreno": 
+                renderLibrary = "libOSMesa.so"; break;
             case "opengles3_desktopgl_angle_vulkan" : renderLibrary = "libtinywrapper.so"; break;
             default:
                 Log.w("RENDER_LIBRARY", "No renderer selected, defaulting to opengles2");

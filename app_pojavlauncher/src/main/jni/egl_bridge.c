@@ -202,6 +202,7 @@ int pojavInitOpenGL() {
         set_gl_bridge_tbl();
     } else if (strcmp(renderer, "vulkan_zink") == 0) {
         pojav_environ->config_renderer = RENDERER_VK_ZINK;
+        setenv("MESA_LOADER_DRIVER_OVERRIDE", "zink");
         load_vulkan();
         setenv("GALLIUM_DRIVER","zink",1);
         set_osm_bridge_tbl();
@@ -214,6 +215,11 @@ int pojavInitOpenGL() {
         pojav_environ->config_renderer = RENDERER_VK_ZINK;
         setenv("GALLIUM_DRIVER", "freedreno", 1);
         setenv("MESA_LOADER_DRIVER_OVERRIDE", "kgsl", 1);
+        set_osm_bridge_tbl();
+    } else if (strcmp(renderer, "swrast") == 0) {
+        pojav_environ->config_renderer = RENDERER_VK_ZINK;
+        setenv("GALLIUM_DRIVER", "llvmpipe", 1);
+        setenv("LIBGL_ALWAYS_SOFTWARE", "1", 1);
         set_osm_bridge_tbl();
     }
     if(br_init()) {
