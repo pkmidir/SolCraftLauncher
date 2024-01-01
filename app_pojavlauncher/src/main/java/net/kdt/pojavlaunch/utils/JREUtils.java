@@ -465,6 +465,7 @@ public class JREUtils {
             case "adrhw_freedreno": 
                 renderLibrary = "libOSMesa.so"; break;
             case "opengles3_desktopgl_angle_vulkan" : renderLibrary = "libtinywrapper.so"; break;
+            case "opengles3_desktopgl_angle_vulkan_new" : renderLibrary = "libtinywrapper_new_angle.so"; break;
             default:
                 Log.w("RENDER_LIBRARY", "No renderer selected, defaulting to opengles2");
                 renderLibrary = "libgl4es_114.so";

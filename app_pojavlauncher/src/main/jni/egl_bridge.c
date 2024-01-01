@@ -197,13 +197,10 @@ int pojavInitOpenGL() {
 
     // NOTE: Override for now.
     const char *renderer = getenv("POJAV_RENDERER");
-    if (strncmp("opengles3_virgl", renderer, 15) == 0) {
+    if (strncmp(renderer, "virgl") == 0) {
         pojav_environ->config_renderer = RENDERER_VK_ZINK;
-        setenv("GALLIUM_DRIVER","virpipe",1);
-        setenv("OSMESA_NO_FLUSH_FRONTBUFFER","1",false); // TODO: set to true?
-        if(strcmp(getenv("OSMESA_NO_FLUSH_FRONTBUFFER"),"1") == 0) {
-            printf("VirGL: OSMesa buffer flush is DISABLED!\n");
-        }
+        setenv("GALLIUM_DRIVER","virpipe", 1);
+        setenv("OSMESA_NO_FLUSH_FRONTBUFFER","1", false); // TODO: set to true?
         set_osm_bridge_tbl();
     } else if (strncmp("opengles", renderer, 8) == 0) {
         pojav_environ->config_renderer = RENDERER_GL4ES;

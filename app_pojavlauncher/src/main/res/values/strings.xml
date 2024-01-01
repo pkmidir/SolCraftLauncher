@@ -67,14 +67,14 @@
     <string name="mcl_setting_renderer_gles2_4">Holy GL4ES - (all versions, fast)</string>
     <string name="mcl_setting_renderer_vulkan_zink">Zink (Vulkan) - (all versions, mid)</string>
     <string name="mcl_setting_renderer_angle">ANGLE (Vulkan) - (1.17+ only, fast)</string>
-    <string name="mcl_setting_renderer_angle_new">Updated ANGLE (Vulkan, NOT IMPLEMENTED!) - (1.17+ only, mid)</string>
+    <string name="mcl_setting_renderer_angle_new">Updated ANGLE (Vulkan) - (1.17+ only, mid)</string>
     <string name="mcl_setting_renderer_panfrost">Panfrost (Mali Gx10 only) - (all versions, mid)</string>
     <string name="mcl_setting_renderer_freedreno">Freedreno (Adreno) - (all versions, mid)</string>
     <string name="mcl_setting_renderer_softpipe">softpipe (CPU) - (all versions, very slow)</string>
 
     <string name="mcl_setting_renderer_virgl">virglrenderer (NOT IMPLEMENTED!) - (all versions, mid)</string>
-    <string name="mcl_setting_renderer_vulkan_zink_legacy">Legacy Zink (UNSUPPORTED!) - (all versions, slow)</string>
-    <string name="mcl_setting_renderer_vgpu">vgpu (COMING SOON!) - (up to 1.16.5, fast)</string>
+    <string name="mcl_setting_renderer_vulkan_zink_legacy">Legacy Zink (UNSUPPORTED AND BROKEN!) - (all versions, slow)</string>
+    <string name="mcl_setting_renderer_vgpu">vgpu - (up to 1.16.5, fast)</string>
 
     <string name="mcl_setting_veroption_release">Release</string>
     <string name="mcl_setting_veroption_snapshot">Snapshot</string>
@@ -193,7 +193,7 @@
     <string name="multirt_config_setdefault">Set default</string>
     <string name="multirt_config_setdefault_already">Default</string>
     <string name="multirt_config_removeerror_last">You must have at least one Java Runtime installed.</string>
-    <string name="multirt_nocompartiblert">Can\'t find any compartible Java Runtime. This version requires Java %d or newer.</string>
+    <string name="multirt_nocompatiblert">Can\'t find any compatible Java Runtime. This version requires Java %d or newer.</string>
     <string name="multirt_nojava8rt">Can\'t find Java 8. In order to use this option, you need to install Java 8.</string>
     <string name="multirt_delete_runtime">Delete runtime</string>
     <string name="pvc_gameDirectory">Game directory</string>
