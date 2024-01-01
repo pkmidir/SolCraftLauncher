@@ -83,7 +83,7 @@ EXTERNAL_API void pojavTerminate() {
 }
 
 bool loadSymbolsVirGL() {
-    pojav_environ->config_renderer = RENDERER_VIRGL;
+    pojav_environ->config_renderer = RENDERER_VK_ZINK;
     //loadSymbols(); TODO: reimplement
 
     char* fileName = calloc(1, 1024);
@@ -216,7 +216,7 @@ int pojavInitOpenGL() {
     // NOTE: Override for now.
     const char *renderer = getenv("POJAV_RENDERER");
     if (strncmp("opengles3_virgl", renderer, 15) == 0) {
-        pojav_environ->config_renderer = RENDERER_VIRGL;
+        pojav_environ->config_renderer = RENDERER_VK_ZINK;
         setenv("GALLIUM_DRIVER","virpipe",1);
         setenv("OSMESA_NO_FLUSH_FRONTBUFFER","1",false); // TODO: set to true?
         if(strcmp(getenv("OSMESA_NO_FLUSH_FRONTBUFFER"),"1") == 0) {
