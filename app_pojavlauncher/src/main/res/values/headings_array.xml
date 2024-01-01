@@ -53,7 +53,6 @@
         <item>adrhw_freedreno</item>
         <item>swrast</item>
         <item>vgpu</item>
-        <item>
     </string-array>
     <string-array name="download_source_names">
         <item>@string/global_default</item>
