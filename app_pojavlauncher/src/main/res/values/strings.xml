@@ -66,9 +66,16 @@
     <string name="mcl_setting_category_renderer">Renderer</string>
     <string name="mcl_setting_renderer_gles2_4">Holy GL4ES - (all versions, fast)</string>
     <string name="mcl_setting_renderer_vulkan_zink">Zink (Vulkan) - (all versions, mid)</string>
-    <string name="mcl_setting_renderer_angle">ANGLE (Vulkan) - (1.17+ only, mid)</string>
+    <string name="mcl_setting_renderer_angle">ANGLE (Vulkan) - (1.17+ only, fast)</string>
+    <string name="mcl_setting_renderer_angle_new">Updated ANGLE (Vulkan, NOT IMPLEMENTED!) - (1.17+ only, mid)</string>
     <string name="mcl_setting_renderer_panfrost">Panfrost (Mali) - (all versions, mid)</string>
     <string name="mcl_setting_renderer_freedreno">Freedreno (Adreno) - (all versions, mid)</string>
+    <string name="mcl_setting_renderer_softpipe">softpipe (CPU) - (all versions, very slow)</string>
+
+    <string name="mcl_setting_renderer_virgl">virglrenderer (NOT IMPLEMENTED!) - (all versions, mid)</string>
+    <string name="mcl_setting_renderer_vulkan_zink_legacy">Legacy Zink (UNSUPPORTED!) - (all versions, slow)</string>
+    <string name="mcl_setting_renderer_vgpu">vgpu (COMING SOON!) - (up to 1.16.5, fast)</string>
+
     <string name="mcl_setting_veroption_release">Release</string>
     <string name="mcl_setting_veroption_snapshot">Snapshot</string>
     <string name="mcl_setting_veroption_oldalpha">Old-alpha</string>
