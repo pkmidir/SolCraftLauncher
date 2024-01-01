@@ -197,7 +197,7 @@ int pojavInitOpenGL() {
 
     // NOTE: Override for now.
     const char *renderer = getenv("POJAV_RENDERER");
-    if (strncmp(renderer, "virgl") == 0) {
+    if (strnmp(renderer, "virgl") == 0) {
         pojav_environ->config_renderer = RENDERER_VK_ZINK;
         setenv("GALLIUM_DRIVER","virpipe", 1);
         setenv("OSMESA_NO_FLUSH_FRONTBUFFER","1", false); // TODO: set to true?
