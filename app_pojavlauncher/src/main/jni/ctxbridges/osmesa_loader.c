@@ -20,11 +20,11 @@ void (*glReadPixels_p) (GLint x, GLint y, GLsizei width, GLsizei height, GLenum 
 
 void dlsym_OSMesa() {
     char* main_osm_libname = getenv("POJAVEXEC_OSMESA");
-    if(main_osm_libname == NULL) main_osm_libname = "libOSMesa.so";
+    if(main_osm_libname == NULL) main_osm_libname = "libOSMesa.so.8.0.0";
     char* main_path = NULL;
     char* alt_path = NULL;
     if(asprintf(&main_path, "%s/%s", getenv("POJAV_NATIVEDIR"), main_osm_libname) == -1 ||
-            asprintf(&alt_path, "%s/libOSMesa.so.8", getenv("POJAV_NATIVEDIR")) == -1) {
+            asprintf(&alt_path, "%s/libOSMesa.so.8.0.0.8", getenv("POJAV_NATIVEDIR")) == -1) {
         abort();
     }
     void* dl_handle = NULL;

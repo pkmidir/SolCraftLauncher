@@ -226,7 +226,7 @@ public class JREUtils {
                 envMap.put("POJAVEXEC_OSMESA", "libOSMesa_pan.so");
             }
             if(LOCAL_RENDERER.equals("adrhw_freedreno") || LOCAL_RENDERER.equals("swrast") || LOCAL_RENDERER.equals("virgl")) {
-                envMap.put("POJAVEXEC_OSMESA", "libOSMesa.so");
+                envMap.put("POJAVEXEC_OSMESA", "libOSMesa.so.8.0.0");
             }
         }
         if(LauncherPreferences.PREF_BIG_CORE_AFFINITY) envMap.put("POJAV_BIG_CORE_AFFINITY", "1");
@@ -463,7 +463,7 @@ public class JREUtils {
             case "swrast":
             case "virgl":
             case "adrhw_freedreno": 
-                renderLibrary = "libOSMesa.so"; break;
+                renderLibrary = "libOSMesa.so.8.0.0"; break;
             case "opengles3_desktopgl_angle_vulkan" : renderLibrary = "libtinywrapper.so"; break;
             case "opengles3_desktopgl_angle_vulkan_new" : renderLibrary = "libtinywrapper_new_angle.so"; break;
             default:
