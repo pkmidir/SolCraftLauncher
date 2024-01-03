@@ -73,7 +73,7 @@
     <string name="mcl_setting_renderer_softpipe">softpipe (CPU) - (all versions, very slow)</string>
     <string name="mcl_setting_renderer_virgl">virglrenderer (NOT IMPLEMENTED!) - (all versions, mid)</string>
     <string name="mcl_setting_renderer_vulkan_zink_legacy">Legacy Zink (UNSUPPORTED AND BROKEN!) - (all versions, slow)</string>
-    <string name="mcl_setting_renderer_panfrost_new">Panfrost UMP (BROKEN!) - (all versions, mid)</string>
+    <string name="mcl_setting_renderer_panfrost_new">Panfrost UMP (TESTING MALI Gx10 ONLY) - (all versions, mid)</string>
     <string name="mcl_setting_renderer_vgpu">vgpu - (up to 1.16.5, fast)</string>
 
     <string name="mcl_setting_veroption_release">Release</string>
