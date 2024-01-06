@@ -225,6 +225,9 @@ public class JREUtils {
             if(LOCAL_RENDERER.equals("malihw_panfrost")) {
                 envMap.put("POJAVEXEC_OSMESA", "libOSMesa_pan.so");
             }
+            if(LOCAL_RENDERER.equals("vulkan_zink_legacy")) {
+                envMap.put("POJAVEXEC_OSMESA", "libOSMesa_znL.so");
+            }
             if(LOCAL_RENDERER.equals("adrhw_freedreno") || LOCAL_RENDERER.equals("swrast") || LOCAL_RENDERER.equals("virgl")) {
                 envMap.put("POJAVEXEC_OSMESA", "libOSMesa.so");
             }
