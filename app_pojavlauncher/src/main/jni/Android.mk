@@ -14,38 +14,12 @@ LOCAL_SRC_FILES := tinywrapper/angle-gles/$(TARGET_ARCH_ABI)/libGLESv2_angle.so
 include $(PREBUILT_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := angle_gles2_new
-LOCAL_SRC_FILES := tinywrapper_new_angle/angle-gles/$(TARGET_ARCH_ABI)/libGLESv2_angle.so
-include $(PREBUILT_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
 LOCAL_MODULE := tinywrapper
 LOCAL_SHARED_LIBRARIES := angle_gles2
 LOCAL_SRC_FILES := tinywrapper/main.c tinywrapper/string_utils.c
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/tinywrapper
 include $(BUILD_SHARED_LIBRARY)
 
-include $(CLEAR_VARS)
-LOCAL_MODULE := tinywrapper_new_angle
-LOCAL_SHARED_LIBRARIES := angle_gles2_new
-LOCAL_SRC_FILES := tinywrapper_new_angle/main.c tinywrapper_new_angle/string_utils.c
-LOCAL_C_INCLUDES := $(LOCAL_PATH)/tinywrapper_new_angle
-include $(BUILD_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE     := xhook
-        LOCAL_SRC_FILES  := xhook/xhook.c \
-                    xhook/xh_core.c \
-                    xhook/xh_elf.c \
-                    xhook/xh_jni.c \
-                    xhook/xh_log.c \
-                    xhook/xh_util.c \
-                    xhook/xh_version.c
-        LOCAL_C_INCLUDES := $(LOCAL_PATH)/xhook
-LOCAL_CFLAGS     := -Wall -Wextra -Werror -fvisibility=hidden
-LOCAL_CONLYFLAGS := -std=c11
-LOCAL_LDLIBS     := -llog
-include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 # Link GLESv2 for test
@@ -82,13 +56,14 @@ LOCAL_LDFLAGS := -z global
 include $(BUILD_SHARED_LIBRARY)
 #endif
 
+$(call import-module,prefab/bytehook)
+LOCAL_PATH := $(HERE_PATH)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := istdio
-LOCAL_SHARED_LIBRARIES := xhook
+LOCAL_SHARED_LIBRARIES := bytehook
 LOCAL_SRC_FILES := \
     stdio_is.c
-LOCAL_C_INCLUDES := $(LOCAL_PATH)/xhook
 include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
