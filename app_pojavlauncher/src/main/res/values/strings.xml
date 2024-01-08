@@ -66,9 +66,16 @@
     <string name="mcl_setting_category_renderer">Renderer</string>
     <string name="mcl_setting_renderer_gles2_4">Holy GL4ES - (all versions, fast)</string>
     <string name="mcl_setting_renderer_vulkan_zink">Zink (Vulkan) - (all versions, mid)</string>
-    <string name="mcl_setting_renderer_angle">ANGLE (Vulkan) - (1.17+ only, mid)</string>
-    <string name="mcl_setting_renderer_panfrost">Panfrost (Mali) - (all versions, mid)</string>
+    <string name="mcl_setting_renderer_angle">ANGLE (Vulkan) - (1.17+ only, fast)</string>
+    <string name="mcl_setting_renderer_angle_new">Updated ANGLE (Vulkan) - (1.17+ only, mid)</string>
+    <string name="mcl_setting_renderer_panfrost">Panfrost (Mali Gx10 only) - (all versions, mid)</string>
     <string name="mcl_setting_renderer_freedreno">Freedreno (Adreno) - (all versions, mid)</string>
+    <string name="mcl_setting_renderer_softpipe">softpipe (CPU) - (all versions, very slow)</string>
+    <string name="mcl_setting_renderer_virgl">virglrenderer (NOT IMPLEMENTED!) - (all versions, mid)</string>
+    <string name="mcl_setting_renderer_vulkan_zink_legacy">Legacy Zink - (all versions, slow)</string>
+    <string name="mcl_setting_renderer_panfrost_new">Panfrost UMP (BROKEN!) - (all versions, mid)</string>
+    <string name="mcl_setting_renderer_vgpu">vgpu (BROKEN) - (up to 1.16.5, fast)</string>
+
     <string name="mcl_setting_veroption_release">Release</string>
     <string name="mcl_setting_veroption_snapshot">Snapshot</string>
     <string name="mcl_setting_veroption_oldalpha">Old-alpha</string>
@@ -172,6 +179,7 @@
     <string name="customctrl_passthru">Mouse pass-thru</string>
     <string name="customctrl_swipeable">Swipeable</string>
     <string name="customctrl_forward_lock">Forward lock</string>
+    <string name="customctrl_absolute_tracking">Absolute finger tracking</string>
     <string name="memory_warning_msg">The current amount of free RAM (%d) is lower than allocated RAM (%d), which may lead to crashes. Change the allocation if the game crashes.</string>
     <string name="mcl_memory_allocation">Memory allocation</string>
     <string name="mcl_memory_allocation_subtitle">Controls how much memory is given to Minecraft.</string>
@@ -185,7 +193,7 @@
     <string name="multirt_config_setdefault">Set default</string>
     <string name="multirt_config_setdefault_already">Default</string>
     <string name="multirt_config_removeerror_last">You must have at least one Java Runtime installed.</string>
-    <string name="multirt_nocompartiblert">Can\'t find any compartible Java Runtime. This version requires Java %d or newer.</string>
+    <string name="multirt_nocompatiblert">Can\'t find any compatible Java Runtime. This version requires Java %d or newer.</string>
     <string name="multirt_nojava8rt">Can\'t find Java 8. In order to use this option, you need to install Java 8.</string>
     <string name="multirt_delete_runtime">Delete runtime</string>
     <string name="pvc_gameDirectory">Game directory</string>
@@ -369,4 +377,7 @@
     <string name="preference_vsync_in_zink_title">Allow V-Sync with Zink</string>
     <string name="preference_vsync_in_zink_description">Allows the launcher to use internal system APIs to enable V-Sync for Zink. Turn this off if your launcher suddenly crashes with Zink after a system update.</string>
     <string name="exception_failed_to_unpack_jre17">Failed to install JRE 17</string>
+    <string name="newdl_starting">Reading game metadata…</string>
+    <string name="newdl_downloading_metadata">Downloading game metadata (%s)</string>
+    <string name="newdl_downloading_game_files">Downloading game files… (%d/%d, %.2f MB)</string>
 </resources>
