@@ -9,7 +9,6 @@
         <item name="6">@string/mcl_setting_renderer_freedreno</item>
         <item name="7">@string/mcl_setting_renderer_softpipe</item>
         <item name="9">@string/mcl_setting_renderer_vulkan_zink_legacy</item>
-        <item name="10">@string/mcl_setting_renderer_vgpu</item>
         <item name="11">@string/mcl_setting_renderer_panfrost_new</item>
     </string-array>
 
@@ -51,7 +50,6 @@
         <item>adrhw_freedreno</item>
         <item>swrast</item>
         <item>vulkan_zink_legacy</item>
-        <item>vgpu</item>
         <item>malihw_panfrost-new</item>
     </string-array>
     <string-array name="download_source_names">
