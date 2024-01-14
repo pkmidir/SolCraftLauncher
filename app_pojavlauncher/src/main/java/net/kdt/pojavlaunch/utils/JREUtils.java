@@ -228,9 +228,6 @@ public class JREUtils {
             if(LOCAL_RENDERER.equals("vulkan_zink_legacy")) {
                 envMap.put("POJAVEXEC_OSMESA", "libOSMesa_znL.so");
             }
-            if(LOCAL_RENDERER.equals("adrhw_freedreno") || LOCAL_RENDERER.equals("swrast") || LOCAL_RENDERER.equals("virgl")) {
-                envMap.put("POJAVEXEC_OSMESA", "libOSMesa.so");
-            }
         }
         if(LauncherPreferences.PREF_BIG_CORE_AFFINITY) envMap.put("POJAV_BIG_CORE_AFFINITY", "1");
         envMap.put("AWTSTUB_WIDTH", Integer.toString(CallbackBridge.windowWidth > 0 ? CallbackBridge.windowWidth : CallbackBridge.physicalWidth));
@@ -455,19 +452,26 @@ public class JREUtils {
         String renderLibrary;
         switch (LOCAL_RENDERER){
             case "opengles2":
-                renderLibrary = "libgl4es_114.so"; break;
+                renderLibrary = "libgl4es_114.so";
+                break;
             case "vgpu":
-                renderLibrary = "libvgpu.so"; break;
+                renderLibrary = "libvgpu.so";
+                break;
             case "malihw_panfrost": 
-                renderLibrary = "libOSMesa_pan.so"; break;
+                renderLibrary = "libOSMesa_pan.so";
+                break;
             case "vulkan_zink_legacy": 
-                renderLibrary = "libOSMesa_znL.so"; break;
+                renderLibrary = "libOSMesa_znL.so";
+                break;
             case "malihw_panfrost-new":
             case "vulkan_zink":
             case "swrast":
-            case "virgl":
             case "adrhw_freedreno": 
-                renderLibrary = "libOSMesa.so"; break;
+                renderLibrary = "libOSMesa.so";
+                break;
+            case "virgl":
+                renderLibrary = "libOSMesa_81.so";
+                break;
             case "opengles3_desktopgl_angle_vulkan" : renderLibrary = "libtinywrapper.so"; break;
             case "opengles3_desktopgl_angle_vulkan_new" : renderLibrary = "libtinywrapper_new_angle.so"; break;
             default:
