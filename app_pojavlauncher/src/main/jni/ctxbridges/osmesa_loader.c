@@ -30,7 +30,7 @@ void dlsym_OSMesa() {
         }
         free(main_path);
     } else if(pojav_environ->config_renderer == RENDERER_VIRGL) {
-        if(asprintf(&main_path, "%s/libOSMesa.so", getenv("POJAV_NATIVEDIR")) == -1) {
+        if(asprintf(&main_path, "%s/libOSMesa_znL.so", getenv("POJAV_NATIVEDIR")) == -1) {
             abort();
         }
     }

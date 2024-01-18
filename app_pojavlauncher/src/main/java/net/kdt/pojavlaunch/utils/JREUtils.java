@@ -460,10 +460,10 @@ public class JREUtils {
             case "malihw_panfrost": 
                 renderLibrary = "libOSMesa_pan.so";
                 break;
+            case "virgl": 
             case "vulkan_zink_legacy": 
                 renderLibrary = "libOSMesa_znL.so";
                 break;
-            case "virgl": 
             case "malihw_panfrost-new":
             case "vulkan_zink":
             case "swrast":
