@@ -454,9 +454,6 @@ public class JREUtils {
             case "opengles2":
                 renderLibrary = "libgl4es_114.so";
                 break;
-            case "vgpu":
-                renderLibrary = "libvgpu.so";
-                break;
             case "malihw_panfrost": 
                 renderLibrary = "libOSMesa_pan.so";
                 break;
@@ -464,6 +461,7 @@ public class JREUtils {
             case "vulkan_zink_legacy": 
                 renderLibrary = "libOSMesa_znL.so";
                 break;
+            case "virgl-ump": 
             case "malihw_panfrost-new":
             case "vulkan_zink":
             case "swrast":
