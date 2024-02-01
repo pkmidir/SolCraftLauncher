@@ -70,7 +70,6 @@
     <string name="mcl_setting_renderer_angle_new">Updated ANGLE (Vulkan) - (1.17+ only, mid)</string>
     <string name="mcl_setting_renderer_panfrost">Panfrost (Mali Gx10 only) - (all versions, mid)</string>
     <string name="mcl_setting_renderer_freedreno">Freedreno (Adreno) - (all versions, mid)</string>
-    <string name="mcl_setting_renderer_softpipe">softpipe (CPU) - (all versions, very slow)</string>
     <string name="mcl_setting_renderer_vulkan_zink_legacy">Legacy Zink (Vulkan) - (all versions, slow)</string>
     <string name="mcl_setting_renderer_virgl">virglrenderer - (all versions, mid)</string>
     <string name="mcl_setting_veroption_release">Release</string>
