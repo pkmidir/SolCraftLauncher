@@ -466,7 +466,6 @@ public class JREUtils {
             case "vulkan_zink_legacy": 
                 renderLibrary = "libOSMesa_znL.so";
                 break;
-            case "malihw_panfrost-new":
             case "vulkan_zink":
             case "swrast":
             case "adrhw_freedreno": 

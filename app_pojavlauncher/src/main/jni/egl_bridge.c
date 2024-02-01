@@ -260,7 +260,7 @@ int pojavInitOpenGL() {
         setenv("MESA_LOADER_DRIVER_OVERRIDE","zink",1);
         setenv("GALLIUM_DRIVER","zink",1);
         set_osm_bridge_tbl();
-    } else if strcmp(renderer, "vulkan_zink_legacy") == 0) {
+    } else if (strcmp(renderer, "vulkan_zink_legacy") == 0) {
         setenv("POJAV_ZINK_PREFER_SYSTEM_DRIVER", "1", 1);
         pojav_environ->config_renderer = RENDERER_VK_ZINK;
         load_vulkan();
