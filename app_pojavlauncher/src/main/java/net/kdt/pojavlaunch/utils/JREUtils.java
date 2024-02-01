@@ -219,17 +219,16 @@ public class JREUtils {
         if(LOCAL_RENDERER != null) {
             envMap.put("POJAV_RENDERER", LOCAL_RENDERER);
             if(LOCAL_RENDERER.equals("opengles3_desktopgl_angle_vulkan")) {
-                envMap.put("LIBGL_ES", "3");
                 envMap.put("POJAVEXEC_EGL","libEGL_angle.so"); // Use ANGLE EGL
+            }
+            if(LOCAL_RENDERER.equals("opengles3_desktopgl_angle_vulkan_new")) {
+                envMap.put("POJAVEXEC_EGL","libEGL_angle_new.so"); // Use ANGLE EGL
             }
             if(LOCAL_RENDERER.equals("malihw_panfrost")) {
                 envMap.put("POJAVEXEC_OSMESA", "libOSMesa_pan.so");
             }
             if(LOCAL_RENDERER.equals("vulkan_zink_legacy")) {
                 envMap.put("POJAVEXEC_OSMESA", "libOSMesa_znL.so");
-            }
-            if(LOCAL_RENDERER.equals("adrhw_freedreno") || LOCAL_RENDERER.equals("swrast") || LOCAL_RENDERER.equals("virgl")) {
-                envMap.put("POJAVEXEC_OSMESA", "libOSMesa.so");
             }
         }
         if(LauncherPreferences.PREF_BIG_CORE_AFFINITY) envMap.put("POJAV_BIG_CORE_AFFINITY", "1");
@@ -455,19 +454,23 @@ public class JREUtils {
         String renderLibrary;
         switch (LOCAL_RENDERER){
             case "opengles2":
-                renderLibrary = "libgl4es_114.so"; break;
+                renderLibrary = "libgl4es_114.so";
+                break;
             case "vgpu":
-                renderLibrary = "libvgpu.so"; break;
+                renderLibrary = "libvgpu.so";
+                break;
             case "malihw_panfrost": 
-                renderLibrary = "libOSMesa_pan.so"; break;
+                renderLibrary = "libOSMesa_pan.so";
+                break;
+            case "virgl": 
             case "vulkan_zink_legacy": 
-                renderLibrary = "libOSMesa_znL.so"; break;
-            case "malihw_panfrost-new":
+                renderLibrary = "libOSMesa_znL.so";
+                break;
             case "vulkan_zink":
             case "swrast":
-            case "virgl":
             case "adrhw_freedreno": 
-                renderLibrary = "libOSMesa.so"; break;
+                renderLibrary = "libOSMesa.so";
+                break;
             case "opengles3_desktopgl_angle_vulkan" : renderLibrary = "libtinywrapper.so"; break;
             case "opengles3_desktopgl_angle_vulkan_new" : renderLibrary = "libtinywrapper_new_angle.so"; break;
             default:
