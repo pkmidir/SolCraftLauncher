@@ -243,7 +243,7 @@ int pojavInitOpenGL() {
         pojav_environ->config_renderer = RENDERER_VIRGL;
         setenv("GALLIUM_DRIVER","virpipe",1);
         setenv("OSMESA_NO_FLUSH_FRONTBUFFER","1",false);
-#ifdef !ADRENO_POSSIBLE
+#ifndef ADRENO_POSSIBLE
         setenv("MESA_GL_VERSION_OVERRIDE", "3.3",false);
         setenv("MESA_GLSL_VERSION_OVERRIDE", "330",false);
 #endif
