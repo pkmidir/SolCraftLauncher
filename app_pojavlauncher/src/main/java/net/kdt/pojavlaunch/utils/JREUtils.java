@@ -219,8 +219,10 @@ public class JREUtils {
         if(LOCAL_RENDERER != null) {
             envMap.put("POJAV_RENDERER", LOCAL_RENDERER);
             if(LOCAL_RENDERER.equals("opengles3_desktopgl_angle_vulkan")) {
-                envMap.put("LIBGL_ES", "3");
                 envMap.put("POJAVEXEC_EGL","libEGL_angle.so"); // Use ANGLE EGL
+            }
+            if(LOCAL_RENDERER.equals("opengles3_desktopgl_angle_vulkan_new")) {
+                envMap.put("POJAVEXEC_EGL","libEGL_angle_new.so"); // Use ANGLE EGL
             }
             if(LOCAL_RENDERER.equals("malihw_panfrost")) {
                 envMap.put("POJAVEXEC_OSMESA", "libOSMesa_pan.so");
