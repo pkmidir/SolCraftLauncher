@@ -462,6 +462,7 @@ public class JREUtils {
             case "malihw_panfrost": 
                 renderLibrary = "libOSMesa_pan.so";
                 break;
+            case "virgl": 
             case "vulkan_zink_legacy": 
                 renderLibrary = "libOSMesa_znL.so";
                 break;
@@ -470,15 +471,8 @@ public class JREUtils {
             case "adrhw_freedreno": 
                 renderLibrary = "libOSMesa.so";
                 break;
-            case "virgl":
-                renderLibrary = "libOSMesa_81.so";
-                break;
-            case "opengles3_desktopgl_angle_vulkan":
-                renderLibrary = "libtinywrapper.so";
-                break;
-            case "opengles3_desktopgl_angle_vulkan_new":
-                renderLibrary = "libtinywrapper_new_angle.so";
-                break;
+            case "opengles3_desktopgl_angle_vulkan" : renderLibrary = "libtinywrapper.so"; break;
+            case "opengles3_desktopgl_angle_vulkan_new" : renderLibrary = "libtinywrapper_new_angle.so"; break;
             default:
                 Log.w("RENDER_LIBRARY", "No renderer selected, defaulting to opengles2");
                 renderLibrary = "libgl4es_114.so";
