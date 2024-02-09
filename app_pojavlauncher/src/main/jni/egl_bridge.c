@@ -1,5 +1,5 @@
 //
-// Modifile by Vera-Firefly on 13.01.2024.
+// Modifile by Vera-Firefly on 03.02.2024.
 //
 #include <jni.h>
 #include <assert.h>
@@ -62,6 +62,8 @@ struct PotatoBridge potatoBridge;
 int (*vtest_main_p) (int argc, char** argv);
 void (*vtest_swap_buffers_p) (void);
 void bigcore_set_affinity();
+
+void* gbuffer;
 
 void* egl_make_current(void* window);
 
@@ -379,6 +381,16 @@ int pojavInitOpenGL() {
             printf("OSMDroid: %s\n",dlerror());
             return 0;
         }
+        printf("OSMDroid: width=%i;height=%i, reserving %i bytes for frame buffer\n", pojav_environ->savedWidth, pojav_environ->savedHeight,
+               pojav_environ->savedWidth * 4 * pojav_environ->savedHeight);
+        gbuffer = calloc(pojav_environ->savedWidth *4, pojav_environ->savedHeight +1);
+        if (gbuffer) {
+            printf("OSMDroid: created frame buffer\n");
+            return 1;
+        } else {
+            printf("OSMDroid: can't generate frame buffer\n");
+            return 0;
+        }
     }
 
     return 0;
@@ -443,7 +455,7 @@ void* egl_make_current(void* window) {
     if (pojav_environ->config_renderer == RENDERER_VIRGL) {
         printf("VirGL: vtest_main = %p\n", vtest_main_p);
         printf("VirGL: Calling VTest server's main function\n");
-        vtest_main_p(4, (const char*[]){"vtest", "--no-loop-or-fork", "--use-gles", "--use-egl-surfaceless", NULL, NULL});
+        vtest_main_p(3, (const char*[]){"vtest", "--no-loop-or-fork", "--use-gles", NULL, NULL});
     }
 }
 
@@ -453,9 +465,7 @@ EXTERNAL_API void pojavMakeCurrent(void* window) {
         br_make_current((basic_render_window_t*)window);
     } else if(pojav_environ->config_renderer == RENDERER_VIRGL) {
         printf("OSMDroid: making current\n");
-        OSMesaMakeCurrent_p((OSMesaContext)window,setbuffer,GL_UNSIGNED_BYTE,pojav_environ->savedWidth,pojav_environ->savedHeight);
-
-
+        OSMesaMakeCurrent_p((OSMesaContext)window,gbuffer,GL_UNSIGNED_BYTE,pojav_environ->savedWidth,pojav_environ->savedHeight);
         printf("OSMDroid: vendor: %s\n",glGetString_p(GL_VENDOR));
         printf("OSMDroid: renderer: %s\n",glGetString_p(GL_RENDERER));
         glClear_p(GL_COLOR_BUFFER_BIT);
@@ -496,6 +506,36 @@ Java_org_lwjgl_vulkan_VK_getVulkanDriverHandle(ABI_COMPAT JNIEnv *env, ABI_COMPA
     return strtoul(getenv("VULKAN_PTR"), NULL, 0x10);
 }
 
+EXTERNAL_API JNIEXPORT void JNICALL
+Java_org_lwjgl_opengl_GL_nativeRegalMakeCurrent(JNIEnv *env, jclass clazz) {
+    if (pojav_environ->config_renderer == RENDERER_VIRGL) {
+        /*printf("Regal: making current");
+    
+        RegalMakeCurrent_func *RegalMakeCurrent = (RegalMakeCurrent_func *) dlsym(RTLD_DEFAULT, "RegalMakeCurrent");
+        RegalMakeCurrent(potatoBridge.eglContext);*/
+
+        printf("regal removed\n");
+        abort();
+    }
+}
+
+EXTERNAL_API JNIEXPORT jlong JNICALL
+Java_org_lwjgl_opengl_GL_getGraphicsBufferAddr(JNIEnv *env, jobject thiz) {
+    if (pojav_environ->config_renderer == RENDERER_VIRGL) {
+        return &gbuffer;
+    }
+}
+
+EXTERNAL_API JNIEXPORT jintArray JNICALL
+Java_org_lwjgl_opengl_GL_getNativeWidthHeight(JNIEnv *env, jobject thiz) {
+    if (pojav_environ->config_renderer == RENDERER_VIRGL) {
+        jintArray ret = (*env)->NewIntArray(env,2);
+        jint arr[] = {pojav_environ->savedWidth, pojav_environ->savedHeight};
+        (*env)->SetIntArrayRegion(env,ret,0,2,arr);
+        return ret;
+    }
+}
+
 EXTERNAL_API void pojavSwapInterval(int interval) {
     if(pojav_environ->config_renderer == RENDERER_VK_ZINK || pojav_environ->config_renderer == RENDERER_GL4ES) {
         br_swap_interval(interval);
@@ -503,4 +543,3 @@ EXTERNAL_API void pojavSwapInterval(int interval) {
         eglSwapInterval_p(potatoBridge.eglDisplay, interval);
     }
 }
-
