@@ -23,18 +23,18 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatSpinner;
 
 
-import net.kdt.pojavlaunch.PojavProfile;
-import net.kdt.pojavlaunch.R;
-import net.kdt.pojavlaunch.Tools;
-import net.kdt.pojavlaunch.authenticator.listener.DoneListener;
-import net.kdt.pojavlaunch.authenticator.listener.ErrorListener;
-import net.kdt.pojavlaunch.authenticator.listener.ProgressListener;
-import net.kdt.pojavlaunch.authenticator.microsoft.PresentedException;
-import net.kdt.pojavlaunch.authenticator.microsoft.MicrosoftBackgroundLogin;
-import net.kdt.pojavlaunch.extra.ExtraConstants;
-import net.kdt.pojavlaunch.extra.ExtraCore;
-import net.kdt.pojavlaunch.extra.ExtraListener;
-import net.kdt.pojavlaunch.value.MinecraftAccount;
+import soldev.solcraftlauncher.PojavProfile;
+import soldev.solcraftlauncher.R;
+import soldev.solcraftlauncher.Tools;
+import soldev.solcraftlauncher.authenticator.listener.DoneListener;
+import soldev.solcraftlauncher.authenticator.listener.ErrorListener;
+import soldev.solcraftlauncher.authenticator.listener.ProgressListener;
+import soldev.solcraftlauncher.authenticator.microsoft.PresentedException;
+import soldev.solcraftlauncher.authenticator.microsoft.MicrosoftBackgroundLogin;
+import soldev.solcraftlauncher.extra.ExtraConstants;
+import soldev.solcraftlauncher.extra.ExtraCore;
+import soldev.solcraftlauncher.extra.ExtraListener;
+import soldev.solcraftlauncher.value.MinecraftAccount;
 
 import java.io.File;
 import java.io.IOException;

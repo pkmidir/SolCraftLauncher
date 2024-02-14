@@ -14,7 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.core.content.res.ResourcesCompat;
 
 
-import net.kdt.pojavlaunch.R;
+import soldev.solcraftlauncher.R;
 
 import fr.spse.extended_view.ExtendedButton;
 

@@ -1,6 +1,6 @@
 package org.lwjgl.glfw;
 
-import net.kdt.pojavlaunch.*;
+import soldev.solcraftlauncher.*;
 import android.content.*;
 import android.view.Choreographer;
 
