@@ -125,6 +125,6 @@
             android:process=":game" />
     </application>
     <queries>
-        <package android:name="net.kdt.pojavlaunch.ffmpeg"/>
+        <package android:name="soldev.solcraftlauncher.ffmpeg"/>
     </queries>
 </manifest>

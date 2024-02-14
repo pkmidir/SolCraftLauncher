@@ -88,7 +88,7 @@ configurations {
 }
 
 android {
-    namespace 'net.kdt.pojavlaunch'
+    namespace 'soldev.solcraftlauncher'
 
     compileSdk = 33
 
@@ -112,7 +112,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "net.kdt.pojavlaunch"
+        applicationId "soldev.solcraftlauncher"
         minSdkVersion 21
         targetSdkVersion 33
         versionCode getDateSeconds()
@@ -128,9 +128,9 @@ android {
             shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.customDebug
-            resValue 'string', 'application_package', 'soldev69.solcraftlauncher'
-            resValue 'string', 'storageProviderAuthorities', 'net.kdt.pojavlaunch.scoped.gamefolder.sol'
-            resValue 'string', 'shareProviderAuthority', 'net.kdt.pojavlaunch.scoped.controlfolder.sol'
+            resValue 'string', 'application_package', 'soldev.solcraftlauncher'
+            resValue 'string', 'storageProviderAuthorities', 'soldev.solcraftlauncher.scoped.gamefolder.sol'
+            resValue 'string', 'shareProviderAuthority', 'soldev.solcraftlauncher.scoped.controlfolder.sol'
         }
         proguard {
             initWith debug
@@ -145,8 +145,8 @@ android {
             // defaultConfig already set
             // multiDexEnabled = true
             // debuggable = true
-            resValue 'string', 'storageProviderAuthorities', 'net.kdt.pojavlaunch.scoped.gamefolder'
-            resValue 'string', 'application_package', 'net.kdt.pojavlaunch'
+            resValue 'string', 'storageProviderAuthorities', 'soldev.solcraftlauncher.scoped.gamefolder'
+            resValue 'string', 'application_package', 'soldev.solcraftlauncher'
         }
         gplay {
             initWith release
