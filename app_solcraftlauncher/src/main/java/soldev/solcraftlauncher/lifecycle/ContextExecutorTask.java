@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.lifecycle;
+package soldev.solcraftlauncher.lifecycle;
 
 import android.app.Activity;
 import android.content.Context;

@@ -1,6 +1,6 @@
-package net.kdt.pojavlaunch.customcontrols.buttons;
+package soldev.solcraftlauncher.customcontrols.buttons;
 
-import static net.kdt.pojavlaunch.LwjglGlfwKeycode.GLFW_KEY_UNKNOWN;
+import static soldev.solcraftlauncher.LwjglGlfwKeycode.GLFW_KEY_UNKNOWN;
 import static org.lwjgl.glfw.CallbackBridge.sendKeyPress;
 import static org.lwjgl.glfw.CallbackBridge.sendMouseButton;
 
@@ -15,13 +15,13 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 
-import net.kdt.pojavlaunch.LwjglGlfwKeycode;
-import net.kdt.pojavlaunch.MainActivity;
-import net.kdt.pojavlaunch.R;
-import net.kdt.pojavlaunch.customcontrols.ControlData;
-import net.kdt.pojavlaunch.customcontrols.ControlLayout;
-import net.kdt.pojavlaunch.customcontrols.handleview.EditControlPopup;
-import net.kdt.pojavlaunch.prefs.LauncherPreferences;
+import soldev.solcraftlauncher.LwjglGlfwKeycode;
+import soldev.solcraftlauncher.MainActivity;
+import soldev.solcraftlauncher.R;
+import soldev.solcraftlauncher.customcontrols.ControlData;
+import soldev.solcraftlauncher.customcontrols.ControlLayout;
+import soldev.solcraftlauncher.customcontrols.handleview.EditControlPopup;
+import soldev.solcraftlauncher.prefs.LauncherPreferences;
 
 import org.lwjgl.glfw.CallbackBridge;
 

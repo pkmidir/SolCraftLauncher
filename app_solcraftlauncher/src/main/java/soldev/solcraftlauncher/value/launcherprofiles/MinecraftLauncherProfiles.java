@@ -1,8 +1,8 @@
-package net.kdt.pojavlaunch.value.launcherprofiles;
+package soldev.solcraftlauncher.value.launcherprofiles;
 import androidx.annotation.Keep;
 
 import java.util.*;
-import net.kdt.pojavlaunch.*;
+import soldev.solcraftlauncher.*;
 
 @Keep
 public class MinecraftLauncherProfiles {

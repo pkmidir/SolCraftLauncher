@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.scoped;
+package soldev.solcraftlauncher.scoped;
 
 import android.annotation.TargetApi;
 import android.content.res.AssetFileDescriptor;
@@ -16,8 +16,8 @@ import android.webkit.MimeTypeMap;
 
 import androidx.annotation.Nullable;
 
-import net.kdt.pojavlaunch.R;
-import net.kdt.pojavlaunch.Tools;
+import soldev.solcraftlauncher.R;
+import soldev.solcraftlauncher.Tools;
 
 import org.apache.commons.io.FileUtils;
 

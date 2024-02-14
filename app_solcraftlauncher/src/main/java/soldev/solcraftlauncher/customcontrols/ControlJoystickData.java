@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.customcontrols;
+package soldev.solcraftlauncher.customcontrols;
 
 public class ControlJoystickData extends ControlData {
 

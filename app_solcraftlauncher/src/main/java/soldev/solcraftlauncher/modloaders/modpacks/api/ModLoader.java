@@ -1,14 +1,14 @@
-package net.kdt.pojavlaunch.modloaders.modpacks.api;
+package soldev.solcraftlauncher.modloaders.modpacks.api;
 
 import android.content.Context;
 import android.content.Intent;
 
-import net.kdt.pojavlaunch.JavaGUILauncherActivity;
-import net.kdt.pojavlaunch.modloaders.FabriclikeDownloadTask;
-import net.kdt.pojavlaunch.modloaders.FabriclikeUtils;
-import net.kdt.pojavlaunch.modloaders.ForgeDownloadTask;
-import net.kdt.pojavlaunch.modloaders.ForgeUtils;
-import net.kdt.pojavlaunch.modloaders.ModloaderDownloadListener;
+import soldev.solcraftlauncher.JavaGUILauncherActivity;
+import soldev.solcraftlauncher.modloaders.FabriclikeDownloadTask;
+import soldev.solcraftlauncher.modloaders.FabriclikeUtils;
+import soldev.solcraftlauncher.modloaders.ForgeDownloadTask;
+import soldev.solcraftlauncher.modloaders.ForgeUtils;
+import soldev.solcraftlauncher.modloaders.ModloaderDownloadListener;
 
 import java.io.File;
 

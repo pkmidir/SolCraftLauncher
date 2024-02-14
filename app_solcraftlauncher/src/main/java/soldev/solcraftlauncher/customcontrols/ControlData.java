@@ -1,14 +1,14 @@
-package net.kdt.pojavlaunch.customcontrols;
+package soldev.solcraftlauncher.customcontrols;
 
-import static net.kdt.pojavlaunch.LwjglGlfwKeycode.GLFW_KEY_UNKNOWN;
+import static soldev.solcraftlauncher.LwjglGlfwKeycode.GLFW_KEY_UNKNOWN;
 
 import android.util.ArrayMap;
 
 import androidx.annotation.Keep;
 
-import net.kdt.pojavlaunch.Tools;
-import net.kdt.pojavlaunch.prefs.LauncherPreferences;
-import net.kdt.pojavlaunch.utils.JSONUtils;
+import soldev.solcraftlauncher.Tools;
+import soldev.solcraftlauncher.prefs.LauncherPreferences;
+import soldev.solcraftlauncher.utils.JSONUtils;
 import net.objecthunter.exp4j.ExpressionBuilder;
 import net.objecthunter.exp4j.function.Function;
 

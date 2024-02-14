@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.value.launcherprofiles;
+package soldev.solcraftlauncher.value.launcherprofiles;
 
 import androidx.annotation.Keep;
 

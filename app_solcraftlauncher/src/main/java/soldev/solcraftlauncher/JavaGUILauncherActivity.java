@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch;
+package soldev.solcraftlauncher;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
@@ -18,13 +18,13 @@ import androidx.activity.OnBackPressedCallback;
 
 import com.kdt.LoggerView;
 
-import net.kdt.pojavlaunch.customcontrols.keyboard.AwtCharSender;
-import net.kdt.pojavlaunch.customcontrols.keyboard.TouchCharInput;
-import net.kdt.pojavlaunch.multirt.MultiRTUtils;
-import net.kdt.pojavlaunch.multirt.Runtime;
-import net.kdt.pojavlaunch.prefs.LauncherPreferences;
-import net.kdt.pojavlaunch.utils.JREUtils;
-import net.kdt.pojavlaunch.utils.MathUtils;
+import soldev.solcraftlauncher.customcontrols.keyboard.AwtCharSender;
+import soldev.solcraftlauncher.customcontrols.keyboard.TouchCharInput;
+import soldev.solcraftlauncher.multirt.MultiRTUtils;
+import soldev.solcraftlauncher.multirt.Runtime;
+import soldev.solcraftlauncher.prefs.LauncherPreferences;
+import soldev.solcraftlauncher.utils.JREUtils;
+import soldev.solcraftlauncher.utils.MathUtils;
 
 import org.apache.commons.io.IOUtils;
 import org.lwjgl.glfw.CallbackBridge;

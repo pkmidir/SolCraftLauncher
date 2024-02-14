@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.modloaders.modpacks.api;
+package soldev.solcraftlauncher.modloaders.modpacks.api;
 
 import android.util.Log;
 
@@ -10,18 +10,18 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.kdt.mcgui.ProgressLayout;
 
-import net.kdt.pojavlaunch.R;
-import net.kdt.pojavlaunch.Tools;
-import net.kdt.pojavlaunch.modloaders.modpacks.models.Constants;
-import net.kdt.pojavlaunch.modloaders.modpacks.models.CurseManifest;
-import net.kdt.pojavlaunch.modloaders.modpacks.models.ModDetail;
-import net.kdt.pojavlaunch.modloaders.modpacks.models.ModItem;
-import net.kdt.pojavlaunch.modloaders.modpacks.models.SearchFilters;
-import net.kdt.pojavlaunch.modloaders.modpacks.models.SearchResult;
-import net.kdt.pojavlaunch.progresskeeper.ProgressKeeper;
-import net.kdt.pojavlaunch.utils.FileUtils;
-import net.kdt.pojavlaunch.utils.GsonJsonUtils;
-import net.kdt.pojavlaunch.utils.ZipUtils;
+import soldev.solcraftlauncher.R;
+import soldev.solcraftlauncher.Tools;
+import soldev.solcraftlauncher.modloaders.modpacks.models.Constants;
+import soldev.solcraftlauncher.modloaders.modpacks.models.CurseManifest;
+import soldev.solcraftlauncher.modloaders.modpacks.models.ModDetail;
+import soldev.solcraftlauncher.modloaders.modpacks.models.ModItem;
+import soldev.solcraftlauncher.modloaders.modpacks.models.SearchFilters;
+import soldev.solcraftlauncher.modloaders.modpacks.models.SearchResult;
+import soldev.solcraftlauncher.progresskeeper.ProgressKeeper;
+import soldev.solcraftlauncher.utils.FileUtils;
+import soldev.solcraftlauncher.utils.GsonJsonUtils;
+import soldev.solcraftlauncher.utils.ZipUtils;
 
 import java.io.File;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.fragments;
+package soldev.solcraftlauncher.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -18,16 +18,16 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import net.kdt.pojavlaunch.PojavApplication;
-import net.kdt.pojavlaunch.R;
-import net.kdt.pojavlaunch.Tools;
-import net.kdt.pojavlaunch.modloaders.FabriclikeDownloadTask;
-import net.kdt.pojavlaunch.modloaders.FabriclikeUtils;
-import net.kdt.pojavlaunch.modloaders.FabricVersion;
-import net.kdt.pojavlaunch.modloaders.ModloaderDownloadListener;
-import net.kdt.pojavlaunch.modloaders.ModloaderListenerProxy;
-import net.kdt.pojavlaunch.modloaders.modpacks.SelfReferencingFuture;
-import net.kdt.pojavlaunch.progresskeeper.ProgressKeeper;
+import soldev.solcraftlauncher.PojavApplication;
+import soldev.solcraftlauncher.R;
+import soldev.solcraftlauncher.Tools;
+import soldev.solcraftlauncher.modloaders.FabriclikeDownloadTask;
+import soldev.solcraftlauncher.modloaders.FabriclikeUtils;
+import soldev.solcraftlauncher.modloaders.FabricVersion;
+import soldev.solcraftlauncher.modloaders.ModloaderDownloadListener;
+import soldev.solcraftlauncher.modloaders.ModloaderListenerProxy;
+import soldev.solcraftlauncher.modloaders.modpacks.SelfReferencingFuture;
+import soldev.solcraftlauncher.progresskeeper.ProgressKeeper;
 
 import java.io.File;
 import java.io.IOException;

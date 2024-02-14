@@ -1,6 +1,6 @@
-package net.kdt.pojavlaunch.authenticator.microsoft;
+package soldev.solcraftlauncher.authenticator.microsoft;
 
-import static net.kdt.pojavlaunch.PojavApplication.sExecutorService;
+import static soldev.solcraftlauncher.PojavApplication.sExecutorService;
 
 import android.util.ArrayMap;
 import android.util.Log;
@@ -10,12 +10,12 @@ import androidx.annotation.Nullable;
 
 import com.kdt.mcgui.ProgressLayout;
 
-import net.kdt.pojavlaunch.R;
-import net.kdt.pojavlaunch.Tools;
-import net.kdt.pojavlaunch.authenticator.listener.DoneListener;
-import net.kdt.pojavlaunch.authenticator.listener.ErrorListener;
-import net.kdt.pojavlaunch.authenticator.listener.ProgressListener;
-import net.kdt.pojavlaunch.value.MinecraftAccount;
+import soldev.solcraftlauncher.R;
+import soldev.solcraftlauncher.Tools;
+import soldev.solcraftlauncher.authenticator.listener.DoneListener;
+import soldev.solcraftlauncher.authenticator.listener.ErrorListener;
+import soldev.solcraftlauncher.authenticator.listener.ProgressListener;
+import soldev.solcraftlauncher.value.MinecraftAccount;
 
 import org.json.JSONArray;
 import org.json.JSONException;

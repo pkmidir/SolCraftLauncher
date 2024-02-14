@@ -1,7 +1,7 @@
-package net.kdt.pojavlaunch.fragments;
+package soldev.solcraftlauncher.fragments;
 
-import net.kdt.pojavlaunch.modloaders.FabriclikeUtils;
-import net.kdt.pojavlaunch.modloaders.ModloaderListenerProxy;
+import soldev.solcraftlauncher.modloaders.FabriclikeUtils;
+import soldev.solcraftlauncher.modloaders.ModloaderListenerProxy;
 
 public class FabricInstallFragment extends FabriclikeInstallFragment {
 

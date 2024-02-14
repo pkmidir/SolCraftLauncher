@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.modloaders.modpacks;
+package soldev.solcraftlauncher.modloaders.modpacks;
 
 import android.util.Log;
 

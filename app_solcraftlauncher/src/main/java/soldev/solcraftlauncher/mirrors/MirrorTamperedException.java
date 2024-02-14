@@ -1,14 +1,14 @@
-package net.kdt.pojavlaunch.mirrors;
+package soldev.solcraftlauncher.mirrors;
 
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.text.Html;
 
-import net.kdt.pojavlaunch.R;
-import net.kdt.pojavlaunch.ShowErrorActivity;
-import net.kdt.pojavlaunch.lifecycle.ContextExecutorTask;
-import net.kdt.pojavlaunch.prefs.LauncherPreferences;
+import soldev.solcraftlauncher.R;
+import soldev.solcraftlauncher.ShowErrorActivity;
+import soldev.solcraftlauncher.lifecycle.ContextExecutorTask;
+import soldev.solcraftlauncher.prefs.LauncherPreferences;
 
 public class MirrorTamperedException extends Exception implements ContextExecutorTask {
     // Do not change. Android really hates when this value changes for some reason.

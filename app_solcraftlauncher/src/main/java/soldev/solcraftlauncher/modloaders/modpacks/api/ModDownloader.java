@@ -1,9 +1,9 @@
-package net.kdt.pojavlaunch.modloaders.modpacks.api;
+package soldev.solcraftlauncher.modloaders.modpacks.api;
 
 import androidx.annotation.Nullable;
 
-import net.kdt.pojavlaunch.Tools;
-import net.kdt.pojavlaunch.utils.DownloadUtils;
+import soldev.solcraftlauncher.Tools;
+import soldev.solcraftlauncher.utils.DownloadUtils;
 
 import java.io.File;
 import java.io.IOException;

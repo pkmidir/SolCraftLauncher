@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch;
+package soldev.solcraftlauncher;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -10,12 +10,12 @@ import android.widget.ListView;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import net.kdt.pojavlaunch.customcontrols.ControlData;
-import net.kdt.pojavlaunch.customcontrols.ControlDrawerData;
-import net.kdt.pojavlaunch.customcontrols.ControlJoystickData;
-import net.kdt.pojavlaunch.customcontrols.ControlLayout;
-import net.kdt.pojavlaunch.customcontrols.EditorExitable;
-import net.kdt.pojavlaunch.prefs.LauncherPreferences;
+import soldev.solcraftlauncher.customcontrols.ControlData;
+import soldev.solcraftlauncher.customcontrols.ControlDrawerData;
+import soldev.solcraftlauncher.customcontrols.ControlJoystickData;
+import soldev.solcraftlauncher.customcontrols.ControlLayout;
+import soldev.solcraftlauncher.customcontrols.EditorExitable;
+import soldev.solcraftlauncher.prefs.LauncherPreferences;
 
 import java.io.IOException;
 

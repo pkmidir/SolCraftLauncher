@@ -1,6 +1,6 @@
-package net.kdt.pojavlaunch.customcontrols.gamepad;
+package soldev.solcraftlauncher.customcontrols.gamepad;
 
-import net.kdt.pojavlaunch.LwjglGlfwKeycode;
+import soldev.solcraftlauncher.LwjglGlfwKeycode;
 
 public class GamepadMap {
 

@@ -1,9 +1,9 @@
-package net.kdt.pojavlaunch.utils;
+package soldev.solcraftlauncher.utils;
 
 import androidx.annotation.NonNull;
 
-import net.kdt.pojavlaunch.JMinecraftVersionList;
-import net.kdt.pojavlaunch.Tools;
+import soldev.solcraftlauncher.JMinecraftVersionList;
+import soldev.solcraftlauncher.Tools;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

@@ -1,17 +1,17 @@
-package net.kdt.pojavlaunch.modloaders.modpacks.api;
+package soldev.solcraftlauncher.modloaders.modpacks.api;
 
 
 import android.content.Context;
 
 import com.kdt.mcgui.ProgressLayout;
 
-import net.kdt.pojavlaunch.PojavApplication;
-import net.kdt.pojavlaunch.R;
-import net.kdt.pojavlaunch.Tools;
-import net.kdt.pojavlaunch.modloaders.modpacks.models.ModDetail;
-import net.kdt.pojavlaunch.modloaders.modpacks.models.ModItem;
-import net.kdt.pojavlaunch.modloaders.modpacks.models.SearchFilters;
-import net.kdt.pojavlaunch.modloaders.modpacks.models.SearchResult;
+import soldev.solcraftlauncher.PojavApplication;
+import soldev.solcraftlauncher.R;
+import soldev.solcraftlauncher.Tools;
+import soldev.solcraftlauncher.modloaders.modpacks.models.ModDetail;
+import soldev.solcraftlauncher.modloaders.modpacks.models.ModItem;
+import soldev.solcraftlauncher.modloaders.modpacks.models.SearchFilters;
+import soldev.solcraftlauncher.modloaders.modpacks.models.SearchResult;
 
 import java.io.IOException;
 

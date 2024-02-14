@@ -1,25 +1,25 @@
-package net.kdt.pojavlaunch.customcontrols.buttons;
+package soldev.solcraftlauncher.customcontrols.buttons;
 
-import static net.kdt.pojavlaunch.customcontrols.gamepad.GamepadJoystick.DIRECTION_EAST;
-import static net.kdt.pojavlaunch.customcontrols.gamepad.GamepadJoystick.DIRECTION_NONE;
-import static net.kdt.pojavlaunch.customcontrols.gamepad.GamepadJoystick.DIRECTION_NORTH;
-import static net.kdt.pojavlaunch.customcontrols.gamepad.GamepadJoystick.DIRECTION_NORTH_EAST;
-import static net.kdt.pojavlaunch.customcontrols.gamepad.GamepadJoystick.DIRECTION_NORTH_WEST;
-import static net.kdt.pojavlaunch.customcontrols.gamepad.GamepadJoystick.DIRECTION_SOUTH;
-import static net.kdt.pojavlaunch.customcontrols.gamepad.GamepadJoystick.DIRECTION_SOUTH_EAST;
-import static net.kdt.pojavlaunch.customcontrols.gamepad.GamepadJoystick.DIRECTION_SOUTH_WEST;
-import static net.kdt.pojavlaunch.customcontrols.gamepad.GamepadJoystick.DIRECTION_WEST;
+import static soldev.solcraftlauncher.customcontrols.gamepad.GamepadJoystick.DIRECTION_EAST;
+import static soldev.solcraftlauncher.customcontrols.gamepad.GamepadJoystick.DIRECTION_NONE;
+import static soldev.solcraftlauncher.customcontrols.gamepad.GamepadJoystick.DIRECTION_NORTH;
+import static soldev.solcraftlauncher.customcontrols.gamepad.GamepadJoystick.DIRECTION_NORTH_EAST;
+import static soldev.solcraftlauncher.customcontrols.gamepad.GamepadJoystick.DIRECTION_NORTH_WEST;
+import static soldev.solcraftlauncher.customcontrols.gamepad.GamepadJoystick.DIRECTION_SOUTH;
+import static soldev.solcraftlauncher.customcontrols.gamepad.GamepadJoystick.DIRECTION_SOUTH_EAST;
+import static soldev.solcraftlauncher.customcontrols.gamepad.GamepadJoystick.DIRECTION_SOUTH_WEST;
+import static soldev.solcraftlauncher.customcontrols.gamepad.GamepadJoystick.DIRECTION_WEST;
 
 import android.annotation.SuppressLint;
 import android.view.View;
 
-import net.kdt.pojavlaunch.LwjglGlfwKeycode;
-import net.kdt.pojavlaunch.Tools;
-import net.kdt.pojavlaunch.customcontrols.ControlData;
-import net.kdt.pojavlaunch.customcontrols.ControlJoystickData;
-import net.kdt.pojavlaunch.customcontrols.ControlLayout;
-import net.kdt.pojavlaunch.customcontrols.gamepad.GamepadJoystick;
-import net.kdt.pojavlaunch.customcontrols.handleview.EditControlPopup;
+import soldev.solcraftlauncher.LwjglGlfwKeycode;
+import soldev.solcraftlauncher.Tools;
+import soldev.solcraftlauncher.customcontrols.ControlData;
+import soldev.solcraftlauncher.customcontrols.ControlJoystickData;
+import soldev.solcraftlauncher.customcontrols.ControlLayout;
+import soldev.solcraftlauncher.customcontrols.gamepad.GamepadJoystick;
+import soldev.solcraftlauncher.customcontrols.handleview.EditControlPopup;
 
 import org.lwjgl.glfw.CallbackBridge;
 

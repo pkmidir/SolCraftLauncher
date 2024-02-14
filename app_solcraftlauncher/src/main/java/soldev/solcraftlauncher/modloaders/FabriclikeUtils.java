@@ -1,9 +1,9 @@
-package net.kdt.pojavlaunch.modloaders;
+package soldev.solcraftlauncher.modloaders;
 
 import com.google.gson.JsonSyntaxException;
 
-import net.kdt.pojavlaunch.Tools;
-import net.kdt.pojavlaunch.utils.DownloadUtils;
+import soldev.solcraftlauncher.Tools;
+import soldev.solcraftlauncher.utils.DownloadUtils;
 
 import org.json.JSONArray;
 import org.json.JSONException;

@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch;
+package soldev.solcraftlauncher;
 
 import static org.lwjgl.glfw.CallbackBridge.sendKeyPress;
 

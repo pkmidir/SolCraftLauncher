@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.utils;
+package soldev.solcraftlauncher.utils;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -8,7 +8,7 @@ import android.os.Build;
 
 import androidx.core.app.NotificationCompat;
 
-import net.kdt.pojavlaunch.R;
+import soldev.solcraftlauncher.R;
 
 public class NotificationUtils {
 

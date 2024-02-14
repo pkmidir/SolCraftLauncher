@@ -1,7 +1,7 @@
-package net.kdt.pojavlaunch.prefs.screens;
+package soldev.solcraftlauncher.prefs.screens;
 
-import static net.kdt.pojavlaunch.Architecture.is32BitsDevice;
-import static net.kdt.pojavlaunch.Tools.getTotalDeviceMemory;
+import static soldev.solcraftlauncher.Architecture.is32BitsDevice;
+import static soldev.solcraftlauncher.Tools.getTotalDeviceMemory;
 
 import android.os.Bundle;
 import android.widget.TextView;
@@ -9,12 +9,12 @@ import android.widget.TextView;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.preference.EditTextPreference;
 
-import net.kdt.pojavlaunch.R;
-import net.kdt.pojavlaunch.Tools;
-import net.kdt.pojavlaunch.contracts.OpenDocumentWithExtension;
-import net.kdt.pojavlaunch.multirt.MultiRTConfigDialog;
-import net.kdt.pojavlaunch.prefs.CustomSeekBarPreference;
-import net.kdt.pojavlaunch.prefs.LauncherPreferences;
+import soldev.solcraftlauncher.R;
+import soldev.solcraftlauncher.Tools;
+import soldev.solcraftlauncher.contracts.OpenDocumentWithExtension;
+import soldev.solcraftlauncher.multirt.MultiRTConfigDialog;
+import soldev.solcraftlauncher.prefs.CustomSeekBarPreference;
+import soldev.solcraftlauncher.prefs.LauncherPreferences;
 
 public class LauncherPreferenceJavaFragment extends LauncherPreferenceFragment {
     private MultiRTConfigDialog mDialogScreen;

@@ -1,9 +1,9 @@
-package net.kdt.pojavlaunch.modloaders.modpacks.imagecache;
+package soldev.solcraftlauncher.modloaders.modpacks.imagecache;
 
 import android.util.Base64;
 import android.util.Log;
 
-import net.kdt.pojavlaunch.Tools;
+import soldev.solcraftlauncher.Tools;
 
 import org.apache.commons.io.IOUtils;
 

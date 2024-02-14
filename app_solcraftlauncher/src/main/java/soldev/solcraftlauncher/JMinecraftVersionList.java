@@ -1,8 +1,8 @@
-package net.kdt.pojavlaunch;
+package soldev.solcraftlauncher;
 
 import androidx.annotation.Keep;
 import java.util.*;
-import net.kdt.pojavlaunch.value.*;
+import soldev.solcraftlauncher.value.*;
 
 @Keep
 @SuppressWarnings("unused") // all unused fields here are parts of JSON structures

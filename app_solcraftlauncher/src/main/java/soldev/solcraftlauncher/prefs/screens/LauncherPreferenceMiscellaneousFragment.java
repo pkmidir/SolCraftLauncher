@@ -1,11 +1,11 @@
-package net.kdt.pojavlaunch.prefs.screens;
+package soldev.solcraftlauncher.prefs.screens;
 
 import android.os.Bundle;
 
 import androidx.preference.Preference;
 
-import net.kdt.pojavlaunch.R;
-import net.kdt.pojavlaunch.Tools;
+import soldev.solcraftlauncher.R;
+import soldev.solcraftlauncher.Tools;
 
 public class LauncherPreferenceMiscellaneousFragment extends LauncherPreferenceFragment {
     @Override

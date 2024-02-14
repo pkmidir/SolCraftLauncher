@@ -1,11 +1,11 @@
-package net.kdt.pojavlaunch.utils;
+package soldev.solcraftlauncher.utils;
 
 import android.util.Log;
 
-import net.kdt.pojavlaunch.JMinecraftVersionList;
-import net.kdt.pojavlaunch.Tools;
-import net.kdt.pojavlaunch.extra.ExtraConstants;
-import net.kdt.pojavlaunch.extra.ExtraCore;
+import soldev.solcraftlauncher.JMinecraftVersionList;
+import soldev.solcraftlauncher.Tools;
+import soldev.solcraftlauncher.extra.ExtraConstants;
+import soldev.solcraftlauncher.extra.ExtraCore;
 
 import java.text.ParseException;
 import java.util.Date;

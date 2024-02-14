@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.fragments;
+package soldev.solcraftlauncher.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -14,12 +14,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import net.kdt.pojavlaunch.R;
-import net.kdt.pojavlaunch.Tools;
-import net.kdt.pojavlaunch.mirrors.DownloadMirror;
-import net.kdt.pojavlaunch.modloaders.ModloaderDownloadListener;
-import net.kdt.pojavlaunch.modloaders.ModloaderListenerProxy;
-import net.kdt.pojavlaunch.progresskeeper.ProgressKeeper;
+import soldev.solcraftlauncher.R;
+import soldev.solcraftlauncher.Tools;
+import soldev.solcraftlauncher.mirrors.DownloadMirror;
+import soldev.solcraftlauncher.modloaders.ModloaderDownloadListener;
+import soldev.solcraftlauncher.modloaders.ModloaderListenerProxy;
+import soldev.solcraftlauncher.progresskeeper.ProgressKeeper;
 
 import java.io.File;
 import java.io.IOException;

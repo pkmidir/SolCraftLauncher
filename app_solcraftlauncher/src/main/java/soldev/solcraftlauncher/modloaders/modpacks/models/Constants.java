@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.modloaders.modpacks.models;
+package soldev.solcraftlauncher.modloaders.modpacks.models;
 
 public class Constants {
     private Constants(){}

@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.value;
+package soldev.solcraftlauncher.value;
 
 import androidx.annotation.Keep;
 

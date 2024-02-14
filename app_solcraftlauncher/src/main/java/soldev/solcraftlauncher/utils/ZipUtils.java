@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.utils;
+package soldev.solcraftlauncher.utils;
 
 import org.apache.commons.io.IOUtils;
 

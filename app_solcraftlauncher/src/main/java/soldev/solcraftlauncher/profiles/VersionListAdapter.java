@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.profiles;
+package soldev.solcraftlauncher.profiles;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,10 +8,10 @@ import android.widget.BaseExpandableListAdapter;
 import android.widget.ExpandableListAdapter;
 import android.widget.TextView;
 
-import net.kdt.pojavlaunch.JMinecraftVersionList;
-import net.kdt.pojavlaunch.R;
-import net.kdt.pojavlaunch.Tools;
-import net.kdt.pojavlaunch.utils.FilteredSubList;
+import soldev.solcraftlauncher.JMinecraftVersionList;
+import soldev.solcraftlauncher.R;
+import soldev.solcraftlauncher.Tools;
+import soldev.solcraftlauncher.utils.FilteredSubList;
 
 import java.io.File;
 import java.util.Arrays;

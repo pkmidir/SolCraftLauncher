@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.progresskeeper;
+package soldev.solcraftlauncher.progresskeeper;
 
 import java.util.ArrayList;
 import java.util.HashMap;

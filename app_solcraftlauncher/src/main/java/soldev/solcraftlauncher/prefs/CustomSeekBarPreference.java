@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.prefs;
+package soldev.solcraftlauncher.prefs;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -13,7 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.preference.PreferenceViewHolder;
 import androidx.preference.SeekBarPreference;
 
-import net.kdt.pojavlaunch.R;
+import soldev.solcraftlauncher.R;
 
 public class CustomSeekBarPreference extends SeekBarPreference {
 

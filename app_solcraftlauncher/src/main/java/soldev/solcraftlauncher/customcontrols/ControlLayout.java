@@ -1,8 +1,8 @@
-package net.kdt.pojavlaunch.customcontrols;
+package soldev.solcraftlauncher.customcontrols;
 
 import static android.content.Context.INPUT_METHOD_SERVICE;
-import static net.kdt.pojavlaunch.MainActivity.mControlLayout;
-import static net.kdt.pojavlaunch.Tools.currentDisplayMetrics;
+import static soldev.solcraftlauncher.MainActivity.mControlLayout;
+import static soldev.solcraftlauncher.Tools.currentDisplayMetrics;
 
 import static org.lwjgl.glfw.CallbackBridge.isGrabbing;
 
@@ -24,18 +24,18 @@ import com.google.gson.JsonSyntaxException;
 import com.kdt.pickafile.FileListView;
 import com.kdt.pickafile.FileSelectedListener;
 
-import net.kdt.pojavlaunch.MinecraftGLSurface;
-import net.kdt.pojavlaunch.R;
-import net.kdt.pojavlaunch.Tools;
-import net.kdt.pojavlaunch.customcontrols.buttons.ControlButton;
-import net.kdt.pojavlaunch.customcontrols.buttons.ControlDrawer;
-import net.kdt.pojavlaunch.customcontrols.buttons.ControlInterface;
-import net.kdt.pojavlaunch.customcontrols.buttons.ControlJoystick;
-import net.kdt.pojavlaunch.customcontrols.buttons.ControlSubButton;
-import net.kdt.pojavlaunch.customcontrols.handleview.ActionRow;
-import net.kdt.pojavlaunch.customcontrols.handleview.ControlHandleView;
-import net.kdt.pojavlaunch.customcontrols.handleview.EditControlPopup;
-import net.kdt.pojavlaunch.prefs.LauncherPreferences;
+import soldev.solcraftlauncher.MinecraftGLSurface;
+import soldev.solcraftlauncher.R;
+import soldev.solcraftlauncher.Tools;
+import soldev.solcraftlauncher.customcontrols.buttons.ControlButton;
+import soldev.solcraftlauncher.customcontrols.buttons.ControlDrawer;
+import soldev.solcraftlauncher.customcontrols.buttons.ControlInterface;
+import soldev.solcraftlauncher.customcontrols.buttons.ControlJoystick;
+import soldev.solcraftlauncher.customcontrols.buttons.ControlSubButton;
+import soldev.solcraftlauncher.customcontrols.handleview.ActionRow;
+import soldev.solcraftlauncher.customcontrols.handleview.ControlHandleView;
+import soldev.solcraftlauncher.customcontrols.handleview.EditControlPopup;
+import soldev.solcraftlauncher.prefs.LauncherPreferences;
 
 import java.io.File;
 import java.io.IOException;

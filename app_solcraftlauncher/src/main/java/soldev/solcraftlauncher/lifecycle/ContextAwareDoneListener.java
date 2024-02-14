@@ -1,19 +1,19 @@
-package net.kdt.pojavlaunch.lifecycle;
+package soldev.solcraftlauncher.lifecycle;
 
-import static net.kdt.pojavlaunch.MainActivity.INTENT_MINECRAFT_VERSION;
+import static soldev.solcraftlauncher.MainActivity.INTENT_MINECRAFT_VERSION;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 
-import net.kdt.pojavlaunch.MainActivity;
-import net.kdt.pojavlaunch.R;
-import net.kdt.pojavlaunch.Tools;
-import net.kdt.pojavlaunch.lifecycle.ContextExecutor;
-import net.kdt.pojavlaunch.lifecycle.ContextExecutorTask;
-import net.kdt.pojavlaunch.progresskeeper.ProgressKeeper;
-import net.kdt.pojavlaunch.tasks.AsyncMinecraftDownloader;
-import net.kdt.pojavlaunch.utils.NotificationUtils;
+import soldev.solcraftlauncher.MainActivity;
+import soldev.solcraftlauncher.R;
+import soldev.solcraftlauncher.Tools;
+import soldev.solcraftlauncher.lifecycle.ContextExecutor;
+import soldev.solcraftlauncher.lifecycle.ContextExecutorTask;
+import soldev.solcraftlauncher.progresskeeper.ProgressKeeper;
+import soldev.solcraftlauncher.tasks.AsyncMinecraftDownloader;
+import soldev.solcraftlauncher.utils.NotificationUtils;
 
 public class ContextAwareDoneListener implements AsyncMinecraftDownloader.DoneListener, ContextExecutorTask {
     private final String mErrorString;

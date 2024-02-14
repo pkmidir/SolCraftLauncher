@@ -1,11 +1,11 @@
-package net.kdt.pojavlaunch;
+package soldev.solcraftlauncher;
 
 import android.content.*;
 import android.os.*;
 import androidx.appcompat.app.*;
-import net.kdt.pojavlaunch.utils.*;
+import soldev.solcraftlauncher.utils.*;
 
-import static net.kdt.pojavlaunch.prefs.LauncherPreferences.PREF_IGNORE_NOTCH;
+import static soldev.solcraftlauncher.prefs.LauncherPreferences.PREF_IGNORE_NOTCH;
 
 public abstract class BaseActivity extends AppCompatActivity {
 

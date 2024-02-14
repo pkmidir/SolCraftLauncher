@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.customcontrols.handleview;
+package soldev.solcraftlauncher.customcontrols.handleview;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -7,8 +7,8 @@ import android.widget.Button;
 
 import androidx.annotation.Nullable;
 
-import net.kdt.pojavlaunch.R;
-import net.kdt.pojavlaunch.customcontrols.buttons.ControlInterface;
+import soldev.solcraftlauncher.R;
+import soldev.solcraftlauncher.customcontrols.buttons.ControlInterface;
 
 @SuppressLint("AppCompatCustomView")
 public class CloneButton extends Button implements ActionButtonInterface {

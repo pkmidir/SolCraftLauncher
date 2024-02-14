@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch;
+package soldev.solcraftlauncher;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -6,7 +6,7 @@ import android.content.SharedPreferences;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import net.kdt.pojavlaunch.value.MinecraftAccount;
+import soldev.solcraftlauncher.value.MinecraftAccount;
 
 public class PojavProfile {
 	private static final String PROFILE_PREF = "pojav_profile";

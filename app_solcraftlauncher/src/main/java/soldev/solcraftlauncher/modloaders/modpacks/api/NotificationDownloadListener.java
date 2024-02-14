@@ -1,14 +1,14 @@
-package net.kdt.pojavlaunch.modloaders.modpacks.api;
+package soldev.solcraftlauncher.modloaders.modpacks.api;
 
 import android.content.Context;
 import android.content.Intent;
 
-import net.kdt.pojavlaunch.LauncherActivity;
-import net.kdt.pojavlaunch.R;
-import net.kdt.pojavlaunch.Tools;
-import net.kdt.pojavlaunch.modloaders.ModloaderDownloadListener;
-import net.kdt.pojavlaunch.modloaders.modpacks.ModloaderInstallTracker;
-import net.kdt.pojavlaunch.utils.NotificationUtils;
+import soldev.solcraftlauncher.LauncherActivity;
+import soldev.solcraftlauncher.R;
+import soldev.solcraftlauncher.Tools;
+import soldev.solcraftlauncher.modloaders.ModloaderDownloadListener;
+import soldev.solcraftlauncher.modloaders.modpacks.ModloaderInstallTracker;
+import soldev.solcraftlauncher.utils.NotificationUtils;
 
 import java.io.File;
 

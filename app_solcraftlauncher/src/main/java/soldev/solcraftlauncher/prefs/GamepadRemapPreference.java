@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.prefs;
+package soldev.solcraftlauncher.prefs;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -8,7 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.preference.Preference;
 
-import net.kdt.pojavlaunch.R;
+import soldev.solcraftlauncher.R;
 
 import fr.spse.gamepad_remapper.Remapper;
 

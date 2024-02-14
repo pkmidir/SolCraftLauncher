@@ -1,8 +1,8 @@
-package net.kdt.pojavlaunch.customcontrols.handleview;
+package soldev.solcraftlauncher.customcontrols.handleview;
 
 import android.view.View;
 
-import net.kdt.pojavlaunch.customcontrols.buttons.ControlInterface;
+import soldev.solcraftlauncher.customcontrols.buttons.ControlInterface;
 
 /** Interface defining the behavior of action buttons */
 public interface ActionButtonInterface extends View.OnClickListener {

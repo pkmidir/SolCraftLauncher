@@ -1,8 +1,8 @@
-package net.kdt.pojavlaunch.customcontrols.buttons;
+package soldev.solcraftlauncher.customcontrols.buttons;
 
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
-import static net.kdt.pojavlaunch.prefs.LauncherPreferences.PREF_BUTTONSIZE;
+import static soldev.solcraftlauncher.prefs.LauncherPreferences.PREF_BUTTONSIZE;
 
 import android.annotation.SuppressLint;
 import android.graphics.drawable.GradientDrawable;
@@ -16,11 +16,11 @@ import androidx.annotation.CallSuper;
 import androidx.annotation.NonNull;
 import androidx.core.math.MathUtils;
 
-import net.kdt.pojavlaunch.GrabListener;
-import net.kdt.pojavlaunch.Tools;
-import net.kdt.pojavlaunch.customcontrols.ControlData;
-import net.kdt.pojavlaunch.customcontrols.ControlLayout;
-import net.kdt.pojavlaunch.customcontrols.handleview.EditControlPopup;
+import soldev.solcraftlauncher.GrabListener;
+import soldev.solcraftlauncher.Tools;
+import soldev.solcraftlauncher.customcontrols.ControlData;
+import soldev.solcraftlauncher.customcontrols.ControlLayout;
+import soldev.solcraftlauncher.customcontrols.handleview.EditControlPopup;
 
 import org.lwjgl.glfw.CallbackBridge;
 
@@ -217,7 +217,7 @@ public interface ControlInterface extends View.OnLongClickListener, GrabListener
         float MIN_DISTANCE = Tools.dpToPx(8);
 
         if (button == this) return false;
-        return !(net.kdt.pojavlaunch.utils.MathUtils.dist(
+        return !(soldev.solcraftlauncher.utils.MathUtils.dist(
                 button.getControlView().getX() + button.getControlView().getWidth() / 2f,
                 button.getControlView().getY() + button.getControlView().getHeight() / 2f,
                 getControlView().getX() + getControlView().getWidth() / 2f,

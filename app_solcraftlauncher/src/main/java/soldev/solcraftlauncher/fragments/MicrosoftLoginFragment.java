@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.fragments;
+package soldev.solcraftlauncher.fragments;
 
 import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
@@ -17,10 +17,10 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import net.kdt.pojavlaunch.R;
-import net.kdt.pojavlaunch.Tools;
-import net.kdt.pojavlaunch.extra.ExtraConstants;
-import net.kdt.pojavlaunch.extra.ExtraCore;
+import soldev.solcraftlauncher.R;
+import soldev.solcraftlauncher.Tools;
+import soldev.solcraftlauncher.extra.ExtraConstants;
+import soldev.solcraftlauncher.extra.ExtraCore;
 
 public class MicrosoftLoginFragment extends Fragment {
     public static final String TAG = "MICROSOFT_LOGIN_FRAGMENT";

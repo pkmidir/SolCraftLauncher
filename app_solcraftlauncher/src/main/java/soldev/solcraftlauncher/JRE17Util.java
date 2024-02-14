@@ -1,15 +1,15 @@
-package net.kdt.pojavlaunch;
+package soldev.solcraftlauncher;
 
-import static net.kdt.pojavlaunch.Architecture.archAsString;
+import static soldev.solcraftlauncher.Architecture.archAsString;
 
 import android.app.Activity;
 import android.content.res.AssetManager;
 import android.util.Log;
 
-import net.kdt.pojavlaunch.multirt.MultiRTUtils;
-import net.kdt.pojavlaunch.multirt.Runtime;
-import net.kdt.pojavlaunch.value.launcherprofiles.LauncherProfiles;
-import net.kdt.pojavlaunch.value.launcherprofiles.MinecraftProfile;
+import soldev.solcraftlauncher.multirt.MultiRTUtils;
+import soldev.solcraftlauncher.multirt.Runtime;
+import soldev.solcraftlauncher.value.launcherprofiles.LauncherProfiles;
+import soldev.solcraftlauncher.value.launcherprofiles.MinecraftProfile;
 
 import java.io.IOException;
 

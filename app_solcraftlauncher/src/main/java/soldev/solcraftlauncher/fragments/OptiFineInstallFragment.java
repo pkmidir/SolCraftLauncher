@@ -1,17 +1,17 @@
-package net.kdt.pojavlaunch.fragments;
+package soldev.solcraftlauncher.fragments;
 
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.widget.ExpandableListAdapter;
 
-import net.kdt.pojavlaunch.JavaGUILauncherActivity;
-import net.kdt.pojavlaunch.R;
-import net.kdt.pojavlaunch.Tools;
-import net.kdt.pojavlaunch.modloaders.ModloaderListenerProxy;
-import net.kdt.pojavlaunch.modloaders.OptiFineDownloadTask;
-import net.kdt.pojavlaunch.modloaders.OptiFineUtils;
-import net.kdt.pojavlaunch.modloaders.OptiFineVersionListAdapter;
+import soldev.solcraftlauncher.JavaGUILauncherActivity;
+import soldev.solcraftlauncher.R;
+import soldev.solcraftlauncher.Tools;
+import soldev.solcraftlauncher.modloaders.ModloaderListenerProxy;
+import soldev.solcraftlauncher.modloaders.OptiFineDownloadTask;
+import soldev.solcraftlauncher.modloaders.OptiFineUtils;
+import soldev.solcraftlauncher.modloaders.OptiFineVersionListAdapter;
 
 import java.io.File;
 import java.io.IOException;

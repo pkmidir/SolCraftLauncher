@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch;
+package soldev.solcraftlauncher;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
-import net.kdt.pojavlaunch.utils.FileUtils;
+import soldev.solcraftlauncher.utils.FileUtils;
 
 import org.apache.commons.io.IOUtils;
 import org.json.JSONException;

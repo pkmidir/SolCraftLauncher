@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.modloaders.modpacks;
+package soldev.solcraftlauncher.modloaders.modpacks;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -6,7 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
-import net.kdt.pojavlaunch.modloaders.modpacks.api.ModLoader;
+import soldev.solcraftlauncher.modloaders.modpacks.api.ModLoader;
 
 import java.io.File;
 

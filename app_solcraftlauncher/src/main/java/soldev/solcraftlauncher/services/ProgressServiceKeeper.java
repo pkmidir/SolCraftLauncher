@@ -1,8 +1,8 @@
-package net.kdt.pojavlaunch.services;
+package soldev.solcraftlauncher.services;
 
 import android.content.Context;
 
-import net.kdt.pojavlaunch.progresskeeper.TaskCountListener;
+import soldev.solcraftlauncher.progresskeeper.TaskCountListener;
 
 public class ProgressServiceKeeper implements TaskCountListener {
     private final Context context;

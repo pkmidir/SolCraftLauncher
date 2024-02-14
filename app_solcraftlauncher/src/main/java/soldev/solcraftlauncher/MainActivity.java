@@ -1,10 +1,10 @@
-package net.kdt.pojavlaunch;
+package soldev.solcraftlauncher;
 
-import static net.kdt.pojavlaunch.Architecture.ARCH_X86;
-import static net.kdt.pojavlaunch.Tools.currentDisplayMetrics;
-import static net.kdt.pojavlaunch.prefs.LauncherPreferences.PREF_SUSTAINED_PERFORMANCE;
-import static net.kdt.pojavlaunch.prefs.LauncherPreferences.PREF_USE_ALTERNATE_SURFACE;
-import static net.kdt.pojavlaunch.prefs.LauncherPreferences.PREF_VIRTUAL_MOUSE_START;
+import static soldev.solcraftlauncher.Architecture.ARCH_X86;
+import static soldev.solcraftlauncher.Tools.currentDisplayMetrics;
+import static soldev.solcraftlauncher.prefs.LauncherPreferences.PREF_SUSTAINED_PERFORMANCE;
+import static soldev.solcraftlauncher.prefs.LauncherPreferences.PREF_USE_ALTERNATE_SURFACE;
+import static soldev.solcraftlauncher.prefs.LauncherPreferences.PREF_VIRTUAL_MOUSE_START;
 import static org.lwjgl.glfw.CallbackBridge.sendKeyPress;
 import static org.lwjgl.glfw.CallbackBridge.windowHeight;
 import static org.lwjgl.glfw.CallbackBridge.windowWidth;
@@ -44,23 +44,23 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.kdt.LoggerView;
 
-import net.kdt.pojavlaunch.lifecycle.ContextExecutor;
-import net.kdt.pojavlaunch.customcontrols.ControlButtonMenuListener;
-import net.kdt.pojavlaunch.customcontrols.ControlData;
-import net.kdt.pojavlaunch.customcontrols.ControlDrawerData;
-import net.kdt.pojavlaunch.customcontrols.ControlJoystickData;
-import net.kdt.pojavlaunch.customcontrols.ControlLayout;
-import net.kdt.pojavlaunch.customcontrols.CustomControls;
-import net.kdt.pojavlaunch.customcontrols.EditorExitable;
-import net.kdt.pojavlaunch.customcontrols.keyboard.LwjglCharSender;
-import net.kdt.pojavlaunch.customcontrols.keyboard.TouchCharInput;
-import net.kdt.pojavlaunch.prefs.LauncherPreferences;
-import net.kdt.pojavlaunch.services.GameService;
-import net.kdt.pojavlaunch.utils.JREUtils;
-import net.kdt.pojavlaunch.utils.MCOptionUtils;
-import net.kdt.pojavlaunch.value.MinecraftAccount;
-import net.kdt.pojavlaunch.value.launcherprofiles.LauncherProfiles;
-import net.kdt.pojavlaunch.value.launcherprofiles.MinecraftProfile;
+import soldev.solcraftlauncher.lifecycle.ContextExecutor;
+import soldev.solcraftlauncher.customcontrols.ControlButtonMenuListener;
+import soldev.solcraftlauncher.customcontrols.ControlData;
+import soldev.solcraftlauncher.customcontrols.ControlDrawerData;
+import soldev.solcraftlauncher.customcontrols.ControlJoystickData;
+import soldev.solcraftlauncher.customcontrols.ControlLayout;
+import soldev.solcraftlauncher.customcontrols.CustomControls;
+import soldev.solcraftlauncher.customcontrols.EditorExitable;
+import soldev.solcraftlauncher.customcontrols.keyboard.LwjglCharSender;
+import soldev.solcraftlauncher.customcontrols.keyboard.TouchCharInput;
+import soldev.solcraftlauncher.prefs.LauncherPreferences;
+import soldev.solcraftlauncher.services.GameService;
+import soldev.solcraftlauncher.utils.JREUtils;
+import soldev.solcraftlauncher.utils.MCOptionUtils;
+import soldev.solcraftlauncher.value.MinecraftAccount;
+import soldev.solcraftlauncher.value.launcherprofiles.LauncherProfiles;
+import soldev.solcraftlauncher.value.launcherprofiles.MinecraftProfile;
 
 import org.lwjgl.glfw.CallbackBridge;
 

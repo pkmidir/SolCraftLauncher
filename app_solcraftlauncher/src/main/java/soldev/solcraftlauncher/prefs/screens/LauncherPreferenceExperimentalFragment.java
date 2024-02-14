@@ -1,8 +1,8 @@
-package net.kdt.pojavlaunch.prefs.screens;
+package soldev.solcraftlauncher.prefs.screens;
 
 import android.os.Bundle;
 
-import net.kdt.pojavlaunch.R;
+import soldev.solcraftlauncher.R;
 
 public class LauncherPreferenceExperimentalFragment extends LauncherPreferenceFragment {
 

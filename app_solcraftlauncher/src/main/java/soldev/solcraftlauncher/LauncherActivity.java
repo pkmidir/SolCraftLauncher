@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch;
+package soldev.solcraftlauncher;
 
 import android.Manifest;
 import android.app.NotificationManager;
@@ -23,28 +23,28 @@ import androidx.fragment.app.FragmentManager;
 import com.kdt.mcgui.ProgressLayout;
 import com.kdt.mcgui.mcAccountSpinner;
 
-import net.kdt.pojavlaunch.lifecycle.ContextExecutor;
-import net.kdt.pojavlaunch.contracts.OpenDocumentWithExtension;
-import net.kdt.pojavlaunch.extra.ExtraConstants;
-import net.kdt.pojavlaunch.extra.ExtraCore;
-import net.kdt.pojavlaunch.extra.ExtraListener;
-import net.kdt.pojavlaunch.fragments.MainMenuFragment;
-import net.kdt.pojavlaunch.fragments.MicrosoftLoginFragment;
-import net.kdt.pojavlaunch.fragments.SelectAuthFragment;
-import net.kdt.pojavlaunch.modloaders.modpacks.ModloaderInstallTracker;
-import net.kdt.pojavlaunch.modloaders.modpacks.imagecache.IconCacheJanitor;
-import net.kdt.pojavlaunch.prefs.LauncherPreferences;
-import net.kdt.pojavlaunch.prefs.screens.LauncherPreferenceFragment;
-import net.kdt.pojavlaunch.progresskeeper.ProgressKeeper;
-import net.kdt.pojavlaunch.progresskeeper.TaskCountListener;
-import net.kdt.pojavlaunch.services.ProgressServiceKeeper;
-import net.kdt.pojavlaunch.tasks.AsyncMinecraftDownloader;
-import net.kdt.pojavlaunch.tasks.AsyncVersionList;
-import net.kdt.pojavlaunch.lifecycle.ContextAwareDoneListener;
-import net.kdt.pojavlaunch.tasks.MinecraftDownloader;
-import net.kdt.pojavlaunch.utils.NotificationUtils;
-import net.kdt.pojavlaunch.value.launcherprofiles.LauncherProfiles;
-import net.kdt.pojavlaunch.value.launcherprofiles.MinecraftProfile;
+import soldev.solcraftlauncher.lifecycle.ContextExecutor;
+import soldev.solcraftlauncher.contracts.OpenDocumentWithExtension;
+import soldev.solcraftlauncher.extra.ExtraConstants;
+import soldev.solcraftlauncher.extra.ExtraCore;
+import soldev.solcraftlauncher.extra.ExtraListener;
+import soldev.solcraftlauncher.fragments.MainMenuFragment;
+import soldev.solcraftlauncher.fragments.MicrosoftLoginFragment;
+import soldev.solcraftlauncher.fragments.SelectAuthFragment;
+import soldev.solcraftlauncher.modloaders.modpacks.ModloaderInstallTracker;
+import soldev.solcraftlauncher.modloaders.modpacks.imagecache.IconCacheJanitor;
+import soldev.solcraftlauncher.prefs.LauncherPreferences;
+import soldev.solcraftlauncher.prefs.screens.LauncherPreferenceFragment;
+import soldev.solcraftlauncher.progresskeeper.ProgressKeeper;
+import soldev.solcraftlauncher.progresskeeper.TaskCountListener;
+import soldev.solcraftlauncher.services.ProgressServiceKeeper;
+import soldev.solcraftlauncher.tasks.AsyncMinecraftDownloader;
+import soldev.solcraftlauncher.tasks.AsyncVersionList;
+import soldev.solcraftlauncher.lifecycle.ContextAwareDoneListener;
+import soldev.solcraftlauncher.tasks.MinecraftDownloader;
+import soldev.solcraftlauncher.utils.NotificationUtils;
+import soldev.solcraftlauncher.value.launcherprofiles.LauncherProfiles;
+import soldev.solcraftlauncher.value.launcherprofiles.MinecraftProfile;
 
 import java.lang.ref.WeakReference;
 

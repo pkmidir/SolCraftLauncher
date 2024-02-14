@@ -1,15 +1,15 @@
-package net.kdt.pojavlaunch.modloaders.modpacks.api;
+package soldev.solcraftlauncher.modloaders.modpacks.api;
 
 import com.kdt.mcgui.ProgressLayout;
 
-import net.kdt.pojavlaunch.R;
-import net.kdt.pojavlaunch.Tools;
-import net.kdt.pojavlaunch.modloaders.modpacks.imagecache.ModIconCache;
-import net.kdt.pojavlaunch.modloaders.modpacks.models.ModDetail;
-import net.kdt.pojavlaunch.progresskeeper.DownloaderProgressWrapper;
-import net.kdt.pojavlaunch.utils.DownloadUtils;
-import net.kdt.pojavlaunch.value.launcherprofiles.LauncherProfiles;
-import net.kdt.pojavlaunch.value.launcherprofiles.MinecraftProfile;
+import soldev.solcraftlauncher.R;
+import soldev.solcraftlauncher.Tools;
+import soldev.solcraftlauncher.modloaders.modpacks.imagecache.ModIconCache;
+import soldev.solcraftlauncher.modloaders.modpacks.models.ModDetail;
+import soldev.solcraftlauncher.progresskeeper.DownloaderProgressWrapper;
+import soldev.solcraftlauncher.utils.DownloadUtils;
+import soldev.solcraftlauncher.value.launcherprofiles.LauncherProfiles;
+import soldev.solcraftlauncher.value.launcherprofiles.MinecraftProfile;
 
 import java.io.File;
 import java.io.IOException;

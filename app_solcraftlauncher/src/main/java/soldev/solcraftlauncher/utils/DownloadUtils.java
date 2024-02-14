@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.utils;
+package soldev.solcraftlauncher.utils;
 
 import android.util.Log;
 
@@ -9,7 +9,7 @@ import java.net.*;
 import java.nio.charset.*;
 import java.util.concurrent.Callable;
 
-import net.kdt.pojavlaunch.*;
+import soldev.solcraftlauncher.*;
 import org.apache.commons.io.*;
 
 @SuppressWarnings("IOStreamConstructor")

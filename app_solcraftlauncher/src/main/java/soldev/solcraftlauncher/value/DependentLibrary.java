@@ -1,7 +1,7 @@
-package net.kdt.pojavlaunch.value;
+package soldev.solcraftlauncher.value;
 
 import androidx.annotation.Keep;
-import net.kdt.pojavlaunch.JMinecraftVersionList.Arguments.ArgValue.ArgRules;
+import soldev.solcraftlauncher.JMinecraftVersionList.Arguments.ArgValue.ArgRules;
 
 @Keep
 public class DependentLibrary {

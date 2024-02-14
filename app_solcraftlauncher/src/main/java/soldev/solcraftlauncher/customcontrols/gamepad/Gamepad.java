@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.customcontrols.gamepad;
+package soldev.solcraftlauncher.customcontrols.gamepad;
 
 
 import static android.view.MotionEvent.AXIS_HAT_X;
@@ -24,28 +24,28 @@ import android.widget.Toast;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.core.math.MathUtils;
 
-import net.kdt.pojavlaunch.GrabListener;
-import net.kdt.pojavlaunch.LwjglGlfwKeycode;
-import net.kdt.pojavlaunch.R;
-import net.kdt.pojavlaunch.Tools;
-import net.kdt.pojavlaunch.prefs.LauncherPreferences;
-import net.kdt.pojavlaunch.utils.MCOptionUtils;
+import soldev.solcraftlauncher.GrabListener;
+import soldev.solcraftlauncher.LwjglGlfwKeycode;
+import soldev.solcraftlauncher.R;
+import soldev.solcraftlauncher.Tools;
+import soldev.solcraftlauncher.prefs.LauncherPreferences;
+import soldev.solcraftlauncher.utils.MCOptionUtils;
 
 import org.lwjgl.glfw.CallbackBridge;
 
-import static net.kdt.pojavlaunch.Tools.currentDisplayMetrics;
-import static net.kdt.pojavlaunch.customcontrols.gamepad.GamepadJoystick.DIRECTION_EAST;
-import static net.kdt.pojavlaunch.customcontrols.gamepad.GamepadJoystick.DIRECTION_NONE;
-import static net.kdt.pojavlaunch.customcontrols.gamepad.GamepadJoystick.DIRECTION_NORTH;
-import static net.kdt.pojavlaunch.customcontrols.gamepad.GamepadJoystick.DIRECTION_NORTH_EAST;
-import static net.kdt.pojavlaunch.customcontrols.gamepad.GamepadJoystick.DIRECTION_NORTH_WEST;
-import static net.kdt.pojavlaunch.customcontrols.gamepad.GamepadJoystick.DIRECTION_SOUTH;
-import static net.kdt.pojavlaunch.customcontrols.gamepad.GamepadJoystick.DIRECTION_SOUTH_EAST;
-import static net.kdt.pojavlaunch.customcontrols.gamepad.GamepadJoystick.DIRECTION_SOUTH_WEST;
-import static net.kdt.pojavlaunch.customcontrols.gamepad.GamepadJoystick.DIRECTION_WEST;
-import static net.kdt.pojavlaunch.customcontrols.gamepad.GamepadJoystick.isJoystickEvent;
-import static net.kdt.pojavlaunch.prefs.LauncherPreferences.PREF_DEADZONE_SCALE;
-import static net.kdt.pojavlaunch.utils.MCOptionUtils.getMcScale;
+import static soldev.solcraftlauncher.Tools.currentDisplayMetrics;
+import static soldev.solcraftlauncher.customcontrols.gamepad.GamepadJoystick.DIRECTION_EAST;
+import static soldev.solcraftlauncher.customcontrols.gamepad.GamepadJoystick.DIRECTION_NONE;
+import static soldev.solcraftlauncher.customcontrols.gamepad.GamepadJoystick.DIRECTION_NORTH;
+import static soldev.solcraftlauncher.customcontrols.gamepad.GamepadJoystick.DIRECTION_NORTH_EAST;
+import static soldev.solcraftlauncher.customcontrols.gamepad.GamepadJoystick.DIRECTION_NORTH_WEST;
+import static soldev.solcraftlauncher.customcontrols.gamepad.GamepadJoystick.DIRECTION_SOUTH;
+import static soldev.solcraftlauncher.customcontrols.gamepad.GamepadJoystick.DIRECTION_SOUTH_EAST;
+import static soldev.solcraftlauncher.customcontrols.gamepad.GamepadJoystick.DIRECTION_SOUTH_WEST;
+import static soldev.solcraftlauncher.customcontrols.gamepad.GamepadJoystick.DIRECTION_WEST;
+import static soldev.solcraftlauncher.customcontrols.gamepad.GamepadJoystick.isJoystickEvent;
+import static soldev.solcraftlauncher.prefs.LauncherPreferences.PREF_DEADZONE_SCALE;
+import static soldev.solcraftlauncher.utils.MCOptionUtils.getMcScale;
 import static org.lwjgl.glfw.CallbackBridge.sendKeyPress;
 import static org.lwjgl.glfw.CallbackBridge.sendMouseButton;
 

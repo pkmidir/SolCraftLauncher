@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.fragments;
+package soldev.solcraftlauncher.fragments;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,13 +7,13 @@ import android.widget.ExpandableListAdapter;
 
 import androidx.annotation.NonNull;
 
-import net.kdt.pojavlaunch.JavaGUILauncherActivity;
-import net.kdt.pojavlaunch.R;
-import net.kdt.pojavlaunch.Tools;
-import net.kdt.pojavlaunch.modloaders.ForgeDownloadTask;
-import net.kdt.pojavlaunch.modloaders.ForgeUtils;
-import net.kdt.pojavlaunch.modloaders.ForgeVersionListAdapter;
-import net.kdt.pojavlaunch.modloaders.ModloaderListenerProxy;
+import soldev.solcraftlauncher.JavaGUILauncherActivity;
+import soldev.solcraftlauncher.R;
+import soldev.solcraftlauncher.Tools;
+import soldev.solcraftlauncher.modloaders.ForgeDownloadTask;
+import soldev.solcraftlauncher.modloaders.ForgeUtils;
+import soldev.solcraftlauncher.modloaders.ForgeVersionListAdapter;
+import soldev.solcraftlauncher.modloaders.ModloaderListenerProxy;
 
 import java.io.File;
 import java.io.IOException;

@@ -1,11 +1,11 @@
-package net.kdt.pojavlaunch.modloaders;
+package soldev.solcraftlauncher.modloaders;
 
 import com.kdt.mcgui.ProgressLayout;
 
-import net.kdt.pojavlaunch.R;
-import net.kdt.pojavlaunch.Tools;
-import net.kdt.pojavlaunch.progresskeeper.ProgressKeeper;
-import net.kdt.pojavlaunch.utils.DownloadUtils;
+import soldev.solcraftlauncher.R;
+import soldev.solcraftlauncher.Tools;
+import soldev.solcraftlauncher.progresskeeper.ProgressKeeper;
+import soldev.solcraftlauncher.utils.DownloadUtils;
 
 import java.io.File;
 import java.io.FileNotFoundException;

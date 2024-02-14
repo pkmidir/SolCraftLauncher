@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.modloaders.modpacks;
+package soldev.solcraftlauncher.modloaders.modpacks;
 
 import android.annotation.SuppressLint;
 import android.content.res.Resources;
@@ -20,18 +20,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.kdt.SimpleArrayAdapter;
 
-import net.kdt.pojavlaunch.PojavApplication;
-import net.kdt.pojavlaunch.R;
-import net.kdt.pojavlaunch.Tools;
-import net.kdt.pojavlaunch.modloaders.modpacks.api.ModpackApi;
-import net.kdt.pojavlaunch.modloaders.modpacks.imagecache.ImageReceiver;
-import net.kdt.pojavlaunch.modloaders.modpacks.imagecache.ModIconCache;
-import net.kdt.pojavlaunch.modloaders.modpacks.models.Constants;
-import net.kdt.pojavlaunch.modloaders.modpacks.models.ModDetail;
-import net.kdt.pojavlaunch.modloaders.modpacks.models.ModItem;
-import net.kdt.pojavlaunch.modloaders.modpacks.models.SearchFilters;
-import net.kdt.pojavlaunch.modloaders.modpacks.models.SearchResult;
-import net.kdt.pojavlaunch.progresskeeper.TaskCountListener;
+import soldev.solcraftlauncher.PojavApplication;
+import soldev.solcraftlauncher.R;
+import soldev.solcraftlauncher.Tools;
+import soldev.solcraftlauncher.modloaders.modpacks.api.ModpackApi;
+import soldev.solcraftlauncher.modloaders.modpacks.imagecache.ImageReceiver;
+import soldev.solcraftlauncher.modloaders.modpacks.imagecache.ModIconCache;
+import soldev.solcraftlauncher.modloaders.modpacks.models.Constants;
+import soldev.solcraftlauncher.modloaders.modpacks.models.ModDetail;
+import soldev.solcraftlauncher.modloaders.modpacks.models.ModItem;
+import soldev.solcraftlauncher.modloaders.modpacks.models.SearchFilters;
+import soldev.solcraftlauncher.modloaders.modpacks.models.SearchResult;
+import soldev.solcraftlauncher.progresskeeper.TaskCountListener;
 
 import java.util.Arrays;
 import java.util.Collections;

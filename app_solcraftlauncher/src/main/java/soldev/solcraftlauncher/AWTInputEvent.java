@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch;
+package soldev.solcraftlauncher;
 
 /*
      * Copyright (c) 1996, 2009, Oracle and/or its affiliates. All rights reserved.

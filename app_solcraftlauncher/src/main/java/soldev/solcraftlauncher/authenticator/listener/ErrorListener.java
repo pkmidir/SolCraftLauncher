@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.authenticator.listener;
+package soldev.solcraftlauncher.authenticator.listener;
 
 /** Called when there is a complete failure, guaranteed to be on the UI Thread */
 public interface ErrorListener {

@@ -1,6 +1,6 @@
-package net.kdt.pojavlaunch;
+package soldev.solcraftlauncher;
 
-import static net.kdt.pojavlaunch.Tools.shareLog;
+import static soldev.solcraftlauncher.Tools.shareLog;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.lifecycle;
+package soldev.solcraftlauncher.lifecycle;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -9,7 +9,7 @@ import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleEventObserver;
 import androidx.lifecycle.LifecycleOwner;
 
-import net.kdt.pojavlaunch.Tools;
+import soldev.solcraftlauncher.Tools;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 

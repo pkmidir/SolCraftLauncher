@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.customcontrols.buttons;
+package soldev.solcraftlauncher.customcontrols.buttons;
 
 import android.annotation.SuppressLint;
 import android.view.MotionEvent;
@@ -6,11 +6,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import net.kdt.pojavlaunch.Tools;
-import net.kdt.pojavlaunch.customcontrols.ControlData;
-import net.kdt.pojavlaunch.customcontrols.ControlDrawerData;
-import net.kdt.pojavlaunch.customcontrols.ControlLayout;
-import net.kdt.pojavlaunch.customcontrols.handleview.EditControlPopup;
+import soldev.solcraftlauncher.Tools;
+import soldev.solcraftlauncher.customcontrols.ControlData;
+import soldev.solcraftlauncher.customcontrols.ControlDrawerData;
+import soldev.solcraftlauncher.customcontrols.ControlLayout;
+import soldev.solcraftlauncher.customcontrols.handleview.EditControlPopup;
 
 import java.util.ArrayList;
 

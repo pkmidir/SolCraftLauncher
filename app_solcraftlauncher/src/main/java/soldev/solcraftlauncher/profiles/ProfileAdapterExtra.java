@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.profiles;
+package soldev.solcraftlauncher.profiles;
 
 import android.graphics.drawable.Drawable;
 

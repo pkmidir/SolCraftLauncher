@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.customcontrols.keyboard;
+package soldev.solcraftlauncher.customcontrols.keyboard;
 
 /** Simple interface for sending chars through whatever bridge will be necessary */
 public interface CharacterSenderStrategy {

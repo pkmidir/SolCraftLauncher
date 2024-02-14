@@ -1,9 +1,9 @@
-package net.kdt.pojavlaunch.customcontrols.handleview;
+package soldev.solcraftlauncher.customcontrols.handleview;
 
 
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
-import static net.kdt.pojavlaunch.Tools.currentDisplayMetrics;
+import static soldev.solcraftlauncher.Tools.currentDisplayMetrics;
 
 import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
@@ -30,14 +30,14 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.kdt.DefocusableScrollView;
 
-import net.kdt.pojavlaunch.EfficientAndroidLWJGLKeycode;
-import net.kdt.pojavlaunch.R;
-import net.kdt.pojavlaunch.colorselector.ColorSelector;
-import net.kdt.pojavlaunch.customcontrols.ControlData;
-import net.kdt.pojavlaunch.customcontrols.ControlDrawerData;
-import net.kdt.pojavlaunch.customcontrols.ControlJoystickData;
-import net.kdt.pojavlaunch.customcontrols.buttons.ControlDrawer;
-import net.kdt.pojavlaunch.customcontrols.buttons.ControlInterface;
+import soldev.solcraftlauncher.EfficientAndroidLWJGLKeycode;
+import soldev.solcraftlauncher.R;
+import soldev.solcraftlauncher.colorselector.ColorSelector;
+import soldev.solcraftlauncher.customcontrols.ControlData;
+import soldev.solcraftlauncher.customcontrols.ControlDrawerData;
+import soldev.solcraftlauncher.customcontrols.ControlJoystickData;
+import soldev.solcraftlauncher.customcontrols.buttons.ControlDrawer;
+import soldev.solcraftlauncher.customcontrols.buttons.ControlInterface;
 
 import java.util.List;
 

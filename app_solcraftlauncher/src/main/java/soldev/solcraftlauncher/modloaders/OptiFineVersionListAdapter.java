@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.modloaders;
+package soldev.solcraftlauncher.modloaders;
 
 import android.view.LayoutInflater;
 import android.view.View;

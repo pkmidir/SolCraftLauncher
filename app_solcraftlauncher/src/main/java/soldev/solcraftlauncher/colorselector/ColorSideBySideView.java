@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.colorselector;
+package soldev.solcraftlauncher.colorselector;
 
 import android.content.Context;
 import android.graphics.Canvas;

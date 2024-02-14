@@ -1,13 +1,13 @@
-package net.kdt.pojavlaunch.customcontrols.gamepad;
+package soldev.solcraftlauncher.customcontrols.gamepad;
 
-import static net.kdt.pojavlaunch.prefs.LauncherPreferences.PREF_DEADZONE_SCALE;
+import static soldev.solcraftlauncher.prefs.LauncherPreferences.PREF_DEADZONE_SCALE;
 
 import android.util.Log;
 import android.view.InputDevice;
 import android.view.MotionEvent;
 
 
-import net.kdt.pojavlaunch.utils.MathUtils;
+import soldev.solcraftlauncher.utils.MathUtils;
 
 public class GamepadJoystick {
 

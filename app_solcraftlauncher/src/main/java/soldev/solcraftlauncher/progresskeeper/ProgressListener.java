@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.progresskeeper;
+package soldev.solcraftlauncher.progresskeeper;
 
 public interface ProgressListener {
     void onProgressStarted();

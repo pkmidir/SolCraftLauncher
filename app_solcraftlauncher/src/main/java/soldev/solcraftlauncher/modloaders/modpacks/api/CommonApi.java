@@ -1,15 +1,15 @@
-package net.kdt.pojavlaunch.modloaders.modpacks.api;
+package soldev.solcraftlauncher.modloaders.modpacks.api;
 
 import android.util.Log;
 
 import androidx.annotation.NonNull;
 
-import net.kdt.pojavlaunch.PojavApplication;
-import net.kdt.pojavlaunch.modloaders.modpacks.models.Constants;
-import net.kdt.pojavlaunch.modloaders.modpacks.models.ModDetail;
-import net.kdt.pojavlaunch.modloaders.modpacks.models.ModItem;
-import net.kdt.pojavlaunch.modloaders.modpacks.models.SearchFilters;
-import net.kdt.pojavlaunch.modloaders.modpacks.models.SearchResult;
+import soldev.solcraftlauncher.PojavApplication;
+import soldev.solcraftlauncher.modloaders.modpacks.models.Constants;
+import soldev.solcraftlauncher.modloaders.modpacks.models.ModDetail;
+import soldev.solcraftlauncher.modloaders.modpacks.models.ModItem;
+import soldev.solcraftlauncher.modloaders.modpacks.models.SearchFilters;
+import soldev.solcraftlauncher.modloaders.modpacks.models.SearchResult;
 
 import java.io.IOException;
 import java.util.ArrayList;

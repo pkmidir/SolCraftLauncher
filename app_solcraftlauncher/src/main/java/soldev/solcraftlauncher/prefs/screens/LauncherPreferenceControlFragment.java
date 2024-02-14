@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.prefs.screens;
+package soldev.solcraftlauncher.prefs.screens;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -8,9 +8,9 @@ import android.os.Bundle;
 
 import androidx.preference.PreferenceCategory;
 
-import net.kdt.pojavlaunch.R;
-import net.kdt.pojavlaunch.prefs.CustomSeekBarPreference;
-import net.kdt.pojavlaunch.prefs.LauncherPreferences;
+import soldev.solcraftlauncher.R;
+import soldev.solcraftlauncher.prefs.CustomSeekBarPreference;
+import soldev.solcraftlauncher.prefs.LauncherPreferences;
 
 public class LauncherPreferenceControlFragment extends LauncherPreferenceFragment {
     private boolean mGyroAvailable = false;

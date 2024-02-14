@@ -1,8 +1,8 @@
-package net.kdt.pojavlaunch;
+package soldev.solcraftlauncher;
 
-import static net.kdt.pojavlaunch.MainActivity.touchCharInput;
-import static net.kdt.pojavlaunch.prefs.LauncherPreferences.PREF_DISABLE_SWAP_HAND;
-import static net.kdt.pojavlaunch.utils.MCOptionUtils.getMcScale;
+import static soldev.solcraftlauncher.MainActivity.touchCharInput;
+import static soldev.solcraftlauncher.prefs.LauncherPreferences.PREF_DISABLE_SWAP_HAND;
+import static soldev.solcraftlauncher.utils.MCOptionUtils.getMcScale;
 import static org.lwjgl.glfw.CallbackBridge.sendKeyPress;
 import static org.lwjgl.glfw.CallbackBridge.sendMouseButton;
 import static org.lwjgl.glfw.CallbackBridge.windowHeight;
@@ -30,12 +30,12 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 
-import net.kdt.pojavlaunch.customcontrols.ControlLayout;
-import net.kdt.pojavlaunch.customcontrols.gamepad.Gamepad;
-import net.kdt.pojavlaunch.prefs.LauncherPreferences;
-import net.kdt.pojavlaunch.utils.JREUtils;
-import net.kdt.pojavlaunch.utils.MCOptionUtils;
-import net.kdt.pojavlaunch.utils.MathUtils;
+import soldev.solcraftlauncher.customcontrols.ControlLayout;
+import soldev.solcraftlauncher.customcontrols.gamepad.Gamepad;
+import soldev.solcraftlauncher.prefs.LauncherPreferences;
+import soldev.solcraftlauncher.utils.JREUtils;
+import soldev.solcraftlauncher.utils.MCOptionUtils;
+import soldev.solcraftlauncher.utils.MathUtils;
 
 import org.lwjgl.glfw.CallbackBridge;
 
@@ -557,7 +557,7 @@ public class MinecraftGLSurface extends View implements GrabListener {
         int barX = (CallbackBridge.physicalWidth / 2) - (barWidth / 2);
         if(x < barX || x >= barX + barWidth) return -1;
 
-        return HOTBAR_KEYS[(int) net.kdt.pojavlaunch.utils.MathUtils.map(x, barX, barX + barWidth, 0, 9)];
+        return HOTBAR_KEYS[(int) soldev.solcraftlauncher.utils.MathUtils.map(x, barX, barX + barWidth, 0, 9)];
     }
 
     /** Return the size, given the UI scale size */

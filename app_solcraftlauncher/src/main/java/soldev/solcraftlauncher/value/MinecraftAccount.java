@@ -1,10 +1,10 @@
-package net.kdt.pojavlaunch.value;
+package soldev.solcraftlauncher.value;
 
 
 import android.graphics.BitmapFactory;
 import android.util.Log;
 
-import net.kdt.pojavlaunch.*;
+import soldev.solcraftlauncher.*;
 import java.io.*;
 import com.google.gson.*;
 import android.graphics.Bitmap;

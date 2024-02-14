@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.colorselector;
+package soldev.solcraftlauncher.colorselector;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -12,7 +12,7 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 
-import net.kdt.pojavlaunch.Tools;
+import soldev.solcraftlauncher.Tools;
 
 
 

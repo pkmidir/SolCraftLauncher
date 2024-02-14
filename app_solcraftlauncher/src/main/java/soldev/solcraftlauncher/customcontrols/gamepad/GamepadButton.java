@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.customcontrols.gamepad;
+package soldev.solcraftlauncher.customcontrols.gamepad;
 
 import android.view.KeyEvent;
 

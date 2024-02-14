@@ -1,6 +1,6 @@
-package net.kdt.pojavlaunch.fragments;
+package soldev.solcraftlauncher.fragments;
 
-import static net.kdt.pojavlaunch.Tools.shareLog;
+import static soldev.solcraftlauncher.Tools.shareLog;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,13 +15,13 @@ import androidx.fragment.app.Fragment;
 
 import com.kdt.mcgui.mcVersionSpinner;
 
-import net.kdt.pojavlaunch.CustomControlsActivity;
-import net.kdt.pojavlaunch.R;
-import net.kdt.pojavlaunch.Tools;
-import net.kdt.pojavlaunch.extra.ExtraConstants;
-import net.kdt.pojavlaunch.extra.ExtraCore;
-import net.kdt.pojavlaunch.progresskeeper.ProgressKeeper;
-import net.kdt.pojavlaunch.value.launcherprofiles.LauncherProfiles;
+import soldev.solcraftlauncher.CustomControlsActivity;
+import soldev.solcraftlauncher.R;
+import soldev.solcraftlauncher.Tools;
+import soldev.solcraftlauncher.extra.ExtraConstants;
+import soldev.solcraftlauncher.extra.ExtraCore;
+import soldev.solcraftlauncher.progresskeeper.ProgressKeeper;
+import soldev.solcraftlauncher.value.launcherprofiles.LauncherProfiles;
 
 public class MainMenuFragment extends Fragment {
     public static final String TAG = "MainMenuFragment";

@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.services;
+package soldev.solcraftlauncher.services;
 
 import android.app.PendingIntent;
 import android.app.Service;
@@ -11,9 +11,9 @@ import android.os.Process;
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 
-import net.kdt.pojavlaunch.R;
-import net.kdt.pojavlaunch.Tools;
-import net.kdt.pojavlaunch.utils.NotificationUtils;
+import soldev.solcraftlauncher.R;
+import soldev.solcraftlauncher.Tools;
+import soldev.solcraftlauncher.utils.NotificationUtils;
 
 import java.lang.ref.WeakReference;
 

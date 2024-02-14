@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.authenticator.microsoft;
+package soldev.solcraftlauncher.authenticator.microsoft;
 
 import android.content.Context;
 

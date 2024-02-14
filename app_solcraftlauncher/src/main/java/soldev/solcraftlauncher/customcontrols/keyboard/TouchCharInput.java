@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.customcontrols.keyboard;
+package soldev.solcraftlauncher.customcontrols.keyboard;
 
 
 import static android.content.Context.INPUT_METHOD_SERVICE;
@@ -12,7 +12,7 @@ import android.view.inputmethod.InputMethodManager;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import net.kdt.pojavlaunch.R;
+import soldev.solcraftlauncher.R;
 
 /**
  * This class is intended for sending characters used in chat via the virtual keyboard

@@ -1,13 +1,13 @@
-package net.kdt.pojavlaunch.prefs;
+package soldev.solcraftlauncher.prefs;
 
 import android.content.Context;
 import android.util.AttributeSet;
 
 import androidx.preference.Preference;
 
-import net.kdt.pojavlaunch.R;
-import net.kdt.pojavlaunch.extra.ExtraConstants;
-import net.kdt.pojavlaunch.extra.ExtraCore;
+import soldev.solcraftlauncher.R;
+import soldev.solcraftlauncher.extra.ExtraConstants;
+import soldev.solcraftlauncher.extra.ExtraCore;
 
 public class BackButtonPreference extends Preference {
     public BackButtonPreference(Context context, AttributeSet attrs) {

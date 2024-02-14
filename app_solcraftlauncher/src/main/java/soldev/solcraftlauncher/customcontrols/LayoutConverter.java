@@ -1,9 +1,9 @@
-package net.kdt.pojavlaunch.customcontrols;
+package soldev.solcraftlauncher.customcontrols;
 
 import com.google.gson.JsonSyntaxException;
 
-import net.kdt.pojavlaunch.LwjglGlfwKeycode;
-import net.kdt.pojavlaunch.Tools;
+import soldev.solcraftlauncher.LwjglGlfwKeycode;
+import soldev.solcraftlauncher.Tools;
 
 import org.json.JSONArray;
 import org.json.JSONException;

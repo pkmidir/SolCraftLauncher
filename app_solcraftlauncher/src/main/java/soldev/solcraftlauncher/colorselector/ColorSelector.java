@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.colorselector;
+package soldev.solcraftlauncher.colorselector;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
@@ -12,7 +12,7 @@ import android.widget.EditText;
 
 import androidx.annotation.Nullable;
 
-import net.kdt.pojavlaunch.R;
+import soldev.solcraftlauncher.R;
 
 public class ColorSelector implements HueSelectionListener, RectangleSelectionListener, AlphaSelectionListener, TextWatcher{
     private static final int ALPHA_MASK = ~(0xFF << 24);

@@ -1,11 +1,11 @@
-package net.kdt.pojavlaunch.customcontrols;
+package soldev.solcraftlauncher.customcontrols;
 import android.content.*;
 
 import androidx.annotation.Keep;
 
 import java.io.IOException;
 import java.util.*;
-import net.kdt.pojavlaunch.*;
+import soldev.solcraftlauncher.*;
 
 @Keep
 public class CustomControls {

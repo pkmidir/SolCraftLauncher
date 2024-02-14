@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.fragments;
+package soldev.solcraftlauncher.fragments;
 
 import android.os.Bundle;
 import android.view.View;
@@ -7,8 +7,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import net.kdt.pojavlaunch.R;
-import net.kdt.pojavlaunch.Tools;
+import soldev.solcraftlauncher.R;
+import soldev.solcraftlauncher.Tools;
 
 public class ProfileTypeSelectFragment extends Fragment {
     public static final String TAG = "ProfileTypeSelectFragment";

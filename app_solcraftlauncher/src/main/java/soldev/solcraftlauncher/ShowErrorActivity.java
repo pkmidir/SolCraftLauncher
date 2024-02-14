@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch;
+package soldev.solcraftlauncher;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -9,8 +9,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import net.kdt.pojavlaunch.lifecycle.ContextExecutorTask;
-import net.kdt.pojavlaunch.utils.NotificationUtils;
+import soldev.solcraftlauncher.lifecycle.ContextExecutorTask;
+import soldev.solcraftlauncher.utils.NotificationUtils;
 
 import java.io.Serializable;
 

@@ -1,7 +1,7 @@
-package net.kdt.pojavlaunch.customcontrols.keyboard;
+package soldev.solcraftlauncher.customcontrols.keyboard;
 
-import net.kdt.pojavlaunch.AWTInputBridge;
-import net.kdt.pojavlaunch.AWTInputEvent;
+import soldev.solcraftlauncher.AWTInputBridge;
+import soldev.solcraftlauncher.AWTInputEvent;
 
 /** Send chars via the AWT Bridgee */
 public class AwtCharSender implements CharacterSenderStrategy {

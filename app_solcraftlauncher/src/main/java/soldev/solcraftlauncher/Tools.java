@@ -1,10 +1,10 @@
-package net.kdt.pojavlaunch;
+package soldev.solcraftlauncher;
 
 import static android.os.Build.VERSION.SDK_INT;
 import static android.os.Build.VERSION_CODES.P;
-import static net.kdt.pojavlaunch.PojavApplication.sExecutorService;
-import static net.kdt.pojavlaunch.prefs.LauncherPreferences.PREF_IGNORE_NOTCH;
-import static net.kdt.pojavlaunch.prefs.LauncherPreferences.PREF_NOTCH_SIZE;
+import static soldev.solcraftlauncher.PojavApplication.sExecutorService;
+import static soldev.solcraftlauncher.prefs.LauncherPreferences.PREF_IGNORE_NOTCH;
+import static soldev.solcraftlauncher.prefs.LauncherPreferences.PREF_NOTCH_SIZE;
 
 import android.app.Activity;
 import android.app.ActivityManager;
@@ -48,24 +48,24 @@ import androidx.fragment.app.FragmentTransaction;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import net.kdt.pojavlaunch.lifecycle.ContextExecutor;
-import net.kdt.pojavlaunch.lifecycle.ContextExecutorTask;
-import net.kdt.pojavlaunch.lifecycle.LifecycleAwareAlertDialog;
-import net.kdt.pojavlaunch.multirt.MultiRTUtils;
-import net.kdt.pojavlaunch.multirt.Runtime;
-import net.kdt.pojavlaunch.plugins.FFmpegPlugin;
-import net.kdt.pojavlaunch.prefs.LauncherPreferences;
-import net.kdt.pojavlaunch.utils.DateUtils;
-import net.kdt.pojavlaunch.utils.DownloadUtils;
-import net.kdt.pojavlaunch.utils.FileUtils;
-import net.kdt.pojavlaunch.utils.JREUtils;
-import net.kdt.pojavlaunch.utils.JSONUtils;
-import net.kdt.pojavlaunch.utils.OldVersionsUtils;
-import net.kdt.pojavlaunch.value.DependentLibrary;
-import net.kdt.pojavlaunch.value.MinecraftAccount;
-import net.kdt.pojavlaunch.value.MinecraftLibraryArtifact;
-import net.kdt.pojavlaunch.value.launcherprofiles.LauncherProfiles;
-import net.kdt.pojavlaunch.value.launcherprofiles.MinecraftProfile;
+import soldev.solcraftlauncher.lifecycle.ContextExecutor;
+import soldev.solcraftlauncher.lifecycle.ContextExecutorTask;
+import soldev.solcraftlauncher.lifecycle.LifecycleAwareAlertDialog;
+import soldev.solcraftlauncher.multirt.MultiRTUtils;
+import soldev.solcraftlauncher.multirt.Runtime;
+import soldev.solcraftlauncher.plugins.FFmpegPlugin;
+import soldev.solcraftlauncher.prefs.LauncherPreferences;
+import soldev.solcraftlauncher.utils.DateUtils;
+import soldev.solcraftlauncher.utils.DownloadUtils;
+import soldev.solcraftlauncher.utils.FileUtils;
+import soldev.solcraftlauncher.utils.JREUtils;
+import soldev.solcraftlauncher.utils.JSONUtils;
+import soldev.solcraftlauncher.utils.OldVersionsUtils;
+import soldev.solcraftlauncher.value.DependentLibrary;
+import soldev.solcraftlauncher.value.MinecraftAccount;
+import soldev.solcraftlauncher.value.MinecraftLibraryArtifact;
+import soldev.solcraftlauncher.value.launcherprofiles.LauncherProfiles;
+import soldev.solcraftlauncher.value.launcherprofiles.MinecraftProfile;
 
 import org.apache.commons.codec.binary.Hex;
 import org.apache.commons.io.IOUtils;

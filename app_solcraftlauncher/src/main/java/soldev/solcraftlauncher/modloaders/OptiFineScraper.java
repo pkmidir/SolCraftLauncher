@@ -1,6 +1,6 @@
-package net.kdt.pojavlaunch.modloaders;
+package soldev.solcraftlauncher.modloaders;
 
-import net.kdt.pojavlaunch.utils.DownloadUtils;
+import soldev.solcraftlauncher.utils.DownloadUtils;
 
 import org.htmlcleaner.HtmlCleaner;
 import org.htmlcleaner.TagNode;

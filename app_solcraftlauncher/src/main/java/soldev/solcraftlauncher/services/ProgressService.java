@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.services;
+package soldev.solcraftlauncher.services;
 
 import android.annotation.SuppressLint;
 import android.app.PendingIntent;
@@ -15,11 +15,11 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.ContextCompat;
 
-import net.kdt.pojavlaunch.R;
-import net.kdt.pojavlaunch.Tools;
-import net.kdt.pojavlaunch.progresskeeper.ProgressKeeper;
-import net.kdt.pojavlaunch.progresskeeper.TaskCountListener;
-import net.kdt.pojavlaunch.utils.NotificationUtils;
+import soldev.solcraftlauncher.R;
+import soldev.solcraftlauncher.Tools;
+import soldev.solcraftlauncher.progresskeeper.ProgressKeeper;
+import soldev.solcraftlauncher.progresskeeper.TaskCountListener;
+import soldev.solcraftlauncher.utils.NotificationUtils;
 
 /**
  * Lazy service which allows the process not to get killed.

@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.modloaders;
+package soldev.solcraftlauncher.modloaders;
 
 import androidx.annotation.NonNull;
 

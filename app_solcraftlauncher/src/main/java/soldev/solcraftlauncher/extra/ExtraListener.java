@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.extra;
+package soldev.solcraftlauncher.extra;
 
 import androidx.annotation.NonNull;
 

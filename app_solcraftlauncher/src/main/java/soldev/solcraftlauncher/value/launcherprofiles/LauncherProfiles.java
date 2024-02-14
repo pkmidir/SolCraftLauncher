@@ -1,11 +1,11 @@
-package net.kdt.pojavlaunch.value.launcherprofiles;
+package soldev.solcraftlauncher.value.launcherprofiles;
 
 import android.util.Log;
 
 import androidx.annotation.NonNull;
 
-import net.kdt.pojavlaunch.Tools;
-import net.kdt.pojavlaunch.prefs.LauncherPreferences;
+import soldev.solcraftlauncher.Tools;
+import soldev.solcraftlauncher.prefs.LauncherPreferences;
 
 import java.io.File;
 import java.io.IOException;

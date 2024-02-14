@@ -1,8 +1,8 @@
-package net.kdt.pojavlaunch.tasks;
+package soldev.solcraftlauncher.tasks;
 
-import net.kdt.pojavlaunch.JMinecraftVersionList;
-import net.kdt.pojavlaunch.extra.ExtraConstants;
-import net.kdt.pojavlaunch.extra.ExtraCore;
+import soldev.solcraftlauncher.JMinecraftVersionList;
+import soldev.solcraftlauncher.extra.ExtraConstants;
+import soldev.solcraftlauncher.extra.ExtraCore;
 
 public class AsyncMinecraftDownloader {
     public static String normalizeVersionId(String versionString) {

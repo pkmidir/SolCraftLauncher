@@ -1,9 +1,9 @@
-package net.kdt.pojavlaunch.modloaders.modpacks.imagecache;
+package soldev.solcraftlauncher.modloaders.modpacks.imagecache;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
-import net.kdt.pojavlaunch.utils.DownloadUtils;
+import soldev.solcraftlauncher.utils.DownloadUtils;
 
 import java.io.FileOutputStream;
 import java.io.IOException;

@@ -1,7 +1,7 @@
-package net.kdt.pojavlaunch.utils;
+package soldev.solcraftlauncher.utils;
 
 
-import static net.kdt.pojavlaunch.prefs.LauncherPreferences.DEFAULT_PREF;
+import static soldev.solcraftlauncher.prefs.LauncherPreferences.DEFAULT_PREF;
 
 import android.content.*;
 import android.content.res.*;
@@ -10,7 +10,7 @@ import android.os.LocaleList;
 
 import androidx.preference.*;
 import java.util.*;
-import net.kdt.pojavlaunch.prefs.*;
+import soldev.solcraftlauncher.prefs.*;
 
 public class LocaleUtils extends ContextWrapper {
 

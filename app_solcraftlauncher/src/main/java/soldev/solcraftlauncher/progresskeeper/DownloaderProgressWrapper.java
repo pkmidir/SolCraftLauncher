@@ -1,8 +1,8 @@
-package net.kdt.pojavlaunch.progresskeeper;
+package soldev.solcraftlauncher.progresskeeper;
 
-import static net.kdt.pojavlaunch.Tools.BYTE_TO_MB;
+import static soldev.solcraftlauncher.Tools.BYTE_TO_MB;
 
-import net.kdt.pojavlaunch.Tools;
+import soldev.solcraftlauncher.Tools;
 
 public class DownloaderProgressWrapper implements Tools.DownloaderFeedback {
 

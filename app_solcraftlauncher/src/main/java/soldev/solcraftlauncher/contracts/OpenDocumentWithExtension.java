@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.contracts;
+package soldev.solcraftlauncher.contracts;
 
 import android.app.Activity;
 import android.content.Context;

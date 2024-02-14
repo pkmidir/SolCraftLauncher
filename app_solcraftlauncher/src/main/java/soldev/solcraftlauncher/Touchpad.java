@@ -1,8 +1,8 @@
-package net.kdt.pojavlaunch;
+package soldev.solcraftlauncher;
 
-import static net.kdt.pojavlaunch.MinecraftGLSurface.FINGER_SCROLL_THRESHOLD;
-import static net.kdt.pojavlaunch.Tools.currentDisplayMetrics;
-import static net.kdt.pojavlaunch.prefs.LauncherPreferences.DEFAULT_PREF;
+import static soldev.solcraftlauncher.MinecraftGLSurface.FINGER_SCROLL_THRESHOLD;
+import static soldev.solcraftlauncher.Tools.currentDisplayMetrics;
+import static soldev.solcraftlauncher.prefs.LauncherPreferences.DEFAULT_PREF;
 
 import android.content.Context;
 import android.os.Build;
@@ -18,7 +18,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.res.ResourcesCompat;
 
-import net.kdt.pojavlaunch.prefs.LauncherPreferences;
+import soldev.solcraftlauncher.prefs.LauncherPreferences;
 
 import org.lwjgl.glfw.CallbackBridge;
 

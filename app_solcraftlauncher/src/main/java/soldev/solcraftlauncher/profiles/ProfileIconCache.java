@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.profiles;
+package soldev.solcraftlauncher.profiles;
 
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.res.ResourcesCompat;
 
-import net.kdt.pojavlaunch.R;
+import soldev.solcraftlauncher.R;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,12 +1,12 @@
-package net.kdt.pojavlaunch.mirrors;
+package soldev.solcraftlauncher.mirrors;
 
 import android.util.Log;
 
 import androidx.annotation.Nullable;
 
-import net.kdt.pojavlaunch.Tools;
-import net.kdt.pojavlaunch.prefs.LauncherPreferences;
-import net.kdt.pojavlaunch.utils.DownloadUtils;
+import soldev.solcraftlauncher.Tools;
+import soldev.solcraftlauncher.prefs.LauncherPreferences;
+import soldev.solcraftlauncher.utils.DownloadUtils;
 
 import java.io.File;
 import java.io.FileNotFoundException;

@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.multirt;
+package soldev.solcraftlauncher.multirt;
 
 import java.util.Objects;
 

@@ -1,9 +1,9 @@
-package net.kdt.pojavlaunch.lifecycle;
+package soldev.solcraftlauncher.lifecycle;
 
 import android.app.Activity;
 import android.app.Application;
 
-import net.kdt.pojavlaunch.Tools;
+import soldev.solcraftlauncher.Tools;
 
 import java.lang.ref.WeakReference;
 

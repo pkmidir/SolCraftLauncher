@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.colorselector;
+package soldev.solcraftlauncher.colorselector;
 
 public interface AlphaSelectionListener {
     void onAlphaSelected(int alpha);

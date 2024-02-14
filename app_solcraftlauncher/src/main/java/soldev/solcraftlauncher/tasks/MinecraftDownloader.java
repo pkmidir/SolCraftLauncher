@@ -1,6 +1,6 @@
-package net.kdt.pojavlaunch.tasks;
+package soldev.solcraftlauncher.tasks;
 
-import static net.kdt.pojavlaunch.PojavApplication.sExecutorService;
+import static soldev.solcraftlauncher.PojavApplication.sExecutorService;
 
 import android.app.Activity;
 import android.util.Log;
@@ -10,20 +10,20 @@ import androidx.annotation.Nullable;
 
 import com.kdt.mcgui.ProgressLayout;
 
-import net.kdt.pojavlaunch.JAssetInfo;
-import net.kdt.pojavlaunch.JAssets;
-import net.kdt.pojavlaunch.JMinecraftVersionList;
-import net.kdt.pojavlaunch.JRE17Util;
-import net.kdt.pojavlaunch.R;
-import net.kdt.pojavlaunch.Tools;
-import net.kdt.pojavlaunch.mirrors.DownloadMirror;
-import net.kdt.pojavlaunch.mirrors.MirrorTamperedException;
-import net.kdt.pojavlaunch.prefs.LauncherPreferences;
-import net.kdt.pojavlaunch.utils.DownloadUtils;
-import net.kdt.pojavlaunch.utils.FileUtils;
-import net.kdt.pojavlaunch.value.DependentLibrary;
-import net.kdt.pojavlaunch.value.MinecraftClientInfo;
-import net.kdt.pojavlaunch.value.MinecraftLibraryArtifact;
+import soldev.solcraftlauncher.JAssetInfo;
+import soldev.solcraftlauncher.JAssets;
+import soldev.solcraftlauncher.JMinecraftVersionList;
+import soldev.solcraftlauncher.JRE17Util;
+import soldev.solcraftlauncher.R;
+import soldev.solcraftlauncher.Tools;
+import soldev.solcraftlauncher.mirrors.DownloadMirror;
+import soldev.solcraftlauncher.mirrors.MirrorTamperedException;
+import soldev.solcraftlauncher.prefs.LauncherPreferences;
+import soldev.solcraftlauncher.utils.DownloadUtils;
+import soldev.solcraftlauncher.utils.FileUtils;
+import soldev.solcraftlauncher.value.DependentLibrary;
+import soldev.solcraftlauncher.value.MinecraftClientInfo;
+import soldev.solcraftlauncher.value.MinecraftLibraryArtifact;
 
 import java.io.File;
 import java.io.IOException;

@@ -1,6 +1,6 @@
-package net.kdt.pojavlaunch.prefs.screens;
+package soldev.solcraftlauncher.prefs.screens;
 
-import static net.kdt.pojavlaunch.prefs.LauncherPreferences.PREF_NOTCH_SIZE;
+import static soldev.solcraftlauncher.prefs.LauncherPreferences.PREF_NOTCH_SIZE;
 
 import android.content.SharedPreferences;
 import android.os.Build;
@@ -10,10 +10,10 @@ import androidx.preference.ListPreference;
 import androidx.preference.SwitchPreference;
 import androidx.preference.SwitchPreferenceCompat;
 
-import net.kdt.pojavlaunch.R;
-import net.kdt.pojavlaunch.Tools;
-import net.kdt.pojavlaunch.prefs.CustomSeekBarPreference;
-import net.kdt.pojavlaunch.prefs.LauncherPreferences;
+import soldev.solcraftlauncher.R;
+import soldev.solcraftlauncher.Tools;
+import soldev.solcraftlauncher.prefs.CustomSeekBarPreference;
+import soldev.solcraftlauncher.prefs.LauncherPreferences;
 
 /**
  * Fragment for any settings video related

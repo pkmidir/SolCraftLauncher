@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.progresskeeper;
+package soldev.solcraftlauncher.progresskeeper;
 
 public class ProgressState {
     int progress;

@@ -1,14 +1,14 @@
-package net.kdt.pojavlaunch.customcontrols;
+package soldev.solcraftlauncher.customcontrols;
 
-import net.kdt.pojavlaunch.Tools;
+import soldev.solcraftlauncher.Tools;
 
 import java.util.ArrayList;
 
-import static net.kdt.pojavlaunch.customcontrols.ControlDrawerData.Orientation.DOWN;
-import static net.kdt.pojavlaunch.customcontrols.ControlDrawerData.Orientation.LEFT;
-import static net.kdt.pojavlaunch.customcontrols.ControlDrawerData.Orientation.RIGHT;
-import static net.kdt.pojavlaunch.customcontrols.ControlDrawerData.Orientation.UP;
-import static net.kdt.pojavlaunch.customcontrols.ControlDrawerData.Orientation.FREE;
+import static soldev.solcraftlauncher.customcontrols.ControlDrawerData.Orientation.DOWN;
+import static soldev.solcraftlauncher.customcontrols.ControlDrawerData.Orientation.LEFT;
+import static soldev.solcraftlauncher.customcontrols.ControlDrawerData.Orientation.RIGHT;
+import static soldev.solcraftlauncher.customcontrols.ControlDrawerData.Orientation.UP;
+import static soldev.solcraftlauncher.customcontrols.ControlDrawerData.Orientation.FREE;
 
 @androidx.annotation.Keep
 public class ControlDrawerData {

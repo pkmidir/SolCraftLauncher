@@ -1,8 +1,8 @@
-package net.kdt.pojavlaunch.customcontrols.keyboard;
+package soldev.solcraftlauncher.customcontrols.keyboard;
 
 import static org.lwjgl.glfw.CallbackBridge.sendKeyPress;
 
-import net.kdt.pojavlaunch.LwjglGlfwKeycode;
+import soldev.solcraftlauncher.LwjglGlfwKeycode;
 
 import org.lwjgl.glfw.CallbackBridge;
 

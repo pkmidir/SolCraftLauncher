@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch;
+package soldev.solcraftlauncher;
 
 import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 
@@ -18,10 +18,10 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-import net.kdt.pojavlaunch.lifecycle.ContextExecutor;
-import net.kdt.pojavlaunch.tasks.AsyncAssetManager;
-import net.kdt.pojavlaunch.utils.*;
-import net.kdt.pojavlaunch.utils.FileUtils;
+import soldev.solcraftlauncher.lifecycle.ContextExecutor;
+import soldev.solcraftlauncher.tasks.AsyncAssetManager;
+import soldev.solcraftlauncher.utils.*;
+import soldev.solcraftlauncher.utils.FileUtils;
 
 public class PojavApplication extends Application {
 	public static final String CRASH_REPORT_TAG = "PojavCrashReport";

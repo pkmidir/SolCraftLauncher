@@ -28,7 +28,7 @@
  *
  *************************************************************************/
 
-package net.kdt.pojavlaunch;
+package soldev.solcraftlauncher;
 
 @SuppressWarnings("unused")
 public class LwjglGlfwKeycode {

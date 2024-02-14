@@ -1,4 +1,4 @@
-package net.kdt.pojavlaunch.prefs.screens;
+package soldev.solcraftlauncher.prefs.screens;
 
 
 import android.app.Activity;
@@ -12,9 +12,9 @@ import androidx.annotation.Nullable;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 
-import net.kdt.pojavlaunch.LauncherActivity;
-import net.kdt.pojavlaunch.R;
-import net.kdt.pojavlaunch.prefs.LauncherPreferences;
+import soldev.solcraftlauncher.LauncherActivity;
+import soldev.solcraftlauncher.R;
+import soldev.solcraftlauncher.prefs.LauncherPreferences;
 
 /**
  * Preference for the main screen, any sub-screen should inherit this class for consistent behavior,

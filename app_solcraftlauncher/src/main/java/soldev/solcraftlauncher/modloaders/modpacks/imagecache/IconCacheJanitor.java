@@ -1,8 +1,8 @@
-package net.kdt.pojavlaunch.modloaders.modpacks.imagecache;
+package soldev.solcraftlauncher.modloaders.modpacks.imagecache;
 
 import android.util.Log;
 
-import net.kdt.pojavlaunch.PojavApplication;
+import soldev.solcraftlauncher.PojavApplication;
 
 import java.io.File;
 import java.util.ArrayList;

@@ -1,9 +1,9 @@
-package net.kdt.pojavlaunch.modloaders;
+package soldev.solcraftlauncher.modloaders;
 
 import android.content.Intent;
 
-import net.kdt.pojavlaunch.Tools;
-import net.kdt.pojavlaunch.utils.DownloadUtils;
+import soldev.solcraftlauncher.Tools;
+import soldev.solcraftlauncher.utils.DownloadUtils;
 
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;

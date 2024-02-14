@@ -1,9 +1,9 @@
-package net.kdt.pojavlaunch.prefs;
+package soldev.solcraftlauncher.prefs;
 
 import static android.os.Build.VERSION.SDK_INT;
 import static android.os.Build.VERSION_CODES.P;
 
-import static net.kdt.pojavlaunch.Architecture.is32BitsDevice;
+import static soldev.solcraftlauncher.Architecture.is32BitsDevice;
 
 import android.app.Activity;
 import android.content.*;
@@ -11,9 +11,9 @@ import android.graphics.Rect;
 import android.os.Build;
 import android.util.Log;
 
-import net.kdt.pojavlaunch.*;
-import net.kdt.pojavlaunch.multirt.MultiRTUtils;
-import net.kdt.pojavlaunch.utils.JREUtils;
+import soldev.solcraftlauncher.*;
+import soldev.solcraftlauncher.multirt.MultiRTUtils;
+import soldev.solcraftlauncher.utils.JREUtils;
 
 public class LauncherPreferences {
     public static final String PREF_KEY_CURRENT_PROFILE = "currentProfile";

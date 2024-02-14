@@ -1,6 +1,6 @@
-package net.kdt.pojavlaunch.customcontrols.handleview;
+package soldev.solcraftlauncher.customcontrols.handleview;
 
-import static net.kdt.pojavlaunch.Tools.currentDisplayMetrics;
+import static soldev.solcraftlauncher.Tools.currentDisplayMetrics;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -12,8 +12,8 @@ import android.widget.LinearLayout;
 import androidx.annotation.Nullable;
 import androidx.core.math.MathUtils;
 
-import net.kdt.pojavlaunch.R;
-import net.kdt.pojavlaunch.customcontrols.buttons.ControlInterface;
+import soldev.solcraftlauncher.R;
+import soldev.solcraftlauncher.customcontrols.buttons.ControlInterface;
 
 /**
  * Layout floating around a Control Button, displaying contextual actions
