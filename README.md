@@ -1,27 +1,27 @@
-<H1 align="center">PojavLauncher</H1>
+<H1 align="center">SolCraftLauncher</H1>
 
-<img src="https://github.com/PojavLauncherTeam/PojavLauncher/blob/v3_openjdk/app_pojavlauncher/src/main/assets/pojavlauncher.png" align="left" width="130" height="150" alt="PojavLauncher logo">
+<img src="https://github.com/SolDev69/SolCraftLauncher/blob/v3_openjdk/app_solcraftlauncher/src/main/assets/SolCraftLauncher.png" align="left" width="130" height="150" alt="SolCraftLauncher logo">
 
-[![Android CI](https://github.com/PojavLauncherTeam/PojavLauncher/workflows/Android%20CI/badge.svg)](https://github.com/PojavLauncherTeam/PojavLauncher/actions)
-[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/PojavLauncherTeam/PojavLauncher)](https://github.com/PojavLauncherTeam/PojavLauncher/actions)
-[![Crowdin](https://badges.crowdin.net/pojavlauncher/localized.svg)](https://crowdin.com/project/pojavlauncher)
+[![Android CI](https://github.com/SolDev69/SolCraftLauncher/workflows/Android%20CI/badge.svg)](https://github.com/SolDev69/SolCraftLauncher/actions)
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/SolDev69/SolCraftLauncher)](https://github.com/SolDev69/SolCraftLauncher/actions)
+[![Crowdin](https://badges.crowdin.net/SolCraftLauncher/localized.svg)](https://crowdin.com/project/SolCraftLauncher)
 [![Discord](https://img.shields.io/discord/724163890803638273.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/6RpEJda) 
 [![Twitter Follow](https://img.shields.io/twitter/follow/plaunchteam?color=blue&style=flat-square)](https://twitter.com/PLaunchTeam)
 ---------
-* From [Boardwalk](https://github.com/zhuowei/Boardwalk)'s ashes here comes PojavLauncher!
+* From [Boardwalk](https://github.com/zhuowei/Boardwalk)'s ashes here comes SolCraftLauncher!
 
-* PojavLauncher is a launcher that allows you to play Minecraft: Java Edition on your Android device!
+* SolCraftLauncher is a launcher that allows you to play Minecraft: Java Edition on your Android device!
 
 * It can run almost every version of Minecraft, allowing you to use .jar only installers to install modloaders such as [Forge](https://files.minecraftforge.net/) and [Fabric](http://fabricmc.net/), mods like [OptiFine](https://optifine.net) and [LabyMod](https://www.labymod.net/en), as well as hack clients like [Wurst](https://www.wurstclient.net/), and much more!
 
-* For more details [check out our wiki](https://github.com/PojavLauncherTeam/PojavLauncher/wiki)
+* For more details [check out our wiki](https://github.com/SolDev69/SolCraftLauncher/wiki)
 ## Some notes to start with
 - We do not have an official TikTok account. No one from the dev team makes TikTok videos. 
-- The official Twitter for PojavLauncher is [@PLaunchTeam](https://twitter.com/PLaunchTeam). Any others (most notably @PojavLauncher) are fake, please report them to Twitter's moderation team.
+- The official Twitter for SolCraftLauncher is [@PLaunchTeam](https://twitter.com/PLaunchTeam). Any others (most notably @SolCraftLauncher) are fake, please report them to Twitter's moderation team.
 
 ## Navigation
 - [Introduction](#introduction)  
-- [Getting PojavLauncher](#getting-pojavlauncher)
+- [Getting SolCraftLauncher](#getting-SolCraftLauncher)
 - [Building](#building) 
 - [Current status](#current-status) 
 - [License](#license) 
@@ -29,17 +29,17 @@
 - [Credits & Third party components and their licenses](#credits--third-party-components-and-their-licenses-if-available)
 
 ## Introduction 
-* PojavLauncher is a Minecraft: Java Edition launcher for Android and iOS based on [Boardwalk](https://github.com/zhuowei/Boardwalk). 
+* SolCraftLauncher is a Minecraft: Java Edition launcher for Android and iOS based on [Boardwalk](https://github.com/zhuowei/Boardwalk). 
 * This launcher can launch almost all available Minecraft versions ranging from rd-132211 to 1.19 snapshots (including Combat Test versions). 
 * Modding via Forge and Fabric are also supported. 
 * This repository contains source code for Android. 
 * For iOS/iPadOS, check out [PojavLauncher_iOS](https://github.com/PojavLauncherTeam/PojavLauncher_iOS).
 
-## Getting PojavLauncher
+## Getting SolCraftLauncher
 
-You can get PojavLauncher via three methods:
+You can get SolCraftLauncher via three methods:
 
-1. You can get the prebuilt app from [stable releases](https://github.com/PojavLauncherTeam/PojavLauncher/releases) or [automatic builds](https://github.com/PojavLauncherTeam/PojavLauncher/actions).
+1. You can get the prebuilt app from [stable releases](https://github.com/SolDev69/SolCraftLauncher/releases) or [automatic builds](https://github.com/SolDev69/SolCraftLauncher/actions).
 
 2. You can get it from Google Play by clicking on this badge:
 [![Google Play](https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png)](https://play.google.com/store/apps/details?id=net.kdt.pojavlaunch)
@@ -85,7 +85,7 @@ Then, run these commands ~~or build using Android Studio~~.
 ```       
 * Build the launcher
 ```
-./gradlew :app_pojavlauncher:assembleDebug
+./gradlew :app_solcraftlauncher:assembleDebug
 ```
 (Replace `gradlew` with `gradlew.bat` if you are building on Windows).
 
@@ -112,10 +112,10 @@ Then, run these commands ~~or build using Android Studio~~.
 - Probably more, that's why we have a bug tracker ;) 
 
 ## License
-- PojavLauncher is licensed under [GNU GPLv3](https://github.com/khanhduytran0/PojavLauncher/blob/master/LICENSE).
+- SolCraftLauncher is licensed under [GNU GPLv3](https://github.com/khanhduytran0/SolCraftLauncher/blob/master/LICENSE).
 
 ## Contributing
-Contributions are welcome! We welcome any type of contribution, not only code. For example, you can help the wiki shape up. You can help the [translation](https://crowdin.com/project/pojavlauncher) too!
+Contributions are welcome! We welcome any type of contribution, not only code. For example, you can help the wiki shape up. You can help the [translation](https://crowdin.com/project/SolCraftLauncher) too!
 
 
 Any code change to this repository (or iOS) should be submitted as a pull request. The description should explain what the code does and give steps to execute it.
