@@ -243,10 +243,6 @@ int pojavInitOpenGL() {
         pojav_environ->config_renderer = RENDERER_VIRGL;
         setenv("GALLIUM_DRIVER","virpipe",1);
         setenv("OSMESA_NO_FLUSH_FRONTBUFFER","1",false);
-#ifndef ADRENO_POSSIBLE
-        setenv("MESA_GL_VERSION_OVERRIDE", "3.3",false);
-        setenv("MESA_GLSL_VERSION_OVERRIDE", "330",false);
-#endif
         if(strcmp(getenv("OSMESA_NO_FLUSH_FRONTBUFFER"),"1") == 0) {
             printf("VirGL: OSMesa buffer flush is DISABLED!\n");
         }
@@ -266,6 +262,8 @@ int pojavInitOpenGL() {
         load_vulkan();
         setenv("MESA_LOADER_DRIVER_OVERRIDE","zink",1);
         setenv("GALLIUM_DRIVER","zink",1);
+        setenv("MESA_GL_VERSION_OVERRIDE", "3.2",false);
+        setenv("MESA_GLSL_VERSION_OVERRIDE", "150",false);
         set_osm_bridge_tbl();
     } else if (strcmp(renderer, "malihw_panfrost") == 0) {
         pojav_environ->config_renderer = RENDERER_VK_ZINK;
@@ -273,9 +271,7 @@ int pojavInitOpenGL() {
         setenv("PAN_DEBUG","gofaster",1);
         set_osm_bridge_tbl();
     } else if (strcmp(renderer, "adrhw_freedreno") == 0) {
-        pojav_environ->config_renderer = RENDERER_VK_ZINK;
-        setenv("MESA_GL_VERSION_OVERRIDE", "3.3",false);
-        setenv("MESA_GLSL_VERSION_OVERRIDE", "330",false);
+        pojav_environ->config_renderer = RENDERER_VK_ZINK
         setenv("GALLIUM_DRIVER", "freedreno", 1);
         setenv("MESA_LOADER_DRIVER_OVERRIDE", "kgsl", 1);
         set_osm_bridge_tbl();
