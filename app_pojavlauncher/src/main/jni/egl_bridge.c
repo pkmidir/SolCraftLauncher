@@ -1,5 +1,5 @@
 //
-// Modifile by Vera-Firefly on 03.02.2024.
+// Modifile by Vera-Firefly on 23.02.2024.
 //
 #include <jni.h>
 #include <assert.h>
@@ -45,6 +45,16 @@
 // This means that you are forced to have this function/variable for ABI compatibility
 #define ABI_COMPAT __attribute__((unused))
 
+// If you do not want to use a framebuffer
+// delete the following definition
+// After that, it will be stored in normal memory
+#ifndef FRAME_BUFFER_SUPPOST
+#define FRAME_BUFFER_SUPPOST
+
+void* gbuffer;
+
+#endif
+
 // endregion OSMESA internals
 struct PotatoBridge {
 
@@ -62,8 +72,6 @@ struct PotatoBridge potatoBridge;
 int (*vtest_main_p) (int argc, char** argv);
 void (*vtest_swap_buffers_p) (void);
 void bigcore_set_affinity();
-
-void* gbuffer;
 
 void* egl_make_current(void* window);
 
@@ -121,6 +129,24 @@ void loadSymbols() {
             dlsym_EGL();
             break;
     }
+}
+
+bool loadSymbolsVirGL() {
+    pojav_environ->config_renderer = RENDERER_VIRGL;
+    loadSymbols();
+
+    char* fileName = calloc(1, 1024);
+
+    sprintf(fileName, "%s/libvirgl_test_server.so", getenv("POJAV_NATIVEDIR"));
+    void *handle = dlopen(fileName, RTLD_LAZY);
+    printf("VirGL: libvirgl_test_server = %p\n", handle);
+    if (!handle) {
+        printf("VirGL: %s\n", dlerror());
+    }
+    vtest_main_p = dlsym(handle, "vtest_main");
+    vtest_swap_buffers_p = dlsym(handle, "vtest_swap_buffers");
+
+    free(fileName);
 }
 
 //#define ADRENO_POSSIBLE
@@ -213,24 +239,6 @@ void load_vulkan() {
     void* vulkan_ptr = dlopen("libvulkan.so", RTLD_LAZY | RTLD_LOCAL);
     printf("OSMDroid: loaded vulkan, ptr=%p\n", vulkan_ptr);
     set_vulkan_ptr(vulkan_ptr);
-}
-
-bool loadSymbolsVirGL() {
-    pojav_environ->config_renderer = RENDERER_VIRGL;
-    loadSymbols();
-
-    char* fileName = calloc(1, 1024);
-
-    sprintf(fileName, "%s/libvirgl_test_server.so", getenv("POJAV_NATIVEDIR"));
-    void *handle = dlopen(fileName, RTLD_LAZY);
-    printf("VirGL: libvirgl_test_server = %p\n", handle);
-    if (!handle) {
-        printf("VirGL: %s\n", dlerror());
-    }
-    vtest_main_p = dlsym(handle, "vtest_main");
-    vtest_swap_buffers_p = dlsym(handle, "vtest_swap_buffers");
-
-    free(fileName);
 }
 
 int pojavInitOpenGL() {
@@ -381,6 +389,7 @@ int pojavInitOpenGL() {
             printf("OSMDroid: %s\n",dlerror());
             return 0;
         }
+#ifdef FRAME_BUFFER_SUPPOST
         printf("OSMDroid: width=%i;height=%i, reserving %i bytes for frame buffer\n", pojav_environ->savedWidth, pojav_environ->savedHeight,
                pojav_environ->savedWidth * 4 * pojav_environ->savedHeight);
         gbuffer = calloc(pojav_environ->savedWidth *4, pojav_environ->savedHeight +1);
@@ -391,6 +400,7 @@ int pojavInitOpenGL() {
             printf("OSMDroid: can't generate frame buffer\n");
             return 0;
         }
+#endif
     }
 
     return 0;
@@ -465,7 +475,11 @@ EXTERNAL_API void pojavMakeCurrent(void* window) {
         br_make_current((basic_render_window_t*)window);
     } else if(pojav_environ->config_renderer == RENDERER_VIRGL) {
         printf("OSMDroid: making current\n");
+#ifdef FRAME_BUFFER_SUPPOST
         OSMesaMakeCurrent_p((OSMesaContext)window,gbuffer,GL_UNSIGNED_BYTE,pojav_environ->savedWidth,pojav_environ->savedHeight);
+#else
+        OSMesaMakeCurrent_p((OSMesaContext)window,setbuffer,GL_UNSIGNED_BYTE,pojav_environ->savedWidth,pojav_environ->savedHeight);
+#endif
         printf("OSMDroid: vendor: %s\n",glGetString_p(GL_VENDOR));
         printf("OSMDroid: renderer: %s\n",glGetString_p(GL_RENDERER));
         glClear_p(GL_COLOR_BUFFER_BIT);
@@ -506,6 +520,7 @@ Java_org_lwjgl_vulkan_VK_getVulkanDriverHandle(ABI_COMPAT JNIEnv *env, ABI_COMPA
     return strtoul(getenv("VULKAN_PTR"), NULL, 0x10);
 }
 
+#ifdef FRAME_BUFFER_SUPPOST
 EXTERNAL_API JNIEXPORT void JNICALL
 Java_org_lwjgl_opengl_GL_nativeRegalMakeCurrent(JNIEnv *env, jclass clazz) {
     if (pojav_environ->config_renderer == RENDERER_VIRGL) {
@@ -535,6 +550,7 @@ Java_org_lwjgl_opengl_GL_getNativeWidthHeight(JNIEnv *env, jobject thiz) {
         return ret;
     }
 }
+#endif
 
 EXTERNAL_API void pojavSwapInterval(int interval) {
     if(pojav_environ->config_renderer == RENDERER_VK_ZINK || pojav_environ->config_renderer == RENDERER_GL4ES) {
