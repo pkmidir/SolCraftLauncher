@@ -284,6 +284,14 @@ public class JREUtils {
         // return ldLibraryPath;
     }
 
+    // Move to it's own function, this gets the allocated ram as an int.
+    static int getAllocatedMemory(List<String> userArgs) {
+        for (String s : userArgs)
+            if (s.contains("Xmx"))
+                return Integer.valueOf(s.split("x")[1].split("M")[0]);
+        return 0;
+    }
+
     public static void launchJavaVM(final AppCompatActivity activity, final Runtime runtime, File gameDirectory, final List<String> JVMArgs, final String userArgsString) throws Throwable {
         String runtimeHome = MultiRTUtils.getRuntimeHome(runtime.name).getAbsolutePath();
 
@@ -310,12 +318,7 @@ public class JREUtils {
         }
         if(LOCAL_RENDERER != null) userArgs.add("-Dorg.lwjgl.opengl.libname=" + graphicsLib);
 
-        activity.runOnUiThread(() -> Toast.makeText(activity, activity.getString(R.string.autoram_info_msg,(()->{
-            for (String s : userArgs)
-                if (s.contains("Xmx"))
-                    return Integer.valueOf(s.split("x")[1].split("M")[0]);
-            return 0;
-        })()), Toast.LENGTH_SHORT).show());
+        activity.runOnUiThread(() -> Toast.makeText(activity, activity.getString(R.string.autoram_info_msg,getAllocatedMemory(userArgs))), Toast.LENGTH_SHORT).show());
         System.out.println(JVMArgs);
 
         initJavaRuntime(runtimeHome);
