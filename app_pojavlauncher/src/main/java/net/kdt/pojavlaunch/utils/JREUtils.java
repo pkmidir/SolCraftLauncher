@@ -310,7 +310,11 @@ public class JREUtils {
         }
         if(LOCAL_RENDERER != null) userArgs.add("-Dorg.lwjgl.opengl.libname=" + graphicsLib);
 
-        activity.runOnUiThread(() -> Toast.makeText(activity, activity.getString(R.string.autoram_info_msg,userArgs.get("-Xmx")), Toast.LENGTH_SHORT).show());
+        activity.runOnUiThread(() -> Toast.makeText(activity, activity.getString(R.string.autoram_info_msg,(()->{
+            for (String s : userArgs)
+                if (s.contains("Xmx"))
+                    return Integer.valueOf(s.split("x")[1].split("M")[0]);
+        })())), Toast.LENGTH_SHORT).show());
         System.out.println(JVMArgs);
 
         initJavaRuntime(runtimeHome);
