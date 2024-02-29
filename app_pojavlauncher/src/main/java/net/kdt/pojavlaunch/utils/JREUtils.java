@@ -297,7 +297,6 @@ public class JREUtils {
         //Remove arguments that can interfere with the good working of the launcher
         purgeArg(userArgs,"-d32");
         purgeArg(userArgs,"-d64");
-        purgeArg(userArgs, "-Xint");
         purgeArg(userArgs, "-XX:+UseTransparentHugePages");
         purgeArg(userArgs, "-XX:+UseLargePagesInMetaspace");
         purgeArg(userArgs, "-XX:+UseLargePages");
