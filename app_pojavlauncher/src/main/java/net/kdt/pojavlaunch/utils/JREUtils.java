@@ -314,6 +314,7 @@ public class JREUtils {
             for (String s : userArgs)
                 if (s.contains("Xmx"))
                     return Integer.valueOf(s.split("x")[1].split("M")[0]);
+            return 0;
         })()), Toast.LENGTH_SHORT).show());
         System.out.println(JVMArgs);
 
