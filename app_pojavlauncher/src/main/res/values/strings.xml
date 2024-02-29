@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App name part -->
-    <string name="app_name">PojavLauncher (Minecraft: Java Edition for Android)</string>
-    <string name="app_short_name">PojavLauncher</string>
+    <string name="app_name">SolCraftLauncher (SolDev's PojavLancher fork)</string>
+    <string name="app_short_name">SolCraftLauncher</string>
 
     <!-- Action bar part -->
 
@@ -65,11 +65,12 @@
     <string name="mcl_setting_subtitle_javaargs">Be careful, this may make game crash if modified without knowledge.</string>
     <string name="mcl_setting_category_renderer">Renderer</string>
     <string name="mcl_setting_renderer_gles2_4">Holy GL4ES - (all versions, fast)</string>
-    <string name="mcl_setting_renderer_vulkan_zink">Zink (Vulkan) - (all versions, mid)</string>
+    <string name="mcl_setting_renderer_vulkan_zink_standard">UMP Zink (Vulkan) - (all versions, mid)</string>
     <string name="mcl_setting_renderer_angle">ANGLE (Vulkan) - (1.17+ only, fast)</string>
     <string name="mcl_setting_renderer_angle_new">Updated ANGLE (Vulkan) - (1.17+ only, mid)</string>
     <string name="mcl_setting_renderer_panfrost">Panfrost (Mali Gx10 only) - (all versions, mid)</string>
     <string name="mcl_setting_renderer_freedreno">Freedreno (Adreno 5xx and 6xx only) - (all versions, mid)</string>
+    <string name="mcl_setting_renderer_vulkan_zink">Zink (Vulkan) - (all versions, mid)</string>
     <string name="mcl_setting_renderer_vulkan_zink_legacy">Legacy Zink (Vulkan) - (all versions, slow)</string>
     <string name="mcl_setting_renderer_virgl">virglrenderer - (1.7+ only, mid)</string>
     <string name="mcl_setting_veroption_release">Release</string>
