@@ -292,6 +292,13 @@ public class JREUtils {
         return 0;
     }
 
+    static boolean isUsingCustomMem(List<String> userArgs) {
+        for (String s : userArgs)
+            if (s.contains("Xmx") || s.contains("Xms"))
+                return true;
+        return false;
+    }
+
     public static void launchJavaVM(final AppCompatActivity activity, final Runtime runtime, File gameDirectory, final List<String> JVMArgs, final String userArgsString) throws Throwable {
         String runtimeHome = MultiRTUtils.getRuntimeHome(runtime.name).getAbsolutePath();
 
@@ -308,16 +315,15 @@ public class JREUtils {
         purgeArg(userArgs, "-XX:+UseTransparentHugePages");
         purgeArg(userArgs, "-XX:+UseLargePagesInMetaspace");
         purgeArg(userArgs, "-XX:+UseLargePages");
-        purgeArg(userArgs, "-Dorg.lwjgl.opengl.libname");
+
+        if(LOCAL_RENDERER != null) userArgs.add("-Dorg.lwjgl.opengl.libname=" + graphicsLib);
         userArgs.addAll(JVMArgs);
         //Add automatically generated args
-        if (!userArgs.contains("-Xms") || !userArgs.contains("-Xmx"))
+        if (!isUsingCustomMem(userArgs))
         {
             userArgs.add("-Xms" + LauncherPreferences.PREF_RAM_ALLOCATION + "M");
             userArgs.add("-Xmx" + LauncherPreferences.PREF_RAM_ALLOCATION + "M");
         }
-        if(LOCAL_RENDERER != null) userArgs.add("-Dorg.lwjgl.opengl.libname=" + graphicsLib);
-
         activity.runOnUiThread(() -> Toast.makeText(activity, activity.getString(R.string.autoram_info_msg,getAllocatedMemory(userArgs)), Toast.LENGTH_SHORT).show());
         System.out.println(JVMArgs);
 
