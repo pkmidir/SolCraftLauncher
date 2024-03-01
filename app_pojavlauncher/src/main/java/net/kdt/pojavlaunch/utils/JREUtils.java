@@ -291,8 +291,8 @@ public class JREUtils {
     static int getAllocatedMemory(List<String> userArgs) {
         for (String s : userArgs)
             if (s.contains("Xmx")) {
-                Matcher matcher = Pattern.compile("\\d+").matcher(s);
-                if (matcher.find()) return Integer.valueOf(matcher.group()); // .find() to prevents IllegalStateException
+                Matcher matcher = Pattern.compile("\\d+(\\D)").matcher(s);
+                if (matcher.find()) return (Integer.valueOf(matcher.group()) * (matcher.group(1).equalsIgnoreCase("G") ? 1024 : 1)); // .find() to prevents IllegalStateException
             }
         return 0;
     }
