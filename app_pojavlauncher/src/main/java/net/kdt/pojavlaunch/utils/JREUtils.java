@@ -22,6 +22,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.oracle.dalvik.*;
 import java.io.*;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import net.kdt.pojavlaunch.*;
 import net.kdt.pojavlaunch.extra.ExtraConstants;
 import net.kdt.pojavlaunch.extra.ExtraCore;
@@ -287,8 +290,10 @@ public class JREUtils {
     // Move to it's own function, this gets the allocated ram as an int.
     static int getAllocatedMemory(List<String> userArgs) {
         for (String s : userArgs)
-            if (s.contains("Xmx"))
-                return Integer.valueOf(s.split("x")[1].split("M")[0]);
+            if (s.contains("Xmx")) {
+                Matcher matcher = Pattern.compile("\\d+").matcher(s);
+                if (matcher.find()) return Integer.valueOf(matcher.group()); // .find() to prevents IllegalStateException
+            }
         return 0;
     }
 
