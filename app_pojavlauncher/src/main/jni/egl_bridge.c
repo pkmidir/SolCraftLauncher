@@ -267,7 +267,7 @@ int pojavInitOpenGL() {
         setenv("MESA_GL_VERSION_OVERRIDE", "3.2",false);
         setenv("MESA_GLSL_VERSION_OVERRIDE", "150",false);
         set_osm_bridge_tbl();
-    } else if (strcmp(renderer, "malihw_panfrost") == 0) {
+    } else if (strcmp(renderer, "malihw_panfrost") == 0 || strcmp(renderer, "malihw_panfrost_ump") == 0) {
         pojav_environ->config_renderer = RENDERER_VK_ZINK;
         setenv("GALLIUM_DRIVER", "panfrost", 1);
         setenv("PAN_DEBUG","gofaster",1);
