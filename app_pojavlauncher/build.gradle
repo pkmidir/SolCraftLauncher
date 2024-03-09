@@ -123,14 +123,14 @@ android {
 
     buildTypes {
         debug {
-            applicationIdSuffix '.sol'
+            applicationIdSuffix '.sol.debug'
             minifyEnabled false
             shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.customDebug
-            resValue 'string', 'application_package', 'net.kdt.pojavlaunch.sol'
-            resValue 'string', 'storageProviderAuthorities', 'net.kdt.pojavlaunch.scoped.gamefolder.sol'
-            resValue 'string', 'shareProviderAuthority', 'net.kdt.pojavlaunch.scoped.controlfolder.sol'
+            resValue 'string', 'application_package', 'net.kdt.pojavlaunch.sol.debug'
+            resValue 'string', 'storageProviderAuthorities', 'net.kdt.pojavlaunch.scoped.gamefolder.sol.debug'
+            resValue 'string', 'shareProviderAuthority', 'net.kdt.pojavlaunch.scoped.controlfolder.sol.debug'
         }
         proguard {
             initWith debug
