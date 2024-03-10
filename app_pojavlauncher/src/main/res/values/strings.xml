@@ -74,6 +74,7 @@
     <string name="mcl_setting_renderer_vulkan_zink_standard">Zink (Vulkan) - (all versions, mid)</string>
     <string name="mcl_setting_renderer_vulkan_zink_legacy">Legacy Zink (Vulkan) - (all versions, slow)</string>
     <string name="mcl_setting_renderer_virgl">virglrenderer - (1.7+ only, mid)</string>
+    <string name="mcl_setting_renderer_virgl_neo">hmm</string>
     <string name="mcl_setting_veroption_release">Release</string>
     <string name="mcl_setting_veroption_snapshot">Snapshot</string>
     <string name="mcl_setting_veroption_oldalpha">Old-alpha</string>

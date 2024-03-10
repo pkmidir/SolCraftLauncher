@@ -215,15 +215,14 @@ void load_vulkan() {
     set_vulkan_ptr(vulkan_ptr);
 }
 
-bool loadSymbolsVirGL() {
+bool loadSymbolsVirGL(char* virglfilename) {
     pojav_environ->config_renderer = RENDERER_VIRGL;
     loadSymbols();
 
     char* fileName = calloc(1, 1024);
-
-    sprintf(fileName, "%s/libvirgl_test_server.so", getenv("POJAV_NATIVEDIR"));
+    sprintf(fileName, "%s/" + virglfilename + ".so", getenv("POJAV_NATIVEDIR"));
     void *handle = dlopen(fileName, RTLD_LAZY);
-    printf("VirGL: libvirgl_test_server = %p\n", handle);
+    printf("VirGL: " + virglfilename + " = %p\n", handle);
     if (!handle) {
         printf("VirGL: %s\n", dlerror());
     }
@@ -241,14 +240,22 @@ int pojavInitOpenGL() {
 
     // NOTE: Override for now.
     const char *renderer = getenv("POJAV_RENDERER");
-    if (strncmp("virgl", renderer, 15) == 0) {
+    if (strcmp(renderer, "virglrenderer") == 0) {
         pojav_environ->config_renderer = RENDERER_VIRGL;
         setenv("GALLIUM_DRIVER","virpipe",1);
         setenv("OSMESA_NO_FLUSH_FRONTBUFFER","1",false);
         if(strcmp(getenv("OSMESA_NO_FLUSH_FRONTBUFFER"),"1") == 0) {
             printf("VirGL: OSMesa buffer flush is DISABLED!\n");
         }
-        loadSymbolsVirGL();
+        loadSymbolsVirGL("libvirgl_test_server");
+    } else if (strcmp(renderer, "virglrenderer-neo") == 0) {
+        pojav_environ->config_renderer = RENDERER_VIRGL;
+        setenv("GALLIUM_DRIVER","virpipe",1);
+        setenv("OSMESA_NO_FLUSH_FRONTBUFFER","1",false);
+        if(strcmp(getenv("OSMESA_NO_FLUSH_FRONTBUFFER"),"1") == 0) {
+            printf("VirGL-NEO: OSMesa buffer flush is DISABLED!\n");
+        }
+        loadSymbolsVirGL("libvirgl_test_server_neo");
     } else if (strncmp("opengles", renderer, 8) == 0) {
         pojav_environ->config_renderer = RENDERER_GL4ES;
         set_gl_bridge_tbl();

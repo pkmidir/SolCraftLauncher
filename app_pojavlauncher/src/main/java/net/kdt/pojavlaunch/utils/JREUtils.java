@@ -497,6 +497,7 @@ public class JREUtils {
             case "vulkan_zink_standard":
                 renderLibrary = "libOSMesa_std.so";
                 break;
+            case "itsasecret":
             case "vulkan_zink":
             case "malihw_panfrost_ump":
             case "adrhw_freedreno": 
