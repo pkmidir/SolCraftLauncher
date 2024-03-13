@@ -219,13 +219,14 @@ bool loadSymbolsVirGL(char* virglfilename) {
     pojav_environ->config_renderer = RENDERER_VIRGL;
     loadSymbols();
 
-    char* fileName = calloc(1, 1024);
-    sprintf(fileName, "%s/" + virglfilename + ".so", getenv("POJAV_NATIVEDIR"));
-    void *handle = dlopen(fileName, RTLD_LAZY);
-    printf("VirGL: " + virglfilename + " = %p\n", handle);
+    char* fileName = calloc(1,1024);
+    sprintf(fileName, "%s/%s.so", getenv("POJAV_NATIVEDIR"), virglfilename);
+    void* handle = dlopen(fileName, RTLD_LAZY);
+    printf("VirGL: %s = %p\n", virglfilename, handle);
     if (!handle) {
         printf("VirGL: %s\n", dlerror());
     }
+
     vtest_main_p = dlsym(handle, "vtest_main");
     vtest_swap_buffers_p = dlsym(handle, "vtest_swap_buffers");
 
