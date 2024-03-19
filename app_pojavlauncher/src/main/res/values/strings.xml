@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App name part -->
-    <string name="app_name">SolCraftLauncher (SolDev PojavLancher fork)</string>
-    <string name="app_short_name">SolCraftLauncher</string>
+    <string name="app_name">SolCraftLauncher (PojavLancher edits by Sol)</string>
+    <string name="app_short_name">SCL</string>
 
     <!-- Action bar part -->
 
