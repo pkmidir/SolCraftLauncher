@@ -6,10 +6,9 @@
         <item name="2a">@string/mcl_setting_renderer_vulkan_zink_standard</item>
         <item name="2b">@string/mcl_setting_renderer_vulkan_zink_legacy</item>
         <item name="3">@string/mcl_setting_renderer_angle</item>
-        <item name="4">@string/mcl_setting_renderer_angle_new</item>
+        <!--<item name="4">@string/mcl_setting_renderer_angle_new</item>-->
         <item name="5">@string/mcl_setting_renderer_virgl</item>
         <item name="6">@string/mcl_setting_renderer_panfrost</item>
-        <item name="6a">@string/mcl_setting_renderer_panfrost_ump</item>
         <item name="7">@string/mcl_setting_renderer_freedreno</item>
     </string-array>
 
@@ -48,10 +47,9 @@
         <item>vulkan_zink_standard</item>
         <item>vulkan_zink_legacy</item>
         <item>opengles3_desktopgl_angle_vulkan</item>
-        <item>opengles3_desktopgl_angle_vulkan_new</item>
+        <!--<item>opengles3_desktopgl_angle_vulkan_new</item>-->
         <item>virgl</item>
         <item>malihw_panfrost</item>
-        <item>malihw_panfrost_ump</item>
         <item>adrhw_freedreno</item>
     </string-array>
     <string-array name="download_source_names">
