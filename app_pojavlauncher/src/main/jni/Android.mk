@@ -10,7 +10,7 @@ LOCAL_PATH := $(HERE_PATH)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := angle_gles2
-LOCAL_SRC_FILES := tinywrapper/angle-gles/$(TARGET_ARCH_ABI)/libGLESv2_angle.so
+LOCAL_SRC_FILES := tinywrapper/angle-gles-/$(TARGET_ARCH_ABI)/libGLESv2_angle.so
 include $(PREBUILT_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
@@ -22,7 +22,7 @@ include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := angle_gles2_new
-LOCAL_SRC_FILES := tinywrapper_new_angle/angle-gles/$(TARGET_ARCH_ABI)/libGLESv2_angle.so
+LOCAL_SRC_FILES := tinywrapper_new_angle/angle-gles/$(TARGET_ARCH_ABI)/libGLESv2_angle_new.so
 include $(PREBUILT_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
