@@ -73,6 +73,8 @@
     <string name="mcl_setting_renderer_vulkan_zink_standard">Zink (Vulkan) - (all versions, mid)</string>
     <string name="mcl_setting_renderer_vulkan_zink_legacy">Legacy Zink (Vulkan) - (all versions, slow)</string>
     <string name="mcl_setting_renderer_virgl">virglrenderer - (1.7+ only, mid)</string>
+    <string name="mcl_setting_renderer_zink_classic">Zink Classic (Vulkan, mesa 23.1.0-devel) - (all versions, mid)</string>
+    <string name="mcl_setting_renderer_freedreno_classic">Freedreno Classic (Certain Adreno 6xx only! mesa 23.1.0-devel) - (all versions, slow)</string>
     <string name="mcl_setting_veroption_release">Release</string>
     <string name="mcl_setting_veroption_snapshot">Snapshot</string>
     <string name="mcl_setting_veroption_oldalpha">Old-alpha</string>

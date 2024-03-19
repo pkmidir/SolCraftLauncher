@@ -6,10 +6,12 @@
         <item name="2a">@string/mcl_setting_renderer_vulkan_zink_standard</item>
         <item name="2b">@string/mcl_setting_renderer_vulkan_zink_legacy</item>
         <item name="3">@string/mcl_setting_renderer_angle</item>
-        <!--<item name="4">@string/mcl_setting_renderer_angle_new</item>-->
+        <item name="4">@string/mcl_setting_renderer_angle_new</item>
         <item name="5">@string/mcl_setting_renderer_virgl</item>
         <item name="6">@string/mcl_setting_renderer_panfrost</item>
         <item name="7">@string/mcl_setting_renderer_freedreno</item>
+        <item name="8a">@string/mcl_setting_renderer_zink_classic</item>
+        <item name="8b">@string/mcl_setting_renderer_freedreno_classic</item>
     </string-array>
 
     <string-array name="menu_customcontrol">
@@ -47,10 +49,12 @@
         <item>vulkan_zink_standard</item>
         <item>vulkan_zink_legacy</item>
         <item>opengles3_desktopgl_angle_vulkan</item>
-        <!--<item>opengles3_desktopgl_angle_vulkan_new</item>-->
+        <item>opengles3_desktopgl_angle_vulkan_new</item>
         <item>virgl</item>
         <item>malihw_panfrost</item>
         <item>adrhw_freedreno</item>
+        <item>c-adrhw_freedreno</item>
+        <item>c-vulkan_zink</item>
     </string-array>
     <string-array name="download_source_names">
         <item>@string/global_default</item>

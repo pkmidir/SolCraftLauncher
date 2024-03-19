@@ -238,6 +238,9 @@ public class JREUtils {
             if(LOCAL_RENDERER.equals("vulkan_zink_standard")) {
                 envMap.put("POJAVEXEC_OSMESA", "libOSMesa_std.so");
             }
+            if(LOCAL_RENDERER.equals("c-vulkan_zink") || LOCAL_RENDERER.equals("c-adrhw_freedreno")) {
+                envMap.put("POJAVEXEC_OSMESA", "libOSMesa_fd.so");
+            }
         }
         if(LauncherPreferences.PREF_BIG_CORE_AFFINITY) envMap.put("POJAV_BIG_CORE_AFFINITY", "1");
         envMap.put("AWTSTUB_WIDTH", Integer.toString(CallbackBridge.windowWidth > 0 ? CallbackBridge.windowWidth : CallbackBridge.physicalWidth));
@@ -502,6 +505,10 @@ public class JREUtils {
             case "vulkan_zink":
             case "adrhw_freedreno": 
                 renderLibrary = "libOSMesa.so";
+                break;
+            case "c-vulkan_zink":
+            case "c-adrhw_freedreno":
+                renderLibrary = "libOSMesa_fd.so";
                 break;
             case "opengles3_desktopgl_angle_vulkan" : renderLibrary = "libtinywrapper.so"; break;
             case "opengles3_desktopgl_angle_vulkan_new" : renderLibrary = "libtinywrapper_new_angle.so"; break;
