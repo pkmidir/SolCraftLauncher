@@ -1,6 +1,6 @@
 <H1 align="center">SolCraftLauncher</H1>
 
-<img src="https://github.com/SolDev69/SolCraftLauncher/blob/v3_sol/app_pojavlauncher/src/main/assets/solcraftlauncher.png" align="left" width="130" height="150" alt="SolCraftLauncher logo">
+<img src="https://github.com/SolDev69/SolCraftLauncher/blob/v3_sol/app_solcraftlauncher/src/main/assets/solcraftlauncher.png" align="left" width="130" height="150" alt="SolCraftLauncher logo">
 
 [![Android CI](https://github.com/SolDev69/SolCraftLauncher/workflows/Android%20CI/badge.svg)](https://github.com/SolDev69/SolCraftLauncher/actions)
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/SolDev69/SolCraftLauncher)](https://github.com/SolDev69/SolCraftLauncher/actions)
@@ -11,7 +11,7 @@ SolCraftLauncher is a fork of PojavLauncher with more technical added features, 
 
 <H1 align="center">PojavLauncher</H1>
 
-<img src="https://github.com/PojavLauncherTeam/PojavLauncher/blob/v3_openjdk/app_pojavlauncher/src/main/assets/pojavlauncher.png" align="left" width="130" height="150" alt="PojavLauncher logo">
+<img src="https://github.com/PojavLauncherTeam/PojavLauncher/blob/v3_openjdk/app_solcraftlauncher/src/main/assets/pojavlauncher.png" align="left" width="130" height="150" alt="PojavLauncher logo">
 
 [![Android CI](https://github.com/PojavLauncherTeam/PojavLauncher/workflows/Android%20CI/badge.svg)](https://github.com/PojavLauncherTeam/PojavLauncher/actions)
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/PojavLauncherTeam/PojavLauncher)](https://github.com/PojavLauncherTeam/PojavLauncher/actions)
@@ -96,7 +96,7 @@ Then, run these commands ~~or build using Android Studio~~.
 ```       
 * Build the launcher
 ```
-./gradlew :app_pojavlauncher:assembleDebug
+./gradlew :app_solcraftlauncher:assembleDebug
 ```
 (Replace `gradlew` with `gradlew.bat` if you are building on Windows).
 
