@@ -177,7 +177,7 @@ public final class Tools {
                         .setPositiveButton(android.R.string.ok, (d, w)->{});
 
             if(LifecycleAwareAlertDialog.haltOnDialog(activity.getLifecycle(), activity, dialogCreator)) {
-                versionId = "1.12.2"
+                versionId = "1.12.2";
             }
         }
 
