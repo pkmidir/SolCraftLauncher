@@ -68,18 +68,18 @@ public class JRE21Util {
 
         String appropriateRuntime = MultiRTUtils.getNearestJreName(versionInfo.javaVersion.majorVersion);
         if (appropriateRuntime != null) {
-            if (jre21Util.isInternalNewJRE(appropriateRuntime)) {
-                jre21Util.checkInternalNewJre(activity.getAssets());
+            if (JRE21Util.isInternalNewJRE(appropriateRuntime)) {
+                JRE21Util.checkInternalNewJre(activity.getAssets());
             }
             minecraftProfile.javaDir = Tools.LAUNCHERPROFILES_RTPREFIX + appropriateRuntime;
             LauncherProfiles.load();
         } else {
             if (versionInfo.javaVersion.majorVersion <= 21) { // there's a chance we have an internal one for this case
-                if (!jre21Util.checkInternalNewJre(activity.getAssets())){
+                if (!JRE21Util.checkInternalNewJre(activity.getAssets())){
                     showRuntimeFail(activity, versionInfo);
                     return false;
                 } else {
-                    minecraftProfile.javaDir = Tools.LAUNCHERPROFILES_RTPREFIX + jre21Util.NEW_JRE_NAME;
+                    minecraftProfile.javaDir = Tools.LAUNCHERPROFILES_RTPREFIX + JRE.NEW_JRE_NAME;
                     LauncherProfiles.load();
                 }
             } else {
