@@ -2,7 +2,7 @@
 <resources>
     <!-- App name part -->
     <string name="app_name">SolCraftLauncher (Minecraft: Java Edition for Android)</string>
-    <string name="app_short_name">SolCraftLauncher</string>
+    <string name="app_short_name">SolCraftLauncher (SCL 4.00 pre-alpha)</string>
 
     <!-- Action bar part -->
 
