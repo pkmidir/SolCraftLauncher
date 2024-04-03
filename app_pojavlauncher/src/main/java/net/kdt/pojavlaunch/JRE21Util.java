@@ -79,7 +79,7 @@ public class JRE21Util {
                     showRuntimeFail(activity, versionInfo);
                     return false;
                 } else {
-                    minecraftProfile.javaDir = Tools.LAUNCHERPROFILES_RTPREFIX + JRE.NEW_JRE_NAME;
+                    minecraftProfile.javaDir = Tools.LAUNCHERPROFILES_RTPREFIX + JRE21Util.NEW_JRE_NAME;
                     LauncherProfiles.load();
                 }
             } else {
