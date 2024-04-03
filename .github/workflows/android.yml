@@ -68,51 +68,30 @@ jobs:
         if: github.repository_owner == 'PojavLauncherTeam' && github.ref_name == 'v3_openjdk'
         run: |
           gradle :app_solcraftlauncher:bundleGplay
-          mv app_solcraftlauncher/build/outputs/bundle/gplay/app_solcraftlauncher-gplay.aab out/app-gplay.aab
+          mv app_solcraftlauncher/build/outputs/bundle/gplay/app_solcraftlauncher-gplay.aab out/
 
       - name: Build Debug .apk
         run: |
           # Build the launcher
           gradle :app_solcraftlauncher:assembleDebug
-          mv app_solcraftlauncher/build/outputs/apk/debug/app_solcraftlauncher-debug.apk out/app-debug.apk
+          mv app_solcraftlauncher/build/outputs/apk/debug/app_solcraftlauncher-debug.apk out/
 
       - name: Build APK without runtime
         run: |
           rm -r app_solcraftlauncher/src/main/assets/components/jre
           rm -r app_solcraftlauncher/src/main/assets/components/jre-new
           gradle assembleDebug
-          mv app_solcraftlauncher/build/outputs/apk/debug/app_solcraftlauncher-debug.apk out/app-debug-noruntime.apk
-      - name: Gen md5sums
-        run: |
-          md5sum out/app-debug.apk > out/app-debug.md5
-          md5sum out/app-debug-noruntime.apk > out/app-debug-noruntime.md5
+          mv app_solcraftlauncher/build/outputs/apk/debug/app_solcraftlauncher-debug.apk out/app_solcraftlauncher-noruntime.apk
           
       - name: Upload APK
         uses: actions/upload-artifact@v3
         with:
-          name: app-debug
-          path: out/app-debug.*
-      
-      - name: Upload AAB
-        uses: actions/upload-artifact@v3
-        with:
-          name: app-release-aab
-          path: out/app-gplay.aab
-
-      - name: Upload onto the Google Play testing track
-        continue-on-error: true
-        if: github.repository_owner == 'PojavLauncherTeam' && github.ref_name == 'v3_openjdk'
-        uses: r0adkll/upload-google-play@v1.1.2
-        with:
-          serviceAccountJsonPlainText: ${{ secrets.GPLAY_SERVICE_JSON }}
-          packageName: net.kdt.pojavlaunch
-          releaseFiles: out/app-gplay.aab
-          track: internal
-          inAppUpdatePriority: 5
+          name: app_solcraftlauncher
+          path: out/app_solcraftlauncher-debug.apk
 
       - name: Upload APK (without runtime)
         uses: actions/upload-artifact@v3
         with:
-          name: app-debug-noruntime
-          path: out/app-debug-noruntime.*
+          name: app_solcraftlauncher-noruntime
+          path: out/app_solcraftlauncher-noruntime.apk
 
