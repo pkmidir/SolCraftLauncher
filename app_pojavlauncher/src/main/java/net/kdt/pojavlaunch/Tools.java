@@ -170,6 +170,18 @@ public final class Tools {
     public static void launchMinecraft(final AppCompatActivity activity, MinecraftAccount minecraftAccount,
                                        MinecraftProfile minecraftProfile, String versionId, int versionJavaRequirement) throws Throwable {
         int freeDeviceMemory = getFreeDeviceMemory(activity);
+
+        if(Architecture.is32BitsDevice())
+        {
+            LifecycleAwareAlertDialog.DialogCreator dialogCreator = (dialog, builder) ->
+                builder.setMessage("Warning: using a 32bit device is no longer supported in modern versions, updates after 1.20.4 (24w13a/24w14potato) will not work!")
+                        .setPositiveButton(android.R.string.ok, (d, w)->{});
+
+            if(LifecycleAwareAlertDialog.haltOnDialog(activity.getLifecycle(), activity, dialogCreator)) {
+                return; // Remove fallback for now, todo: add back later
+            }
+        }
+
         if(LauncherPreferences.PREF_RAM_ALLOCATION > freeDeviceMemory) {
             LifecycleAwareAlertDialog.DialogCreator dialogCreator = (dialog, builder) ->
                 builder.setMessage(activity.getString(R.string.memory_warning_msg, freeDeviceMemory, LauncherPreferences.PREF_RAM_ALLOCATION))
