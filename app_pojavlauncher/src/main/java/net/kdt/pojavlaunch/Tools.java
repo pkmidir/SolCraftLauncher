@@ -173,7 +173,7 @@ public final class Tools {
         if(Architecture.is32BitsDevice())
         {
             LifecycleAwareAlertDialog.DialogCreator dialogCreator = (dialog, builder) ->
-                builder.setMessage("Warning: using a 32bit device is no longer supported in modern versions, updates after 1.20.4 (24w13a/24w14potato) will not work!")
+                builder.setMessage("Warning: using a 32bit device is no longer supported in modern versions, updates after 1.20.4 (24w13a/24w14potato) may not work as intended!")
                         .setPositiveButton(android.R.string.ok, (d, w)->{});
 
             if(LifecycleAwareAlertDialog.haltOnDialog(activity.getLifecycle(), activity, dialogCreator)) {
