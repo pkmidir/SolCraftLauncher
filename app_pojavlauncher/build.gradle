@@ -51,7 +51,7 @@ def getVersionName = {
             return ("LOCAL-" + "${getDate()}")
         }else {
             // Used by github actions
-            TAG_STRING =  'edelweiss-' + "${getDate()}" + "-" + TAG_PART_COMMIT.toString().trim()
+            TAG_STRING =  'phoenix-' + "${getDate()}" + "-" + TAG_PART_COMMIT.toString().trim()
         }
 
     }
@@ -128,7 +128,7 @@ android {
             shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.customDebug
-            resValue 'string', 'application_package', 'net.kdt.pojavlaunch.debug'
+            resValue 'string', 'application_package', 'net.kdt.pojavlaunch.sol.debug'
             resValue 'string', 'storageProviderAuthorities', 'net.kdt.pojavlaunch.scoped.gamefolder.debug'
             resValue 'string', 'shareProviderAuthority', 'net.kdt.pojavlaunch.scoped.controlfolder.debug'
         }
