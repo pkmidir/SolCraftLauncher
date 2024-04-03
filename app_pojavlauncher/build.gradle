@@ -112,7 +112,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "net.kdt.pojavlaunch"
+        applicationId "soldev.solcraftlauncher"
         minSdkVersion 21
         targetSdkVersion 33
         versionCode getDateSeconds()
@@ -128,9 +128,9 @@ android {
             shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.customDebug
-            resValue 'string', 'application_package', 'net.kdt.pojavlaunch.sol.debug'
-            resValue 'string', 'storageProviderAuthorities', 'net.kdt.pojavlaunch.scoped.gamefolder.debug'
-            resValue 'string', 'shareProviderAuthority', 'net.kdt.pojavlaunch.scoped.controlfolder.debug'
+            resValue 'string', 'application_package', 'soldev.solcraftlauncher.debug'
+            resValue 'string', 'storageProviderAuthorities', 'soldev.solcraftlauncher.scoped.gamefolder.debug'
+            resValue 'string', 'shareProviderAuthority', 'soldev.solcraftlauncher.scoped.controlfolder.debug'
         }
         proguard {
             initWith debug
