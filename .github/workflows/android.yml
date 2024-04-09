@@ -36,15 +36,15 @@ jobs:
           branch: buildjre8
           name: jre8-pojav
 
-      - name: Get JRE17
+      - name: Get JRE21
         uses: dawidd6/action-download-artifact@v2
         with:
           workflow: build.yml
           path: app_solcraftlauncher/src/main/assets/components/jre-new
           workflow_conclusion: success
           repo: PojavLauncherTeam/android-openjdk-build-multiarch
-          branch: buildjre17
-          name: jre17-pojav
+          branch: buildjre21
+          name: jre21-pojav
 
       - uses: gradle/gradle-build-action@v2
         with:
