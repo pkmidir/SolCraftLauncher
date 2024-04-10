@@ -88,7 +88,7 @@ public class MinecraftDownloader {
         mDownloaderThreadException = new AtomicReference<>(null);
 
         if(!downloadAndProcessMetadata(activity, verInfo, versionName)) {
-            throw new RuntimeException(activity.getString(R.string.exception_failed_to_unpack_jre17));
+            throw new RuntimeException(activity.getString(R.string.exception_failed_to_unpack_jre21));
         }
 
         ArrayBlockingQueue<Runnable> taskQueue =
@@ -190,7 +190,7 @@ public class MinecraftDownloader {
      * @param activity Activity, used for automatic installation of JRE 17 if needed
      * @param verInfo The JMinecraftVersionList.Version from the version list, if available
      * @param versionName The version ID (necessary)
-     * @return false if JRE17 installation failed, true otherwise
+     * @return false if JRE21 installation failed, true otherwise
      * @throws IOException if the download of any of the metadata files fails
      */
     private boolean downloadAndProcessMetadata(Activity activity, JMinecraftVersionList.Version verInfo, String versionName) throws IOException, MirrorTamperedException {

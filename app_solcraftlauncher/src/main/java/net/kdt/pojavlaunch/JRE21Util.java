@@ -16,21 +16,21 @@ import java.io.IOException;
 public class JRE21Util {
     public static final String NEW_JRE_NAME = "Internal-21";
     public static boolean checkInternalNewJre(AssetManager assetManager) {
-        String launcher_jre17_version;
-        String installed_jre17_version = MultiRTUtils.__internal__readBinpackVersion(NEW_JRE_NAME);
+        String launcher_jre21_version;
+        String installed_jre21_version = MultiRTUtils.__internal__readBinpackVersion(NEW_JRE_NAME);
         try {
-            launcher_jre17_version = Tools.read(assetManager.open("components/jre-new/version"));
+            launcher_jre21_version = Tools.read(assetManager.open("components/jre-new/version"));
         }catch (IOException exc) {
             //we don't have a runtime included!
-            return installed_jre17_version != null; //if we have one installed -> return true -> proceed (no updates but the current one should be functional)
+            return installed_jre21_version != null; //if we have one installed -> return true -> proceed (no updates but the current one should be functional)
             //if we don't -> return false -> Cannot find compatible Java runtime
         }
-        if(!launcher_jre17_version.equals(installed_jre17_version))  // this implicitly checks for null, so it will unpack the runtime even if we don't have one installed
-            return unpackJre17(assetManager, launcher_jre17_version);
+        if(!launcher_jre21_version.equals(installed_jre21_version))  // this implicitly checks for null, so it will unpack the runtime even if we don't have one installed
+            return unpackJre21(assetManager, launcher_jre21_version);
         else return true;
     }
 
-    private static boolean unpackJre17(AssetManager assetManager, String rt_version) {
+    private static boolean unpackJre21(AssetManager assetManager, String rt_version) {
         try {
             MultiRTUtils.installRuntimeNamedBinpack(
                     assetManager.open("components/jre-new/universal.tar.xz"),
@@ -73,7 +73,7 @@ public class JRE21Util {
             minecraftProfile.javaDir = Tools.LAUNCHERPROFILES_RTPREFIX + appropriateRuntime;
             LauncherProfiles.load();
         } else {
-            if (versionInfo.javaVersion.majorVersion <= 17) { // there's a chance we have an internal one for this case
+            if (versionInfo.javaVersion.majorVersion <= 21) { // there's a chance we have an internal one for this case
                 if (!JRE21Util.checkInternalNewJre(activity.getAssets())){
                     showRuntimeFail(activity, versionInfo);
                     return false;
