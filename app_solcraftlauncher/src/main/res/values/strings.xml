@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App name part -->
-    <string name="app_name">SolCraftLauncher (Minecraft: Java Edition for Android)</string>
-    <string name="app_short_name">SolCraftLauncher (SCL 4.00 pre-alpha)</string>
+    <string name="app_name">SolCraftLauncher (a fork of PojavLauncher)</string>
+    <string name="app_short_name">SCL 4.00 Alpha</string>
 
     <!-- Action bar part -->
 
@@ -65,7 +65,7 @@
     <string name="mcl_setting_subtitle_javaargs">Be careful, this may make game crash if modified without knowledge.</string>
     <string name="mcl_setting_category_renderer">Renderer</string>
     <string name="mcl_setting_renderer_gles2_4">Holy GL4ES - (all versions, fast)</string>
-    <string name="mcl_setting_renderer_vulkan_zink">Classic Zink (Vulkan) - (all versions, mid)</string>
+    <string name="mcl_setting_renderer_vulkan_zink">Zink (Vulkan) - (all versions, mid)</string>
     <string name="mcl_setting_renderer_angle">ANGLE (Vulkan) - (1.17+ only, mid)</string>
     <string name="mcl_setting_veroption_release">Release</string>
     <string name="mcl_setting_veroption_snapshot">Snapshot</string>
