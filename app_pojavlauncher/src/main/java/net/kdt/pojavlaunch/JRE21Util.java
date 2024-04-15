@@ -54,7 +54,7 @@ public class JRE21Util {
     public static boolean installNewJreIfNeeded(Activity activity, JMinecraftVersionList.Version versionInfo) {
         //Now we have the reliable information to check if our runtime settings are good enough
         if (versionInfo.javaVersion == null || versionInfo.javaVersion.component.equalsIgnoreCase("jre-legacy"))
-            return true;
+                return true;
 
         LauncherProfiles.load();
         MinecraftProfile minecraftProfile = LauncherProfiles.getCurrentProfile();
