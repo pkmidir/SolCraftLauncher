@@ -8,14 +8,15 @@
 
     <com.kdt.mcgui.mcAccountSpinner
         android:id="@+id/account_spinner"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_42sdp"
+        android:layout_width="625dp"
+        android:layout_height="44dp"
 
+        android:layout_marginStart="52dp"
         android:dropDownWidth="wrap_content"
-        android:dropDownVerticalOffset="@dimen/_42sdp"
 
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        android:dropDownVerticalOffset="@dimen/_42sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/setting_button"
@@ -28,19 +29,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Holding most of the dynamic content -->
+
+
     <ImageButton
         android:id="@+id/delete_account_button"
         android:layout_width="@dimen/_52sdp"
         android:layout_height="@dimen/_42sdp"
+        android:layout_marginEnd="627dp"
+
+
         android:background="?attr/selectableItemBackground"
-        android:src="@drawable/ic_menu_delete_forever"
         android:scaleType="fitCenter"
-
-
+        android:src="@drawable/ic_menu_delete_forever"
         app:layout_constraintEnd_toStartOf="@id/setting_button"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Holding most of the dynamic content -->
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/container_fragment"
         android:name="net.kdt.pojavlaunch.fragments.MainMenuFragment"
@@ -48,8 +52,9 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/progress_layout"
-        app:layout_constraintTop_toBottomOf="@+id/account_spinner" />
-
+        app:layout_constraintTop_toBottomOf="@+id/account_spinner"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="-16dp" />
 
     <com.kdt.mcgui.ProgressLayout
         android:id="@+id/progress_layout"
