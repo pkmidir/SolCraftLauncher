@@ -104,6 +104,13 @@ void pojavPumpEvents(void* window) {
     // by spec, they will be called on the same thread so no synchronization here
     pojav_environ->isPumpingEvents = true;
 
+    if((pojav_environ->cLastX != pojav_environ->cursorX || pojav_environ->cLastY != pojav_environ->cursorY) && pojav_environ->GLFW_invoke_CursorPos) {
+        pojav_environ->cLastX = pojav_environ->cursorX;
+        pojav_environ->cLastY = pojav_environ->cursorY;
+        pojav_environ->GLFW_invoke_CursorPos(window, floor(pojav_environ->cursorX),
+                                             floor(pojav_environ->cursorY));
+    }
+
     size_t index = pojav_environ->outEventIndex;
     size_t targetIndex = pojav_environ->outTargetIndex;
 
@@ -138,12 +145,6 @@ void pojavPumpEvents(void* window) {
         index++;
         if (index >= EVENT_WINDOW_SIZE)
             index -= EVENT_WINDOW_SIZE;
-    }
-    if((pojav_environ->cLastX != pojav_environ->cursorX || pojav_environ->cLastY != pojav_environ->cursorY) && pojav_environ->GLFW_invoke_CursorPos) {
-        pojav_environ->cLastX = pojav_environ->cursorX;
-        pojav_environ->cLastY = pojav_environ->cursorY;
-        pojav_environ->GLFW_invoke_CursorPos(window, floor(pojav_environ->cursorX),
-                                             floor(pojav_environ->cursorY));
     }
 
     // The out target index is updated by the rewinder
@@ -379,7 +380,7 @@ JNIEXPORT jboolean JNICALL JavaCritical_org_lwjgl_glfw_CallbackBridge_nativeSetI
 }
 
 JNIEXPORT jboolean JNICALL Java_org_lwjgl_glfw_CallbackBridge_nativeSetInputReady(__attribute__((unused)) JNIEnv* env, __attribute__((unused)) jclass clazz, jboolean inputReady) {
-    JavaCritical_org_lwjgl_glfw_CallbackBridge_nativeSetInputReady(inputReady);
+    return JavaCritical_org_lwjgl_glfw_CallbackBridge_nativeSetInputReady(inputReady);
 }
 
 JNIEXPORT void JNICALL Java_org_lwjgl_glfw_CallbackBridge_nativeSetGrabbing(__attribute__((unused)) JNIEnv* env, __attribute__((unused)) jclass clazz, jboolean grabbing) {
