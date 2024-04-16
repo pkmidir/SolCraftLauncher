@@ -13,7 +13,6 @@ import com.kdt.mcgui.ProgressLayout;
 import net.kdt.pojavlaunch.JAssetInfo;
 import net.kdt.pojavlaunch.JAssets;
 import net.kdt.pojavlaunch.JMinecraftVersionList;
-import net.kdt.pojavlaunch.JRE17Util;
 import net.kdt.pojavlaunch.JRE21Util;
 import net.kdt.pojavlaunch.R;
 import net.kdt.pojavlaunch.Tools;
@@ -191,7 +190,7 @@ public class MinecraftDownloader {
      * @param activity Activity, used for automatic installation of JRE 17 if needed
      * @param verInfo The JMinecraftVersionList.Version from the version list, if available
      * @param versionName The version ID (necessary)
-     * @return false if JRE17 installation failed, true otherwise
+     * @return false if JRE21 installation failed, true otherwise
      * @throws IOException if the download of any of the metadata files fails
      */
     private boolean downloadAndProcessMetadata(Activity activity, JMinecraftVersionList.Version verInfo, String versionName) throws IOException, MirrorTamperedException {
@@ -204,7 +203,7 @@ public class MinecraftDownloader {
             throw new IOException("Unable to read Version JSON for version " + versionName);
         }
 
-        if(activity != null && !JRE17Util.installNewJreIfNeeded(activity, verInfo) && !JRE21Util.installNewJreIfNeeded(activity, verInfo)){
+        if(activity != null && !JRE21Util.installNewJreIfNeeded(activity, verInfo)){
             return false;
         }
 
