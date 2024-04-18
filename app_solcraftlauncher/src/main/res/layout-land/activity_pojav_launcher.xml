@@ -36,7 +36,7 @@
         android:id="@+id/delete_account_button"
         android:layout_width="@dimen/_52sdp"
         android:layout_height="@dimen/_42sdp"
-        android:layout_marginEnd="627dp"
+        android:layout_marginEnd="@dimen/_600sdp"
 
 
         android:background="?attr/selectableItemBackground"
