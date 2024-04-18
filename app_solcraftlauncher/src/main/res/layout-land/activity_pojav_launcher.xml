@@ -8,8 +8,8 @@
 
     <com.kdt.mcgui.mcAccountSpinner
         android:id="@+id/account_spinner"
-        android:layout_width="625dp"
-        android:layout_height="44dp"
+        android:layout_width="@dimen/_600sdp"
+        android:layout_height="@dimen/_44sdp"
 
         android:layout_marginStart="52dp"
         android:dropDownWidth="wrap_content"
@@ -20,11 +20,11 @@
 
     <ImageButton
         android:id="@+id/setting_button"
-        android:layout_width="@dimen/_52sdp"
-        android:layout_height="@dimen/_42sdp"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_45sdp"
         android:background="?attr/selectableItemBackground"
-        android:src="@drawable/ic_menu_settings"
         android:scaleType="fitCenter"
+        android:src="@drawable/ic_menu_settings"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
