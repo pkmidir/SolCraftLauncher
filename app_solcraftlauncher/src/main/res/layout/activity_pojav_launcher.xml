@@ -22,13 +22,16 @@
 
     <com.kdt.mcgui.mcAccountSpinner
         android:id="@+id/account_spinner"
-        android:layout_width="215dp"
+        android:layout_width="match_parent"
         android:layout_height="66dp"
-
         android:dropDownWidth="@dimen/_250sdp"
         android:dropDownVerticalOffset="@dimen/_52sdp"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="98dp" />
+        app:layout_constrainedWidth="@+id/setting_button"
+
+        app:layout_constraintLeft_toLeftOf="@+id/delete_account_button"
+        app:layout_constraintRight_toLeftOf="@+id/setting_button"
+        app:layout_constraintStart_toEndOf="@+id/delete_account_button"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/delete_account_button"
