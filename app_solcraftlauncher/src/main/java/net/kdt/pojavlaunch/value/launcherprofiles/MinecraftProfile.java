@@ -19,9 +19,10 @@ public class MinecraftProfile {
 	public String pojavRendererName;
 	public String controlFile;
 	public MinecraftResolution[] resolution;
+    public String galliumDriverName;
 
 
-	public static MinecraftProfile createTemplate(){
+    public static MinecraftProfile createTemplate(){
 		MinecraftProfile TEMPLATE = new MinecraftProfile();
 		TEMPLATE.name = "New";
 		TEMPLATE.lastVersionId = "latest-release";

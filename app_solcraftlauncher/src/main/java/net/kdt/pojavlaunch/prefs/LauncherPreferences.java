@@ -18,6 +18,7 @@ import net.kdt.pojavlaunch.utils.JREUtils;
 public class LauncherPreferences {
     public static final String PREF_KEY_CURRENT_PROFILE = "currentProfile";
     public static final String PREF_KEY_SKIP_NOTIFICATION_CHECK = "skipNotificationPermissionCheck";
+    public static String PREF_GALLIUM_DRIVER = "zink";
 
     public static SharedPreferences DEFAULT_PREF;
     public static String PREF_RENDERER = "opengles2";

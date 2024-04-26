@@ -159,6 +159,7 @@ public class MainActivity extends BaseActivity implements ControlButtonMenuListe
             if(minecraftProfile.pojavRendererName != null) {
                 Log.i("RdrDebug","__P_renderer="+minecraftProfile.pojavRendererName);
                 Tools.LOCAL_RENDERER = minecraftProfile.pojavRendererName;
+                Tools.GALLIUM_DRIVER = minecraftProfile.galliumDriverName;
             }
 
             setTitle("Minecraft " + minecraftProfile.lastVersionId);
@@ -335,6 +336,11 @@ public class MainActivity extends BaseActivity implements ControlButtonMenuListe
         if(Tools.LOCAL_RENDERER == null) {
             Tools.LOCAL_RENDERER = LauncherPreferences.PREF_RENDERER;
         }
+
+        if(Tools.GALLIUM_DRIVER == null) {
+            Tools.GALLIUM_DRIVER = LauncherPreferences.PREF_GALLIUM_DRIVER;
+        }
+
         if(!Tools.checkRendererCompatible(this, Tools.LOCAL_RENDERER)) {
             Tools.RenderersList renderersList = Tools.getCompatibleRenderers(this);
             String firstCompatibleRenderer = renderersList.rendererIds.get(0);

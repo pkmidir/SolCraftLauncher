@@ -12,6 +12,13 @@
             android:icon="@drawable/ic_setting_engine"
             app2:useSimpleSummaryProvider="true"/>
 
+        <androidx.preference.ListPreference
+            android:title="Gallium Driver"
+            android:key="mesa_renderers"
+            android:defaultValue="zink"
+            android:icon="@drawable/ic_setting_engine"
+            app2:useSimpleSummaryProvider="true"/>
+
         <androidx.preference.SwitchPreferenceCompat
             android:defaultValue="false"
             android:key="ignoreNotch"
