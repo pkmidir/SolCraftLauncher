@@ -461,9 +461,8 @@ public class JREUtils {
         }
 
 
-        if (LOCAL_RENDERER)
-            if (LOCAL_RENDERER.contains("mesa"))
-                renderLibrary = "libOSMesa_.so";
+        if (LOCAL_RENDERER.contains("mesa"))
+            renderLibrary = "libOSMesa_.so";
 
         if (!dlopen(renderLibrary) && !dlopen(findInLdLibPath(renderLibrary))) {
             Log.e("RENDER_LIBRARY","Failed to load renderer " + renderLibrary + ". Falling back to GL4ES 1.1.4");
