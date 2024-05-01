@@ -58,34 +58,6 @@ public class AsyncAssetManager {
         });
     }
 
-    public static void unpackRuntime11(AssetManager am) {
-        String rt_version = null;
-        String current_rt_version = MultiRTUtils.__internal__readBinpackVersion("Internal-11");
-        try {
-            rt_version = Tools.read(am.open("components/jre-11/version"));
-        } catch (IOException e) {
-            Log.e("JREAuto", "JRE was not included on this APK.", e);
-        }
-        String exactJREName = MultiRTUtils.getExactJreName(11);
-        if(current_rt_version == null && exactJREName != null && !exactJREName.equals("Internal-11")) return;
-        if(rt_version == null) return;
-        if(rt_version.equals(current_rt_version)) return;
-
-        String finalRt_version = rt_version;
-        sExecutorService.execute(() -> {
-
-            try {
-                MultiRTUtils.installRuntimeNamedBinpack(
-                        am.open("components/jre-11/universal.tar.xz"),
-                        am.open("components/jre-11/bin-" + archAsString(Tools.DEVICE_ARCHITECTURE) + ".tar.xz"),
-                        "Internal-11", finalRt_version);
-                MultiRTUtils.postPrepare("Internal-11");
-            }catch (IOException e) {
-                Log.e("JREAuto", "Internal-11 JRE unpack failed", e);
-            }
-        });
-    }
-
     public static void unpackRuntime17(AssetManager am) {
         String rt_version = null;
         String current_rt_version = MultiRTUtils.__internal__readBinpackVersion("Internal-17");
