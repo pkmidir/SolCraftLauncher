@@ -33,7 +33,7 @@ public class AsyncAssetManager {
         String rt_version = null;
         String current_rt_version = MultiRTUtils.__internal__readBinpackVersion("Internal-8");
         try {
-            rt_version = Tools.read(am.open("components/jre-8/version"));
+            rt_version = Tools.read(am.open("components/jre/version"));
         } catch (IOException e) {
             Log.e("JREAuto", "JRE was not included on this APK.", e);
         }
@@ -48,8 +48,8 @@ public class AsyncAssetManager {
 
             try {
                 MultiRTUtils.installRuntimeNamedBinpack(
-                        am.open("components/jre-8/universal.tar.xz"),
-                        am.open("components/jre-8/bin-" + archAsString(Tools.DEVICE_ARCHITECTURE) + ".tar.xz"),
+                        am.open("components/jre/universal.tar.xz"),
+                        am.open("components/jre/bin-" + archAsString(Tools.DEVICE_ARCHITECTURE) + ".tar.xz"),
                         "Internal-8", finalRt_version);
                 MultiRTUtils.postPrepare("Internal-8");
             }catch (IOException e) {
