@@ -23,13 +23,13 @@ void (*glReadPixels_p) (GLint x, GLint y, GLsizei width, GLsizei height, GLenum 
 void dlsym_OSMesa() {
     char* main_osm_libname = getenv("POJAVEXEC_OSMESA");
     char* main_path = NULL;
-    if(pojav_environ->config_renderer == RENDERER_VK_ZINK) {
+    if(solcraft_environ->config_renderer == RENDERER_VK_ZINK) {
         if(main_osm_libname == NULL) main_osm_libname = "libOSMesa.so";
         if(asprintf(&main_path, "%s/%s", getenv("POJAV_NATIVEDIR"), main_osm_libname) == -1) {
             abort();
         }
         free(main_path);
-    } else if(pojav_environ->config_renderer == RENDERER_VIRGL) {
+    } else if(solcraft_environ->config_renderer == RENDERER_VIRGL) {
         if(asprintf(&main_path, "%s/libOSMesa_znL.so", getenv("POJAV_NATIVEDIR")) == -1) {
             abort();
         }

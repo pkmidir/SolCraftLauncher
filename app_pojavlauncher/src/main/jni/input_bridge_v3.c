@@ -37,48 +37,48 @@ jint (*orig_ProcessImpl_forkAndExec)(JNIEnv *env, jobject process, jint mode, jb
 static void registerFunctions(JNIEnv *env);
 
 jint JNI_OnLoad(JavaVM* vm, __attribute__((unused)) void* reserved) {
-    if (pojav_environ->dalvikJavaVMPtr == NULL) {
+    if (solcraft_environ->dalvikJavaVMPtr == NULL) {
         __android_log_print(ANDROID_LOG_INFO, "Native", "Saving DVM environ...");
         //Save dalvik global JavaVM pointer
-        pojav_environ->dalvikJavaVMPtr = vm;
-        (*vm)->GetEnv(vm, (void**) &pojav_environ->dalvikJNIEnvPtr_ANDROID, JNI_VERSION_1_4);
-        pojav_environ->bridgeClazz = (*pojav_environ->dalvikJNIEnvPtr_ANDROID)->NewGlobalRef(pojav_environ->dalvikJNIEnvPtr_ANDROID,(*pojav_environ->dalvikJNIEnvPtr_ANDROID) ->FindClass(pojav_environ->dalvikJNIEnvPtr_ANDROID,"org/lwjgl/glfw/CallbackBridge"));
-        pojav_environ->method_accessAndroidClipboard = (*pojav_environ->dalvikJNIEnvPtr_ANDROID)->GetStaticMethodID(pojav_environ->dalvikJNIEnvPtr_ANDROID, pojav_environ->bridgeClazz, "accessAndroidClipboard", "(ILjava/lang/String;)Ljava/lang/String;");
-        pojav_environ->method_onGrabStateChanged = (*pojav_environ->dalvikJNIEnvPtr_ANDROID)->GetStaticMethodID(pojav_environ->dalvikJNIEnvPtr_ANDROID, pojav_environ->bridgeClazz, "onGrabStateChanged", "(Z)V");
-        pojav_environ->isUseStackQueueCall = JNI_FALSE;
-    } else if (pojav_environ->dalvikJavaVMPtr != vm) {
+        solcraft_environ->dalvikJavaVMPtr = vm;
+        (*vm)->GetEnv(vm, (void**) &solcraft_environ->dalvikJNIEnvPtr_ANDROID, JNI_VERSION_1_4);
+        solcraft_environ->bridgeClazz = (*solcraft_environ->dalvikJNIEnvPtr_ANDROID)->NewGlobalRef(solcraft_environ->dalvikJNIEnvPtr_ANDROID,(*solcraft_environ->dalvikJNIEnvPtr_ANDROID) ->FindClass(solcraft_environ->dalvikJNIEnvPtr_ANDROID,"org/lwjgl/glfw/CallbackBridge"));
+        solcraft_environ->method_accessAndroidClipboard = (*solcraft_environ->dalvikJNIEnvPtr_ANDROID)->GetStaticMethodID(solcraft_environ->dalvikJNIEnvPtr_ANDROID, solcraft_environ->bridgeClazz, "accessAndroidClipboard", "(ILjava/lang/String;)Ljava/lang/String;");
+        solcraft_environ->method_onGrabStateChanged = (*solcraft_environ->dalvikJNIEnvPtr_ANDROID)->GetStaticMethodID(solcraft_environ->dalvikJNIEnvPtr_ANDROID, solcraft_environ->bridgeClazz, "onGrabStateChanged", "(Z)V");
+        solcraft_environ->isUseStackQueueCall = JNI_FALSE;
+    } else if (solcraft_environ->dalvikJavaVMPtr != vm) {
         __android_log_print(ANDROID_LOG_INFO, "Native", "Saving JVM environ...");
-        pojav_environ->runtimeJavaVMPtr = vm;
-        (*vm)->GetEnv(vm, (void**) &pojav_environ->runtimeJNIEnvPtr_JRE, JNI_VERSION_1_4);
-        pojav_environ->vmGlfwClass = (*pojav_environ->runtimeJNIEnvPtr_JRE)->NewGlobalRef(pojav_environ->runtimeJNIEnvPtr_JRE, (*pojav_environ->runtimeJNIEnvPtr_JRE)->FindClass(pojav_environ->runtimeJNIEnvPtr_JRE, "org/lwjgl/glfw/GLFW"));
-        pojav_environ->method_glftSetWindowAttrib = (*pojav_environ->runtimeJNIEnvPtr_JRE)->GetStaticMethodID(pojav_environ->runtimeJNIEnvPtr_JRE, pojav_environ->vmGlfwClass, "glfwSetWindowAttrib", "(JII)V");
-        pojav_environ->method_internalWindowSizeChanged = (*pojav_environ->runtimeJNIEnvPtr_JRE)->GetStaticMethodID(pojav_environ->runtimeJNIEnvPtr_JRE, pojav_environ->vmGlfwClass, "internalWindowSizeChanged", "(JII)V");
-        jfieldID field_keyDownBuffer = (*pojav_environ->runtimeJNIEnvPtr_JRE)->GetStaticFieldID(pojav_environ->runtimeJNIEnvPtr_JRE, pojav_environ->vmGlfwClass, "keyDownBuffer", "Ljava/nio/ByteBuffer;");
-        jobject keyDownBufferJ = (*pojav_environ->runtimeJNIEnvPtr_JRE)->GetStaticObjectField(pojav_environ->runtimeJNIEnvPtr_JRE, pojav_environ->vmGlfwClass, field_keyDownBuffer);
-        pojav_environ->keyDownBuffer = (*pojav_environ->runtimeJNIEnvPtr_JRE)->GetDirectBufferAddress(pojav_environ->runtimeJNIEnvPtr_JRE, keyDownBufferJ);
-        jfieldID field_mouseDownBuffer = (*pojav_environ->runtimeJNIEnvPtr_JRE)->GetStaticFieldID(pojav_environ->runtimeJNIEnvPtr_JRE, pojav_environ->vmGlfwClass, "mouseDownBuffer", "Ljava/nio/ByteBuffer;");
-        jobject mouseDownBufferJ = (*pojav_environ->runtimeJNIEnvPtr_JRE)->GetStaticObjectField(pojav_environ->runtimeJNIEnvPtr_JRE, pojav_environ->vmGlfwClass, field_mouseDownBuffer);
-        pojav_environ->mouseDownBuffer = (*pojav_environ->runtimeJNIEnvPtr_JRE)->GetDirectBufferAddress(pojav_environ->runtimeJNIEnvPtr_JRE, mouseDownBufferJ);
+        solcraft_environ->runtimeJavaVMPtr = vm;
+        (*vm)->GetEnv(vm, (void**) &solcraft_environ->runtimeJNIEnvPtr_JRE, JNI_VERSION_1_4);
+        solcraft_environ->vmGlfwClass = (*solcraft_environ->runtimeJNIEnvPtr_JRE)->NewGlobalRef(solcraft_environ->runtimeJNIEnvPtr_JRE, (*solcraft_environ->runtimeJNIEnvPtr_JRE)->FindClass(solcraft_environ->runtimeJNIEnvPtr_JRE, "org/lwjgl/glfw/GLFW"));
+        solcraft_environ->method_glftSetWindowAttrib = (*solcraft_environ->runtimeJNIEnvPtr_JRE)->GetStaticMethodID(solcraft_environ->runtimeJNIEnvPtr_JRE, solcraft_environ->vmGlfwClass, "glfwSetWindowAttrib", "(JII)V");
+        solcraft_environ->method_internalWindowSizeChanged = (*solcraft_environ->runtimeJNIEnvPtr_JRE)->GetStaticMethodID(solcraft_environ->runtimeJNIEnvPtr_JRE, solcraft_environ->vmGlfwClass, "internalWindowSizeChanged", "(JII)V");
+        jfieldID field_keyDownBuffer = (*solcraft_environ->runtimeJNIEnvPtr_JRE)->GetStaticFieldID(solcraft_environ->runtimeJNIEnvPtr_JRE, solcraft_environ->vmGlfwClass, "keyDownBuffer", "Ljava/nio/ByteBuffer;");
+        jobject keyDownBufferJ = (*solcraft_environ->runtimeJNIEnvPtr_JRE)->GetStaticObjectField(solcraft_environ->runtimeJNIEnvPtr_JRE, solcraft_environ->vmGlfwClass, field_keyDownBuffer);
+        solcraft_environ->keyDownBuffer = (*solcraft_environ->runtimeJNIEnvPtr_JRE)->GetDirectBufferAddress(solcraft_environ->runtimeJNIEnvPtr_JRE, keyDownBufferJ);
+        jfieldID field_mouseDownBuffer = (*solcraft_environ->runtimeJNIEnvPtr_JRE)->GetStaticFieldID(solcraft_environ->runtimeJNIEnvPtr_JRE, solcraft_environ->vmGlfwClass, "mouseDownBuffer", "Ljava/nio/ByteBuffer;");
+        jobject mouseDownBufferJ = (*solcraft_environ->runtimeJNIEnvPtr_JRE)->GetStaticObjectField(solcraft_environ->runtimeJNIEnvPtr_JRE, solcraft_environ->vmGlfwClass, field_mouseDownBuffer);
+        solcraft_environ->mouseDownBuffer = (*solcraft_environ->runtimeJNIEnvPtr_JRE)->GetDirectBufferAddress(solcraft_environ->runtimeJNIEnvPtr_JRE, mouseDownBufferJ);
         hookExec();
         installLinkerBugMitigation();
         installEMUIIteratorMititgation();
     }
 
-    if(pojav_environ->dalvikJavaVMPtr == vm) {
+    if(solcraft_environ->dalvikJavaVMPtr == vm) {
         //perform in all DVM instances, not only during first ever set up
         JNIEnv *env;
         (*vm)->GetEnv(vm, (void**) &env, JNI_VERSION_1_4);
         registerFunctions(env);
     }
-    pojav_environ->isGrabbing = JNI_FALSE;
+    solcraft_environ->isGrabbing = JNI_FALSE;
     
     return JNI_VERSION_1_4;
 }
 
 #define ADD_CALLBACK_WWIN(NAME) \
 JNIEXPORT jlong JNICALL Java_org_lwjgl_glfw_GLFW_nglfwSet##NAME##Callback(JNIEnv * env, jclass cls, jlong window, jlong callbackptr) { \
-    void** oldCallback = (void**) &pojav_environ->GLFW_invoke_##NAME; \
-    pojav_environ->GLFW_invoke_##NAME = (GLFW_invoke_##NAME##_func*) (uintptr_t) callbackptr; \
+    void** oldCallback = (void**) &solcraft_environ->GLFW_invoke_##NAME; \
+    solcraft_environ->GLFW_invoke_##NAME = (GLFW_invoke_##NAME##_func*) (uintptr_t) callbackptr; \
     return (jlong) (uintptr_t) *oldCallback; \
 }
 
@@ -95,50 +95,50 @@ ADD_CALLBACK_WWIN(WindowSize)
 #undef ADD_CALLBACK_WWIN
 
 void handleFramebufferSizeJava(long window, int w, int h) {
-    (*pojav_environ->runtimeJNIEnvPtr_JRE)->CallStaticVoidMethod(pojav_environ->runtimeJNIEnvPtr_JRE, pojav_environ->vmGlfwClass, pojav_environ->method_internalWindowSizeChanged, (long)window, w, h);
+    (*solcraft_environ->runtimeJNIEnvPtr_JRE)->CallStaticVoidMethod(solcraft_environ->runtimeJNIEnvPtr_JRE, solcraft_environ->vmGlfwClass, solcraft_environ->method_internalWindowSizeChanged, (long)window, w, h);
 }
 
 void pojavPumpEvents(void* window) {
-    if(pojav_environ->isPumpingEvents) return;
+    if(solcraft_environ->isPumpingEvents) return;
     // prevent further calls until we exit the loop
     // by spec, they will be called on the same thread so no synchronization here
-    pojav_environ->isPumpingEvents = true;
+    solcraft_environ->isPumpingEvents = true;
 
-    if((pojav_environ->cLastX != pojav_environ->cursorX || pojav_environ->cLastY != pojav_environ->cursorY) && pojav_environ->GLFW_invoke_CursorPos) {
-        pojav_environ->cLastX = pojav_environ->cursorX;
-        pojav_environ->cLastY = pojav_environ->cursorY;
-        pojav_environ->GLFW_invoke_CursorPos(window, floor(pojav_environ->cursorX),
-                                             floor(pojav_environ->cursorY));
+    if((solcraft_environ->cLastX != solcraft_environ->cursorX || solcraft_environ->cLastY != solcraft_environ->cursorY) && solcraft_environ->GLFW_invoke_CursorPos) {
+        solcraft_environ->cLastX = solcraft_environ->cursorX;
+        solcraft_environ->cLastY = solcraft_environ->cursorY;
+        solcraft_environ->GLFW_invoke_CursorPos(window, floor(solcraft_environ->cursorX),
+                                             floor(solcraft_environ->cursorY));
     }
 
-    size_t index = pojav_environ->outEventIndex;
-    size_t targetIndex = pojav_environ->outTargetIndex;
+    size_t index = solcraft_environ->outEventIndex;
+    size_t targetIndex = solcraft_environ->outTargetIndex;
 
     while (targetIndex != index) {
-        GLFWInputEvent event = pojav_environ->events[index];
+        GLFWInputEvent event = solcraft_environ->events[index];
         switch (event.type) {
             case EVENT_TYPE_CHAR:
-                if(pojav_environ->GLFW_invoke_Char) pojav_environ->GLFW_invoke_Char(window, event.i1);
+                if(solcraft_environ->GLFW_invoke_Char) solcraft_environ->GLFW_invoke_Char(window, event.i1);
                 break;
             case EVENT_TYPE_CHAR_MODS:
-                if(pojav_environ->GLFW_invoke_CharMods) pojav_environ->GLFW_invoke_CharMods(window, event.i1, event.i2);
+                if(solcraft_environ->GLFW_invoke_CharMods) solcraft_environ->GLFW_invoke_CharMods(window, event.i1, event.i2);
                 break;
             case EVENT_TYPE_KEY:
-                if(pojav_environ->GLFW_invoke_Key) pojav_environ->GLFW_invoke_Key(window, event.i1, event.i2, event.i3, event.i4);
+                if(solcraft_environ->GLFW_invoke_Key) solcraft_environ->GLFW_invoke_Key(window, event.i1, event.i2, event.i3, event.i4);
                 break;
             case EVENT_TYPE_MOUSE_BUTTON:
-                if(pojav_environ->GLFW_invoke_MouseButton) pojav_environ->GLFW_invoke_MouseButton(window, event.i1, event.i2, event.i3);
+                if(solcraft_environ->GLFW_invoke_MouseButton) solcraft_environ->GLFW_invoke_MouseButton(window, event.i1, event.i2, event.i3);
                 break;
             case EVENT_TYPE_SCROLL:
-                if(pojav_environ->GLFW_invoke_Scroll) pojav_environ->GLFW_invoke_Scroll(window, event.i1, event.i2);
+                if(solcraft_environ->GLFW_invoke_Scroll) solcraft_environ->GLFW_invoke_Scroll(window, event.i1, event.i2);
                 break;
             case EVENT_TYPE_FRAMEBUFFER_SIZE:
-                handleFramebufferSizeJava(pojav_environ->showingWindow, event.i1, event.i2);
-                if(pojav_environ->GLFW_invoke_FramebufferSize) pojav_environ->GLFW_invoke_FramebufferSize(window, event.i1, event.i2);
+                handleFramebufferSizeJava(solcraft_environ->showingWindow, event.i1, event.i2);
+                if(solcraft_environ->GLFW_invoke_FramebufferSize) solcraft_environ->GLFW_invoke_FramebufferSize(window, event.i1, event.i2);
                 break;
             case EVENT_TYPE_WINDOW_SIZE:
-                handleFramebufferSizeJava(pojav_environ->showingWindow, event.i1, event.i2);
-                if(pojav_environ->GLFW_invoke_WindowSize) pojav_environ->GLFW_invoke_WindowSize(window, event.i1, event.i2);
+                handleFramebufferSizeJava(solcraft_environ->showingWindow, event.i1, event.i2);
+                if(solcraft_environ->GLFW_invoke_WindowSize) solcraft_environ->GLFW_invoke_WindowSize(window, event.i1, event.i2);
                 break;
         }
 
@@ -148,54 +148,54 @@ void pojavPumpEvents(void* window) {
     }
 
     // The out target index is updated by the rewinder
-    pojav_environ->isPumpingEvents = false;
+    solcraft_environ->isPumpingEvents = false;
 }
 
 /** Setup the amount of event that will get pumped into each window */
 void pojavComputeEventTarget() {
-    size_t counter = atomic_load_explicit(&pojav_environ->eventCounter, memory_order_acquire);
-    size_t index = pojav_environ->outEventIndex;
+    size_t counter = atomic_load_explicit(&solcraft_environ->eventCounter, memory_order_acquire);
+    size_t index = solcraft_environ->outEventIndex;
 
     unsigned targetIndex = index + counter;
     if (targetIndex >= EVENT_WINDOW_SIZE)
         targetIndex -= EVENT_WINDOW_SIZE;
 
     // Only accessed by one unique thread, no need for atomic store
-    pojav_environ->inEventCount = counter;
-    pojav_environ->outTargetIndex = targetIndex;
+    solcraft_environ->inEventCount = counter;
+    solcraft_environ->outTargetIndex = targetIndex;
 }
 
 /** Apply index offsets after events have been pumped */
 void pojavRewindEvents() {
-    pojav_environ->outEventIndex = pojav_environ->outTargetIndex;
+    solcraft_environ->outEventIndex = solcraft_environ->outTargetIndex;
 
     // New events may have arrived while pumping, so remove only the difference before the start and end of execution
-    atomic_fetch_sub_explicit(&pojav_environ->eventCounter, pojav_environ->inEventCount, memory_order_acquire);
+    atomic_fetch_sub_explicit(&solcraft_environ->eventCounter, solcraft_environ->inEventCount, memory_order_acquire);
 }
 
 JNIEXPORT void JNICALL
 Java_org_lwjgl_glfw_GLFW_nglfwGetCursorPos(JNIEnv *env, __attribute__((unused)) jclass clazz, __attribute__((unused)) jlong window, jobject xpos,
                                           jobject ypos) {
-    *(double*)(*env)->GetDirectBufferAddress(env, xpos) = pojav_environ->cursorX;
-    *(double*)(*env)->GetDirectBufferAddress(env, ypos) = pojav_environ->cursorY;
+    *(double*)(*env)->GetDirectBufferAddress(env, xpos) = solcraft_environ->cursorX;
+    *(double*)(*env)->GetDirectBufferAddress(env, ypos) = solcraft_environ->cursorY;
 }
 
 JNIEXPORT void JNICALL JavaCritical_org_lwjgl_glfw_GLFW_nglfwGetCursorPosA(__attribute__((unused)) jlong window, jint lengthx, jdouble* xpos, jint lengthy, jdouble* ypos) {
-    *xpos = pojav_environ->cursorX;
-    *ypos = pojav_environ->cursorY;
+    *xpos = solcraft_environ->cursorX;
+    *ypos = solcraft_environ->cursorY;
 }
 
 JNIEXPORT void JNICALL
 Java_org_lwjgl_glfw_GLFW_nglfwGetCursorPosA(JNIEnv *env, __attribute__((unused)) jclass clazz, __attribute__((unused)) jlong window,
                                             jdoubleArray xpos, jdoubleArray ypos) {
-    (*env)->SetDoubleArrayRegion(env, xpos, 0,1, &pojav_environ->cursorX);
-    (*env)->SetDoubleArrayRegion(env, ypos, 0,1, &pojav_environ->cursorY);
+    (*env)->SetDoubleArrayRegion(env, xpos, 0,1, &solcraft_environ->cursorX);
+    (*env)->SetDoubleArrayRegion(env, ypos, 0,1, &solcraft_environ->cursorY);
 }
 
 JNIEXPORT void JNICALL JavaCritical_org_lwjgl_glfw_GLFW_glfwSetCursorPos(__attribute__((unused)) jlong window, jdouble xpos,
                                                                          jdouble ypos) {
-    pojav_environ->cLastX = pojav_environ->cursorX = xpos;
-    pojav_environ->cLastY = pojav_environ->cursorY = ypos;
+    solcraft_environ->cLastX = solcraft_environ->cursorX = xpos;
+    solcraft_environ->cLastY = solcraft_environ->cursorY = ypos;
 }
 
 JNIEXPORT void JNICALL
@@ -207,17 +207,17 @@ Java_org_lwjgl_glfw_GLFW_glfwSetCursorPos(__attribute__((unused)) JNIEnv *env, _
 
 
 void sendData(int type, int i1, int i2, int i3, int i4) {
-    GLFWInputEvent *event = &pojav_environ->events[pojav_environ->inEventIndex];
+    GLFWInputEvent *event = &solcraft_environ->events[solcraft_environ->inEventIndex];
     event->type = type;
     event->i1 = i1;
     event->i2 = i2;
     event->i3 = i3;
     event->i4 = i4;
 
-    if (++pojav_environ->inEventIndex >= EVENT_WINDOW_SIZE)
-        pojav_environ->inEventIndex -= EVENT_WINDOW_SIZE;
+    if (++solcraft_environ->inEventIndex >= EVENT_WINDOW_SIZE)
+        solcraft_environ->inEventIndex -= EVENT_WINDOW_SIZE;
 
-    atomic_fetch_add_explicit(&pojav_environ->eventCounter, 1, memory_order_acquire);
+    atomic_fetch_add_explicit(&solcraft_environ->eventCounter, 1, memory_order_acquire);
 }
 
 /**
@@ -244,14 +244,14 @@ void hookExec() {
     orig_ProcessImpl_forkAndExec = dlsym(RTLD_DEFAULT, "Java_java_lang_UNIXProcess_forkAndExec");
     if (!orig_ProcessImpl_forkAndExec) {
         orig_ProcessImpl_forkAndExec = dlsym(RTLD_DEFAULT, "Java_java_lang_ProcessImpl_forkAndExec");
-        cls = (*pojav_environ->runtimeJNIEnvPtr_JRE)->FindClass(pojav_environ->runtimeJNIEnvPtr_JRE, "java/lang/ProcessImpl");
+        cls = (*solcraft_environ->runtimeJNIEnvPtr_JRE)->FindClass(solcraft_environ->runtimeJNIEnvPtr_JRE, "java/lang/ProcessImpl");
     } else {
-        cls = (*pojav_environ->runtimeJNIEnvPtr_JRE)->FindClass(pojav_environ->runtimeJNIEnvPtr_JRE, "java/lang/UNIXProcess");
+        cls = (*solcraft_environ->runtimeJNIEnvPtr_JRE)->FindClass(solcraft_environ->runtimeJNIEnvPtr_JRE, "java/lang/UNIXProcess");
     }
     JNINativeMethod methods[] = {
         {"forkAndExec", "(I[B[B[BI[BI[B[IZ)I", (void *)&hooked_ProcessImpl_forkAndExec}
     };
-    (*pojav_environ->runtimeJNIEnvPtr_JRE)->RegisterNatives(pojav_environ->runtimeJNIEnvPtr_JRE, cls, methods, 1);
+    (*solcraft_environ->runtimeJNIEnvPtr_JRE)->RegisterNatives(solcraft_environ->runtimeJNIEnvPtr_JRE, cls, methods, 1);
     printf("Registered forkAndExec\n");
 }
 
@@ -280,7 +280,7 @@ jlong ndlopen_bugfix(__attribute__((unused)) JNIEnv *env,
 void installLinkerBugMitigation() {
     if(android_get_device_api_level() >= 30) return;
     __android_log_print(ANDROID_LOG_INFO, "Api29LinkerFix", "API < 30 detected, installing linker bug mitigation");
-    JNIEnv* env = pojav_environ->runtimeJNIEnvPtr_JRE;
+    JNIEnv* env = solcraft_environ->runtimeJNIEnvPtr_JRE;
     jclass dynamicLinkLoader = (*env)->FindClass(env, "org/lwjgl/system/linux/DynamicLinkLoader");
     if(dynamicLinkLoader == NULL) {
         __android_log_print(ANDROID_LOG_ERROR, "Api29LinkerFix", "Failed to find the target class");
@@ -317,7 +317,7 @@ jint getLibraryPath_fix(__attribute__((unused)) JNIEnv *env,
 void installEMUIIteratorMititgation() {
     if(getenv("POJAV_EMUI_ITERATOR_MITIGATE") == NULL) return;
     __android_log_print(ANDROID_LOG_INFO, "EMUIIteratorFix", "Installing...");
-    JNIEnv* env = pojav_environ->runtimeJNIEnvPtr_JRE;
+    JNIEnv* env = solcraft_environ->runtimeJNIEnvPtr_JRE;
     jclass sharedLibraryUtil = (*env)->FindClass(env, "org/lwjgl/system/SharedLibraryUtil");
     if(sharedLibraryUtil == NULL) {
         __android_log_print(ANDROID_LOG_ERROR, "EMUIIteratorFix", "Failed to find the target class");
@@ -334,7 +334,7 @@ void installEMUIIteratorMititgation() {
 }
 
 void critical_set_stackqueue(jboolean use_input_stack_queue) {
-    pojav_environ->isUseStackQueueCall = (int) use_input_stack_queue;
+    solcraft_environ->isUseStackQueueCall = (int) use_input_stack_queue;
 }
 
 void noncritical_set_stackqueue(__attribute__((unused)) JNIEnv *env, __attribute__((unused)) jclass clazz, jboolean use_input_stack_queue) {
@@ -343,13 +343,13 @@ void noncritical_set_stackqueue(__attribute__((unused)) JNIEnv *env, __attribute
 
 JNIEXPORT jstring JNICALL Java_org_lwjgl_glfw_CallbackBridge_nativeClipboard(JNIEnv* env, __attribute__((unused)) jclass clazz, jint action, jbyteArray copySrc) {
 #ifdef DEBUG
-    LOGD("Debug: Clipboard access is going on\n", pojav_environ->isUseStackQueueCall);
+    LOGD("Debug: Clipboard access is going on\n", solcraft_environ->isUseStackQueueCall);
 #endif
 
     JNIEnv *dalvikEnv;
-    (*pojav_environ->dalvikJavaVMPtr)->AttachCurrentThread(pojav_environ->dalvikJavaVMPtr, &dalvikEnv, NULL);
+    (*solcraft_environ->dalvikJavaVMPtr)->AttachCurrentThread(solcraft_environ->dalvikJavaVMPtr, &dalvikEnv, NULL);
     assert(dalvikEnv != NULL);
-    assert(pojav_environ->bridgeClazz != NULL);
+    assert(solcraft_environ->bridgeClazz != NULL);
     
     LOGD("Clipboard: Converting string\n");
     char *copySrcC;
@@ -360,23 +360,23 @@ JNIEXPORT jstring JNICALL Java_org_lwjgl_glfw_CallbackBridge_nativeClipboard(JNI
     }
 
     LOGD("Clipboard: Calling 2nd\n");
-    jstring pasteDst = convertStringJVM(dalvikEnv, env, (jstring) (*dalvikEnv)->CallStaticObjectMethod(dalvikEnv, pojav_environ->bridgeClazz, pojav_environ->method_accessAndroidClipboard, action, copyDst));
+    jstring pasteDst = convertStringJVM(dalvikEnv, env, (jstring) (*dalvikEnv)->CallStaticObjectMethod(dalvikEnv, solcraft_environ->bridgeClazz, solcraft_environ->method_accessAndroidClipboard, action, copyDst));
 
     if (copySrc) {
         (*dalvikEnv)->DeleteLocalRef(dalvikEnv, copyDst);    
         (*env)->ReleaseByteArrayElements(env, copySrc, (jbyte *)copySrcC, 0);
     }
-    (*pojav_environ->dalvikJavaVMPtr)->DetachCurrentThread(pojav_environ->dalvikJavaVMPtr);
+    (*solcraft_environ->dalvikJavaVMPtr)->DetachCurrentThread(solcraft_environ->dalvikJavaVMPtr);
     return pasteDst;
 }
 
 JNIEXPORT jboolean JNICALL JavaCritical_org_lwjgl_glfw_CallbackBridge_nativeSetInputReady(jboolean inputReady) {
 #ifdef DEBUG
-    LOGD("Debug: Changing input state, isReady=%d, pojav_environ->isUseStackQueueCall=%d\n", inputReady, pojav_environ->isUseStackQueueCall);
+    LOGD("Debug: Changing input state, isReady=%d, solcraft_environ->isUseStackQueueCall=%d\n", inputReady, solcraft_environ->isUseStackQueueCall);
 #endif
     __android_log_print(ANDROID_LOG_INFO, "NativeInput", "Input ready: %i", inputReady);
-    pojav_environ->isInputReady = inputReady;
-    return pojav_environ->isUseStackQueueCall;
+    solcraft_environ->isInputReady = inputReady;
+    return solcraft_environ->isUseStackQueueCall;
 }
 
 JNIEXPORT jboolean JNICALL Java_org_lwjgl_glfw_CallbackBridge_nativeSetInputReady(__attribute__((unused)) JNIEnv* env, __attribute__((unused)) jclass clazz, jboolean inputReady) {
@@ -385,18 +385,18 @@ JNIEXPORT jboolean JNICALL Java_org_lwjgl_glfw_CallbackBridge_nativeSetInputRead
 
 JNIEXPORT void JNICALL Java_org_lwjgl_glfw_CallbackBridge_nativeSetGrabbing(__attribute__((unused)) JNIEnv* env, __attribute__((unused)) jclass clazz, jboolean grabbing) {
     JNIEnv *dalvikEnv;
-    (*pojav_environ->dalvikJavaVMPtr)->AttachCurrentThread(pojav_environ->dalvikJavaVMPtr, &dalvikEnv, NULL);
-    (*dalvikEnv)->CallStaticVoidMethod(dalvikEnv, pojav_environ->bridgeClazz, pojav_environ->method_onGrabStateChanged, grabbing);
-    (*pojav_environ->dalvikJavaVMPtr)->DetachCurrentThread(pojav_environ->dalvikJavaVMPtr);
-    pojav_environ->isGrabbing = grabbing;
+    (*solcraft_environ->dalvikJavaVMPtr)->AttachCurrentThread(solcraft_environ->dalvikJavaVMPtr, &dalvikEnv, NULL);
+    (*dalvikEnv)->CallStaticVoidMethod(dalvikEnv, solcraft_environ->bridgeClazz, solcraft_environ->method_onGrabStateChanged, grabbing);
+    (*solcraft_environ->dalvikJavaVMPtr)->DetachCurrentThread(solcraft_environ->dalvikJavaVMPtr);
+    solcraft_environ->isGrabbing = grabbing;
 }
 
 jboolean critical_send_char(jchar codepoint) {
-    if (pojav_environ->GLFW_invoke_Char && pojav_environ->isInputReady) {
-        if (pojav_environ->isUseStackQueueCall) {
+    if (solcraft_environ->GLFW_invoke_Char && solcraft_environ->isInputReady) {
+        if (solcraft_environ->isUseStackQueueCall) {
             sendData(EVENT_TYPE_CHAR, codepoint, 0, 0, 0);
         } else {
-            pojav_environ->GLFW_invoke_Char((void*) pojav_environ->showingWindow, (unsigned int) codepoint);
+            solcraft_environ->GLFW_invoke_Char((void*) solcraft_environ->showingWindow, (unsigned int) codepoint);
         }
         return JNI_TRUE;
     }
@@ -408,11 +408,11 @@ jboolean noncritical_send_char(__attribute__((unused)) JNIEnv* env, __attribute_
 }
 
 jboolean critical_send_char_mods(jchar codepoint, jint mods) {
-    if (pojav_environ->GLFW_invoke_CharMods && pojav_environ->isInputReady) {
-        if (pojav_environ->isUseStackQueueCall) {
+    if (solcraft_environ->GLFW_invoke_CharMods && solcraft_environ->isInputReady) {
+        if (solcraft_environ->isUseStackQueueCall) {
             sendData(EVENT_TYPE_CHAR_MODS, (int) codepoint, mods, 0, 0);
         } else {
-            pojav_environ->GLFW_invoke_CharMods((void*) pojav_environ->showingWindow, codepoint, mods);
+            solcraft_environ->GLFW_invoke_CharMods((void*) solcraft_environ->showingWindow, codepoint, mods);
         }
         return JNI_TRUE;
     }
@@ -424,8 +424,8 @@ jboolean noncritical_send_char_mods(__attribute__((unused)) JNIEnv* env, __attri
 }
 /*
 JNIEXPORT void JNICALL Java_org_lwjgl_glfw_CallbackBridge_nativeSendCursorEnter(JNIEnv* env, jclass clazz, jint entered) {
-    if (pojav_environ->GLFW_invoke_CursorEnter && pojav_environ->isInputReady) {
-        pojav_environ->GLFW_invoke_CursorEnter(pojav_environ->showingWindow, entered);
+    if (solcraft_environ->GLFW_invoke_CursorEnter && solcraft_environ->isInputReady) {
+        solcraft_environ->GLFW_invoke_CursorEnter(solcraft_environ->showingWindow, entered);
     }
 }
 */
@@ -434,30 +434,30 @@ void critical_send_cursor_pos(jfloat x, jfloat y) {
 #ifdef DEBUG
     LOGD("Sending cursor position \n");
 #endif
-    if (pojav_environ->GLFW_invoke_CursorPos && pojav_environ->isInputReady) {
+    if (solcraft_environ->GLFW_invoke_CursorPos && solcraft_environ->isInputReady) {
 #ifdef DEBUG
-        LOGD("pojav_environ->GLFW_invoke_CursorPos && pojav_environ->isInputReady \n");
+        LOGD("solcraft_environ->GLFW_invoke_CursorPos && solcraft_environ->isInputReady \n");
 #endif
-        if (!pojav_environ->isCursorEntered) {
-            if (pojav_environ->GLFW_invoke_CursorEnter) {
-                pojav_environ->isCursorEntered = true;
-                if (pojav_environ->isUseStackQueueCall) {
+        if (!solcraft_environ->isCursorEntered) {
+            if (solcraft_environ->GLFW_invoke_CursorEnter) {
+                solcraft_environ->isCursorEntered = true;
+                if (solcraft_environ->isUseStackQueueCall) {
                     sendData(EVENT_TYPE_CURSOR_ENTER, 1, 0, 0, 0);
                 } else {
-                    pojav_environ->GLFW_invoke_CursorEnter((void*) pojav_environ->showingWindow, 1);
+                    solcraft_environ->GLFW_invoke_CursorEnter((void*) solcraft_environ->showingWindow, 1);
                 }
-            } else if (pojav_environ->isGrabbing) {
+            } else if (solcraft_environ->isGrabbing) {
                 // Some Minecraft versions does not use GLFWCursorEnterCallback
                 // This is a smart check, as Minecraft will not in grab mode if already not.
-                pojav_environ->isCursorEntered = true;
+                solcraft_environ->isCursorEntered = true;
             }
         }
 
-        if (!pojav_environ->isUseStackQueueCall) {
-            pojav_environ->GLFW_invoke_CursorPos((void*) pojav_environ->showingWindow, (double) (x), (double) (y));
+        if (!solcraft_environ->isUseStackQueueCall) {
+            solcraft_environ->GLFW_invoke_CursorPos((void*) solcraft_environ->showingWindow, (double) (x), (double) (y));
         } else {
-            pojav_environ->cursorX = x;
-            pojav_environ->cursorY = y;
+            solcraft_environ->cursorX = x;
+            solcraft_environ->cursorY = y;
         }
     }
 }
@@ -470,12 +470,12 @@ void noncritical_send_cursor_pos(__attribute__((unused)) JNIEnv* env, __attribut
        __typeof__ (b) _b = (b); \
      _a > _b ? _a : _b; })
 void critical_send_key(jint key, jint scancode, jint action, jint mods) {
-    if (pojav_environ->GLFW_invoke_Key && pojav_environ->isInputReady) {
-        pojav_environ->keyDownBuffer[max(0, key-31)] = (jbyte) action;
-        if (pojav_environ->isUseStackQueueCall) {
+    if (solcraft_environ->GLFW_invoke_Key && solcraft_environ->isInputReady) {
+        solcraft_environ->keyDownBuffer[max(0, key-31)] = (jbyte) action;
+        if (solcraft_environ->isUseStackQueueCall) {
             sendData(EVENT_TYPE_KEY, key, scancode, action, mods);
         } else {
-            pojav_environ->GLFW_invoke_Key((void*) pojav_environ->showingWindow, key, scancode, action, mods);
+            solcraft_environ->GLFW_invoke_Key((void*) solcraft_environ->showingWindow, key, scancode, action, mods);
         }
     }
 }
@@ -484,12 +484,12 @@ void noncritical_send_key(__attribute__((unused)) JNIEnv* env, __attribute__((un
 }
 
 void critical_send_mouse_button(jint button, jint action, jint mods) {
-    if (pojav_environ->GLFW_invoke_MouseButton && pojav_environ->isInputReady) {
-        pojav_environ->mouseDownBuffer[max(0, button)] = (jbyte) action;
-        if (pojav_environ->isUseStackQueueCall) {
+    if (solcraft_environ->GLFW_invoke_MouseButton && solcraft_environ->isInputReady) {
+        solcraft_environ->mouseDownBuffer[max(0, button)] = (jbyte) action;
+        if (solcraft_environ->isUseStackQueueCall) {
             sendData(EVENT_TYPE_MOUSE_BUTTON, button, action, mods, 0);
         } else {
-            pojav_environ->GLFW_invoke_MouseButton((void*) pojav_environ->showingWindow, button, action, mods);
+            solcraft_environ->GLFW_invoke_MouseButton((void*) solcraft_environ->showingWindow, button, action, mods);
         }
     }
 }
@@ -499,22 +499,22 @@ void noncritical_send_mouse_button(__attribute__((unused)) JNIEnv* env, __attrib
 }
 
 void critical_send_screen_size(jint width, jint height) {
-    pojav_environ->savedWidth = width;
-    pojav_environ->savedHeight = height;
-    if (pojav_environ->isInputReady) {
-        if (pojav_environ->GLFW_invoke_FramebufferSize) {
-            if (pojav_environ->isUseStackQueueCall) {
+    solcraft_environ->savedWidth = width;
+    solcraft_environ->savedHeight = height;
+    if (solcraft_environ->isInputReady) {
+        if (solcraft_environ->GLFW_invoke_FramebufferSize) {
+            if (solcraft_environ->isUseStackQueueCall) {
                 sendData(EVENT_TYPE_FRAMEBUFFER_SIZE, width, height, 0, 0);
             } else {
-                pojav_environ->GLFW_invoke_FramebufferSize((void*) pojav_environ->showingWindow, width, height);
+                solcraft_environ->GLFW_invoke_FramebufferSize((void*) solcraft_environ->showingWindow, width, height);
             }
         }
 
-        if (pojav_environ->GLFW_invoke_WindowSize) {
-            if (pojav_environ->isUseStackQueueCall) {
+        if (solcraft_environ->GLFW_invoke_WindowSize) {
+            if (solcraft_environ->isUseStackQueueCall) {
                 sendData(EVENT_TYPE_WINDOW_SIZE, width, height, 0, 0);
             } else {
-                pojav_environ->GLFW_invoke_WindowSize((void*) pojav_environ->showingWindow, width, height);
+                solcraft_environ->GLFW_invoke_WindowSize((void*) solcraft_environ->showingWindow, width, height);
             }
         }
     }
@@ -525,11 +525,11 @@ void noncritical_send_screen_size(__attribute__((unused)) JNIEnv* env, __attribu
 }
 
 void critical_send_scroll(jdouble xoffset, jdouble yoffset) {
-    if (pojav_environ->GLFW_invoke_Scroll && pojav_environ->isInputReady) {
-        if (pojav_environ->isUseStackQueueCall) {
+    if (solcraft_environ->GLFW_invoke_Scroll && solcraft_environ->isInputReady) {
+        if (solcraft_environ->isUseStackQueueCall) {
             sendData(EVENT_TYPE_SCROLL, (int)xoffset, (int)yoffset, 0, 0);
         } else {
-            pojav_environ->GLFW_invoke_Scroll((void*) pojav_environ->showingWindow, (double) xoffset, (double) yoffset);
+            solcraft_environ->GLFW_invoke_Scroll((void*) solcraft_environ->showingWindow, (double) xoffset, (double) yoffset);
         }
     }
 }
@@ -540,20 +540,20 @@ void noncritical_send_scroll(__attribute__((unused)) JNIEnv* env, __attribute__(
 
 
 JNIEXPORT void JNICALL Java_org_lwjgl_glfw_GLFW_nglfwSetShowingWindow(__attribute__((unused)) JNIEnv* env, __attribute__((unused)) jclass clazz, jlong window) {
-    pojav_environ->showingWindow = (long) window;
+    solcraft_environ->showingWindow = (long) window;
 }
 
 JNIEXPORT void JNICALL Java_org_lwjgl_glfw_CallbackBridge_nativeSetWindowAttrib(__attribute__((unused)) JNIEnv* env, __attribute__((unused)) jclass clazz, jint attrib, jint value) {
-    if (!pojav_environ->showingWindow || !pojav_environ->isUseStackQueueCall) {
+    if (!solcraft_environ->showingWindow || !solcraft_environ->isUseStackQueueCall) {
         // If the window is not shown, there is nothing to do yet.
         // For Minecraft < 1.13, calling to JNI functions here crashes the JVM for some reason, therefore it is skipped for now.
         return;
     }
 
-    (*pojav_environ->runtimeJNIEnvPtr_JRE)->CallStaticVoidMethod(
-        pojav_environ->runtimeJNIEnvPtr_JRE,
-        pojav_environ->vmGlfwClass, pojav_environ->method_glftSetWindowAttrib,
-        (jlong) pojav_environ->showingWindow, attrib, value
+    (*solcraft_environ->runtimeJNIEnvPtr_JRE)->CallStaticVoidMethod(
+        solcraft_environ->runtimeJNIEnvPtr_JRE,
+        solcraft_environ->vmGlfwClass, solcraft_environ->method_glftSetWindowAttrib,
+        (jlong) solcraft_environ->showingWindow, attrib, value
     );
 }
 const static JNINativeMethod critical_fcns[] = {

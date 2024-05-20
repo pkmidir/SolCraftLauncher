@@ -30,7 +30,7 @@ typedef void GLFW_invoke_MouseButton_func(void* window, int button, int action, 
 typedef void GLFW_invoke_Scroll_func(void* window, double xoffset, double yoffset);
 typedef void GLFW_invoke_WindowSize_func(void* window, int width, int height);
 
-struct pojav_environ_s {
+struct solcraft_environ_s {
     struct ANativeWindow* pojavWindow;
     basic_render_window_t* mainWindowBundle;
     int config_renderer;
@@ -72,6 +72,6 @@ struct pojav_environ_s {
 
 #undef ADD_CALLBACK_WWIN
 };
-extern struct pojav_environ_s *pojav_environ;
+extern struct solcraft_environ_s *solcraft_environ;
 
 #endif //POJAVLAUNCHER_ENVIRON_H
