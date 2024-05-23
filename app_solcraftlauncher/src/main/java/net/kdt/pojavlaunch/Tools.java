@@ -1158,11 +1158,15 @@ public final class Tools {
         Resources resources = context.getResources();
         String[] defaultRenderers = resources.getStringArray(R.array.renderer_values);
         String[] defaultRendererNames = resources.getStringArray(R.array.renderer);
+        String[] defaultDrivers = resources.getStringArray(R.array.mesa_renderer_values);
+        String[] defaultDriverNames = resources.getStringArray(R.array.mesa_renderers);
         boolean deviceHasVulkan = checkVulkanSupport(context.getPackageManager());
         // Currently, only 32-bit x86 does not have the Zink binary
         boolean deviceHasZinkBinary = !(Architecture.is32BitsDevice() && Architecture.isx86Device());
         List<String> rendererIds = new ArrayList<>(defaultRenderers.length);
         List<String> rendererNames = new ArrayList<>(defaultRendererNames.length);
+        List<String> galliumIds = new ArrayList<>(defaultDrivers.length);
+        List<String> galliumNames = new ArrayList<>(defaultDriverNames.length);
         for(int i = 0; i < defaultRenderers.length; i++) {
             String rendererId = defaultRenderers[i];
             if(rendererId.contains("vulkan") && !deviceHasVulkan) continue;
@@ -1170,6 +1174,16 @@ public final class Tools {
             rendererIds.add(rendererId);
             rendererNames.add(defaultRendererNames[i]);
         }
+
+        for (int i = 0; i < defaultDrivers.length; i++)
+        {
+            String driverId = defaultDrivers[i];
+            if(driverId.contains("vulkan") && !deviceHasVulkan) continue;
+            if(driverId.contains("zink") && !deviceHasZinkBinary) continue;
+            galliumIds.add(driverId);
+            galliumNames.add(defaultDriverNames[i]);
+        }
+        
         sCompatibleRenderers = new RenderersList(rendererIds,
                 rendererNames.toArray(new String[0]));
 
