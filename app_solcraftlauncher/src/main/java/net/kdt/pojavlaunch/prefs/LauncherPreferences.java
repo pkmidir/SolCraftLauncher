@@ -74,7 +74,7 @@ public class LauncherPreferences {
     public static void loadPreferences(Context ctx) {
         //Required for the data folder.
         Tools.initContextConstants(ctx);
-
+        PREF_GALLIUM_DRIVER = DEFAULT_PREF.getString("mesa_renderers", "zink");
         PREF_RENDERER = DEFAULT_PREF.getString("renderer", "opengles2");
         PREF_BUTTONSIZE = DEFAULT_PREF.getInt("buttonscale", 100);
         PREF_MOUSESCALE = DEFAULT_PREF.getInt("mousescale", 100);
