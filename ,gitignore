@@ -1,1 +1,11 @@
 .vscode/
+
+/.gradle
+/build
+/*/build
+app_solcraftlauncher/src/main/assets/components/jre
+local.properties
+.idea/
+app_solcraftlauncher/.cxx/
+.vs/
+/curseforge_key.txt
