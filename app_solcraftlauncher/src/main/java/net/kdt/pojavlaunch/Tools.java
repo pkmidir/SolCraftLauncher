@@ -126,6 +126,8 @@ public final class Tools {
     public static String CTRLMAP_PATH;
     public static String CTRLDEF_FILE;
     private static RenderersList sCompatibleRenderers;
+    private static RenderersList sCompatibleDrivers;
+
 
 
     private static File getPojavStorageRoot(Context ctx) {
@@ -1158,15 +1160,11 @@ public final class Tools {
         Resources resources = context.getResources();
         String[] defaultRenderers = resources.getStringArray(R.array.renderer_values);
         String[] defaultRendererNames = resources.getStringArray(R.array.renderer);
-        String[] defaultDrivers = resources.getStringArray(R.array.mesa_renderer_values);
-        String[] defaultDriverNames = resources.getStringArray(R.array.mesa_renderers);
         boolean deviceHasVulkan = checkVulkanSupport(context.getPackageManager());
         // Currently, only 32-bit x86 does not have the Zink binary
         boolean deviceHasZinkBinary = !(Architecture.is32BitsDevice() && Architecture.isx86Device());
         List<String> rendererIds = new ArrayList<>(defaultRenderers.length);
         List<String> rendererNames = new ArrayList<>(defaultRendererNames.length);
-        List<String> galliumIds = new ArrayList<>(defaultDrivers.length);
-        List<String> galliumNames = new ArrayList<>(defaultDriverNames.length);
         for(int i = 0; i < defaultRenderers.length; i++) {
             String rendererId = defaultRenderers[i];
             if(rendererId.contains("vulkan") && !deviceHasVulkan) continue;
@@ -1174,7 +1172,24 @@ public final class Tools {
             rendererIds.add(rendererId);
             rendererNames.add(defaultRendererNames[i]);
         }
+        
+        sCompatibleRenderers = new RenderersList(rendererIds,
+                rendererNames.toArray(new String[0]));
 
+        return sCompatibleRenderers;
+    }
+
+        /** Return the renderers that are compatible with this device */
+    public static RenderersList getCompatibleDrivers(Context context) {
+        if(sCompatibleDrivers != null) return sCompatibleDrivers;
+        Resources resources = context.getResources();
+        String[] defaultDrivers = resources.getStringArray(R.array.mesa_renderer_values);
+        String[] defaultDriverNames = resources.getStringArray(R.array.mesa_renderers);
+        boolean deviceHasVulkan = checkVulkanSupport(context.getPackageManager());
+        // Currently, only 32-bit x86 does not have the Zink binary
+        boolean deviceHasZinkBinary = !(Architecture.is32BitsDevice() && Architecture.isx86Device());
+        List<String> galliumIds = new ArrayList<>(defaultDrivers.length);
+        List<String> galliumNames = new ArrayList<>(defaultDriverNames.length);
         for (int i = 0; i < defaultDrivers.length; i++)
         {
             String driverId = defaultDrivers[i];
@@ -1184,11 +1199,12 @@ public final class Tools {
             galliumNames.add(defaultDriverNames[i]);
         }
         
-        sCompatibleRenderers = new RenderersList(rendererIds,
-                rendererNames.toArray(new String[0]));
+        sCompatibleDrivers = new RenderersList(galliumIds,
+                galliumNames.toArray(new String[0]));
 
-        return sCompatibleRenderers;
+        return sCompatibleDrivers;
     }
+
 
     /** Checks if the renderer Id is compatible with the current device */
     public static boolean checkRendererCompatible(Context context, String rendererName) {

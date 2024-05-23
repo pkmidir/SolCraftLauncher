@@ -43,9 +43,17 @@ public class LauncherPreferenceVideoFragment extends LauncherPreferenceFragment 
 
         ListPreference rendererListPreference = requirePreference("renderer",
                 ListPreference.class);
+        ListPreference galliumListPreference = requirePreference("mesa_renderers",
+                ListPreference.class);
+
         Tools.RenderersList renderersList = Tools.getCompatibleRenderers(getContext());
+        Tools.RenderersList galliumDriverList = Tools.getCompatibleDrivers(getContext());
+
         rendererListPreference.setEntries(renderersList.rendererDisplayNames);
         rendererListPreference.setEntryValues(renderersList.rendererIds.toArray(new String[0]));
+
+        galliumListPreference.setEntries(galliumDriverList.rendererDisplayNames);
+        galliumListPreference.setEntryValues(galliumDriverList.rendererIds.toArray(new String[0]));
 
         computeVisibility();
     }
