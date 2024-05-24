@@ -52,8 +52,6 @@
         <item>freedreno</item>
         <item>zink</item>
         <item>swrast</item>
-        <item>virgl</item>
-        <item>panfrost</item>
     </string-array>
     <string-array name="download_source_names">
         <item>@string/global_default</item>
