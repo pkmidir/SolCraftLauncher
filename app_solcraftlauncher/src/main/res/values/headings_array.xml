@@ -49,8 +49,8 @@
         <item>mesa</item>
     </string-array>
     <string-array name="mesa_renderer_values">
-        <item>freedreno</item>
         <item>zink</item>
+        <item>freedreno</item>
         <item>swrast</item>
     </string-array>
     <string-array name="download_source_names">
