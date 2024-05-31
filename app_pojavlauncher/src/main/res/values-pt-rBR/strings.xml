@@ -51,7 +51,7 @@
     <string name="mcl_setting_subtitle_javaargs">Cuidado, isto pode causar falhas no seu jogo caso modificado sem conhecimento.</string>
     <string name="mcl_setting_category_renderer">Renderizador</string>
     <string name="mcl_setting_renderer_gles2_4">Holy GL4ES - (todas as versões, rápido)</string>
-    <string name="mcl_setting_renderer_vulkan_zink">Zink (Vulkan) - (todas as versões, mediano, baixa compatibilidade)</string>
+    <string name="mcl_setting_renderer_vulkan_zink">UMP Zink (Vulkan) - (todas as versões, mediano, baixa compatibilidade)</string>
     <string name="mcl_setting_renderer_angle">ANGLE - (versões 1.17+, mediano)</string>
     <string name="mcl_setting_veroption_release">Versões finais</string>
     <string name="mcl_setting_veroption_snapshot">Snapshot</string>

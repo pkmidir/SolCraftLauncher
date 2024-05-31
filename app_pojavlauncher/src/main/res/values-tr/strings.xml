@@ -51,7 +51,7 @@
     <string name="mcl_setting_subtitle_javaargs">Dikkatli olun, eğer bilgisizce değiştirilirse oyunun çökmesine sebep olabilir.</string>
     <string name="mcl_setting_category_renderer">İşleyici</string>
     <string name="mcl_setting_renderer_gles2_4">Kutsal GL4ES - (bütün sürümler için, hızlı)</string>
-    <string name="mcl_setting_renderer_vulkan_zink">Zink (Vulkan) - (tüm sürümler, orta)</string>
+    <string name="mcl_setting_renderer_vulkan_zink">UMP Zink (Vulkan) - (tüm sürümler, orta)</string>
     <string name="mcl_setting_renderer_angle">ANGLE (Vulkan) - (sadece 1.17+, orta)</string>
     <string name="mcl_setting_veroption_release">Sürümler</string>
     <string name="mcl_setting_veroption_snapshot">Test sürümleri</string>

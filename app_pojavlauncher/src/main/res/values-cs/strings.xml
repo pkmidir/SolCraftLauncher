@@ -51,7 +51,7 @@
     <string name="mcl_setting_subtitle_javaargs">Pozor, toto může způsobit pád hry, jeli upraveno bez znalostí.</string>
     <string name="mcl_setting_category_renderer">Vykreslovač</string>
     <string name="mcl_setting_renderer_gles2_4">Svatá GL4ES - (všechny verze, rychlá)</string>
-    <string name="mcl_setting_renderer_vulkan_zink">Zink (Vulkan) - (všechny verze, střední)</string>
+    <string name="mcl_setting_renderer_vulkan_zink">UMP Zink (Vulkan) - (všechny verze, střední)</string>
     <string name="mcl_setting_renderer_angle">ANGLE (Vulkan) - (pouze 1.17+, střední)</string>
     <string name="mcl_setting_veroption_release">Vydání</string>
     <string name="mcl_setting_veroption_snapshot">Snapshot</string>
